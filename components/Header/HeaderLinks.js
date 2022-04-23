@@ -2,6 +2,8 @@
 import React from "react";
 import Link from "next/link";
 import { useRouter } from 'next/router'
+import { useWeb3 } from "@3rdweb/hooks"
+import MiddleTruncate from "../Helper/MiddleTruncate";
 
 // @material-ui/core components
 import {makeStyles} from "@material-ui/core/styles";
@@ -26,8 +28,9 @@ const useStyles = makeStyles(styles);
 export default function HeaderLinks(props) {
     const classes = useStyles();
 	const router = useRouter();
+	const { connectWallet, address, error } = useWeb3();
 
-	console.log(router.pathname, classes.navLink);
+	console.log('wallet-address:', address, error);
 
     return (
         <List className={classes.list}>
@@ -80,14 +83,27 @@ export default function HeaderLinks(props) {
                 </Button>
             </ListItem>
             <ListItem className={classes.listItem}>
-                <Button
-                    href="https://www.creative-tim.com/product/nextjs-material-kit-pro?ref=njsmk-navbar"
-                    color="primary"
-                    target="_blank"
-                    className={classes.navLink}
-                >
-                    Connect Wallet
-                </Button>
+				{address ? (
+					<Button
+						color="default"
+						target="_blank"
+						className={classes.navLink}
+					>
+						<MiddleTruncate
+							text={address}
+							start={6}
+							end={4} />
+					</Button>
+				) : (
+					<Button
+						color="primary"
+						target="_blank"
+						className={classes.navLink}
+						onClick={()=>connectWallet("injected")}
+					>
+						Connect Wallet
+					</Button>
+				)}
             </ListItem>
         </List>
     );

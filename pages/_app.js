@@ -5,6 +5,7 @@ import Head from "next/head";
 import Router from "next/router";
 import Layout from "components/layout";
 import { ThirdwebWeb3Provider } from "@3rdweb/hooks";
+import "regenerator-runtime/runtime";
 
 import PageChange from "components/PageChange/PageChange.js";
 
@@ -28,7 +29,7 @@ Router.events.on("routeChangeError", () => {
 	document.body.classList.remove("body-page-transition");
 });
 
-const supportedChainIds = [1];
+const supportedChainIds = [1, 3];
 
 const connectors = {
 	injected: {},
@@ -60,14 +61,14 @@ export default class MyApp extends App {
 					/>
 					<title>BotSail.io</title>
 				</Head>
-				<Layout>
-					<ThirdwebWeb3Provider
-						supportedChainIds={supportedChainIds}
-						connectors={connectors}
-					>
+				<ThirdwebWeb3Provider
+					supportedChainIds={supportedChainIds}
+					connectors={connectors}
+				>
+					<Layout>
 						<Component {...pageProps} />
-					</ThirdwebWeb3Provider>
-				</Layout>
+					</Layout>
+				</ThirdwebWeb3Provider>
 			</React.Fragment>
 		);
 	}

@@ -20,7 +20,7 @@ const componentsStyle = {
 			maxWidth: "1140px",
 			paddingTop: '90px'
 		},
-		"@media (min-width: 1600px)": {
+		"@media (min-width: 1500px)": {
 			maxWidth: "1480px",
 			paddingTop: '90px'
 		},

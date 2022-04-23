@@ -6,27 +6,27 @@ const componentsStyle = {
 		paddingTop: '90px',
 		"@media (min-width: 576px)": {
 			maxWidth: "540px",
-			paddingTop: '90px'
+			paddingTop: '120px'
 		},
 		"@media (min-width: 768px)": {
 			maxWidth: "720px",
-			paddingTop: '90px'
+			paddingTop: '120px'
 		},
 		"@media (min-width: 992px)": {
 			maxWidth: "960px",
-			paddingTop: '90px'
+			paddingTop: '120px'
 		},
 		"@media (min-width: 1200px)": {
 			maxWidth: "1140px",
-			paddingTop: '90px'
+			paddingTop: '120px'
 		},
 		"@media (min-width: 1500px)": {
 			maxWidth: "1480px",
-			paddingTop: '90px'
+			paddingTop: '120px'
 		},
 		"@media (min-width: 1920px)": {
 			maxWidth: "1800px",
-			paddingTop: '90px'
+			paddingTop: '120px'
 		},
 	},
 	filterOptionContainer: {

@@ -14,8 +14,8 @@ export default function Layout({ children }) {
 			  	rightLinks={<HeaderLinks />}
 			  	fixed
 			  	changeColorOnScroll={{
-					height: 400,
-					color: "white",
+					height: 70,
+					color: "info",
 			  	}}
 			/>
 

@@ -17,6 +17,14 @@ export default function CollectionList() {
 			<CollectionItem/>
 			<CollectionItem/>
 			<CollectionItem/>
+			<CollectionItem/>
+			<CollectionItem/>
+			<CollectionItem/>
+			<CollectionItem/>
+			<CollectionItem/>
+			<CollectionItem/>
+			<CollectionItem/>
+			<CollectionItem/>
 		</ul>
 	);
 }

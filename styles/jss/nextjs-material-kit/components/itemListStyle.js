@@ -1,4 +1,4 @@
-const collectionListStyle = {
+const itemListStyle = {
 	items: {
 		listStyle: 'none',
 		padding: 0,
@@ -39,6 +39,18 @@ const collectionListStyle = {
 			'&:hover': {
 				boxShadow: "0 0 0 2px #228be6",
 				borderRadius: '8px'
+			},
+
+			'&.verified': {
+				'&:after': {
+					content: "",
+					width: '24px',
+					height: '24px',
+					background: 'url(/img/verified.svg) 0 0/contain',
+					position: 'absolute',
+					top: '-6px',
+					right: '-6px'
+				}
 			},
 
 			'&.verified:after': {
@@ -102,12 +114,27 @@ const collectionListStyle = {
 			overflow: 'hidden'
 		},
 
-		'& .counters': {
+		'& .scores': {
 			color: '#868e96',
 			marginTop: '4px',
 			fontSize: '10px'
+		},
+
+		'& .buy-container': {
+			marginTop: '10px',
+			display: 'flex',
+			justifyContent: 'center',
+
+			'& .buy-btn': {
+				height: "30px"
+			},
+
+			'& .buy-btn:hover': {
+				webkitTransform: "scale(1.1)",
+				transform: "scale(1.1)"
+			}
 		}
 	}
 };
 
-export default collectionListStyle;
+export default itemListStyle;

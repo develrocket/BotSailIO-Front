@@ -1,5 +1,6 @@
 import React from "react";
 import Image from "next/image";
+import Link from "next/link";
 
 // material-ui components
 import {makeStyles} from "@material-ui/core/styles";
@@ -18,7 +19,7 @@ export default function Item() {
 
 	return (
 		<li className="verified">
-			<a href="/velas/velas-apes-club/215">
+			<Link href="/velas/velas-apes-club/215"><a>
 				<div className="media">
 					<Image src="https://m.raregems.io/c/21725?optimizer=image&amp;width=400" width={400} height={400} loading="lazy"/>
 				</div>
@@ -38,7 +39,7 @@ export default function Item() {
 						</Button>
 					</div>
 				</div>
-			</a>
+			</a></Link>
 		</li>
 	);
 }

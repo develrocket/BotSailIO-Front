@@ -1,19 +1,40 @@
 const ItemDetailStyle = {
 	imageDetail: {
 		height: "100%",
-		borderLeft: "1px solid #343a40",
-		background: "#131316",
+		padding: "30px",
+
+		'& .property-box': {
+			background: "#212529",
+			borderRadius: "24px",
+			padding: "30px",
+			height: "100%",
+			overflowY: "auto"
+		},
 
 		'& .property-div': {
-			display: "flex",
-			flexDirection: "column",
-			justifyContent: "center",
-			padding: "15px 20px",
-			height: "400px",
+			height: "100%",
+			overflowY: "auto",
 
-			// "@media (mix-width: 496px)": {
-				overflowY: "scroll",
-			// },
+			'&::-webkit-scrollbar': {
+				width: "10px",
+			},
+
+			'&::-webkit-scrollbar-track': {
+				backgroundColor: "darkgray",
+				borderRadius: "5px"
+			},
+
+			'&::-webkit-scrollbar-thumb': {
+				backgroundColor: "#9c27b0",
+				borderRadius: "5px",
+				cursor: "pointer",
+				boxShadow: "inset 0 0 6px rgba(0, 0, 0, 0.3)",
+
+				'&:hover': {
+					backgroundColor: "#820099",
+					cursor: "pointer"
+				}
+			}
 		},
 
 		'& .share-div': {

@@ -20,9 +20,9 @@ export default function Detail({item}) {
 	return (
 		<div className={classes.detailContainer}>
 			<GridContainer className="detail-div">
-				<GridItem xs={12} sm={12} md={7} lg={8}>
-					<Image src="https://m.raregems.io/c/21725?optimizer=image&amp;width=400" className="detail-img"
-						   layout="fill" objectFit="contain" loading="lazy"/>
+				<GridItem xs={12} sm={12} md={7} lg={8} className="height-full">
+					<img src="https://m.raregems.io/c/21725?optimizer=image&amp;width=400" alt="icon"
+						 className="detail-img"/>
 				</GridItem>
 				<GridItem xs={12} sm={12} md={5} lg={4} className="detail-contain">
 					<ItemDetail />

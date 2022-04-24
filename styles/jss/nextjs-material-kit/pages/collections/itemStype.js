@@ -8,13 +8,23 @@ const itemStyle = {
 			width: "100%",
 			height: "100%",
 			margin: "0",
-			borderTop: "1px solid #343a40",
-			background: "#0006",
+		},
+
+		'& .height-full': {
+			height: "100%",
+			display: "flex",
+			justifyContent: "center"
 		},
 
 		'& .detail-contain': {
-			padding: "0"
-		}
+			padding: "0",
+			height: "100%"
+		},
+
+		'& .detail-img': {
+			margin: "30px",
+			borderRadius: "24px"
+		},
 	}
 };
 

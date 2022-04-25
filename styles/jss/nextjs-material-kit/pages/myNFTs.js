@@ -1,9 +1,7 @@
 const collectionsStyle = {
+
 	partTitle: {
 		textAlign: 'center',
-		'& .items li a:hover .media img':  {
-			transform: 'scale(1.1)'
-		},
 
 		'& .top': {
 			textAlign: 'center',

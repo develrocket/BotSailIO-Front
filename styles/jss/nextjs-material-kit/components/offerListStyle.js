@@ -1,4 +1,4 @@
-const collectionListStyle = {
+const offerListStyle = {
 	items: {
 		listStyle: 'none',
 		padding: 0,
@@ -14,6 +14,12 @@ const collectionListStyle = {
 			grid: 'none/repeat(auto-fit,calc(50vw - 39px))',
 			gap: '16px',
 			margin: '32px 16px'
+		},
+
+		"@media (max-width: 412px)": {
+			'& .btn button': {
+				padding: '6px 7px'
+			}
 		},
 
 		'& li:hover': {
@@ -32,17 +38,19 @@ const collectionListStyle = {
 				padding: 0,
 				textDecoration: 'none',
 				display: 'block',
-				overflow: 'hidden',
-
-				'&:hover .media img': {
-					webkitTransform: "scale(1.1)",
-					transform: "scale(1.1)"
-				},
+				overflow: 'hidden'
 			},
 
-			'&:hover': {
-				boxShadow: "0 0 0 2px #228be6",
-				borderRadius: '8px'
+			'&.verified': {
+				'&:after': {
+					content: "",
+					width: '24px',
+					height: '24px',
+					background: 'url(/img/verified.svg) 0 0/contain',
+					position: 'absolute',
+					top: '-6px',
+					right: '-6px'
+				}
 			},
 
 			'&.verified:after': {
@@ -113,18 +121,9 @@ const collectionListStyle = {
 		},
 
 		'& .btn': {
-			textAlign: 'center',
-
-			// '& button': {
-			// 	background: 'linear-gradient(-10deg,#7048EA,#ae3ec9)',
-			// 	color: '#ffffff',
-			// 	padding: '6px 16px',
-			// 	cursor: 'pointer',
-			// 	border: 0,
-			// 	borderRadius: '32px'
-			// }
+			textAlign: 'center'
 		}
 	}
 };
 
-export default collectionListStyle;
+export default offerListStyle;

@@ -9,7 +9,7 @@ const useStyles = makeStyles(styles);
 export default function CollectionList() {
 	const classes = useStyles();
 	return (
-		<ul className={classes.items}>
+		<ul className={classes.items + ' items'}>
 			<CollectionItem/>
 			<CollectionItem/>
 			<CollectionItem/>

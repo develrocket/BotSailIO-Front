@@ -1,4 +1,4 @@
-const collectionListStyle = {
+const tradeListStyle = {
 	items: {
 		listStyle: 'none',
 		padding: 0,
@@ -129,4 +129,4 @@ const collectionListStyle = {
 	}
 };
 
-export default collectionListStyle;
+export default tradeListStyle;

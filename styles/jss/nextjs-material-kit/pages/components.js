@@ -28,6 +28,9 @@ const componentsStyle = {
 			maxWidth: "1800px",
 			paddingTop: '120px'
 		},
+		'& .items li a:hover .media img':  {
+			transform: 'scale(1.1)'
+		},
 	},
 	filterOptionContainer: {
 		background: '#212529',

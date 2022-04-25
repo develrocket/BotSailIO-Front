@@ -44,9 +44,8 @@ export default function HeaderLinks(props) {
             </ListItem>
             <ListItem className={classes.listItem}>
                 <Button
-                    href="https://www.creative-tim.com/product/nextjs-material-kit-pro?ref=njsmk-navbar"
+                    href="/myNFTs"
                     color="transparent"
-                    target="_blank"
                     className={classes.navLink}
                 >
                     My NFTs
@@ -54,9 +53,8 @@ export default function HeaderLinks(props) {
             </ListItem>
             <ListItem className={classes.listItem}>
                 <Button
-                    href="https://www.creative-tim.com/product/nextjs-material-kit-pro?ref=njsmk-navbar"
+                    href="/offers"
                     color="transparent"
-                    target="_blank"
                     className={classes.navLink}
                 >
                     Latest Offer
@@ -64,9 +62,8 @@ export default function HeaderLinks(props) {
             </ListItem>
             <ListItem className={classes.listItem}>
                 <Button
-                    href="https://www.creative-tim.com/product/nextjs-material-kit-pro?ref=njsmk-navbar"
+                    href="/trades"
                     color="transparent"
-                    target="_blank"
                     className={classes.navLink}
                 >
                     Latest Trade

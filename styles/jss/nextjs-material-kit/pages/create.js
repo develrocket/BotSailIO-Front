@@ -1,16 +1,11 @@
 const collectionsStyle = {
+
 	partTitle: {
-		textAlign: 'center',
-		'& .items li a:hover .media img':  {
-			transform: 'scale(1.1)'
-		},
 
 		'& .top': {
-			textAlign: 'center',
 			color: '#ced4da',
 			marginBottom: '16px',
 			paddingTop: '32px',
-			fontSize: '32px',
 			fontWeight: 'bold'
 		},
 

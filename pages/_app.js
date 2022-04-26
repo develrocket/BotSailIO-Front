@@ -58,7 +58,7 @@ export default class MyApp extends App {
 						name="viewport"
 						content="width=device-width, initial-scale=1, shrink-to-fit=no"
 					/>
-					<title>BotSail.io</title>
+					<title>BoatSail.io</title>
 				</Head>
 				<ThirdwebWeb3Provider
 					supportedChainIds={supportedChainIds}

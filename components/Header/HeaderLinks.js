@@ -28,7 +28,18 @@ const useStyles = makeStyles(styles);
 export default function HeaderLinks(props) {
     const classes = useStyles();
 	const router = useRouter();
+	const { pathname, query } = router
 	const { connectWallet, address, error } = useWeb3();
+
+	const incrementCounter = () => {
+		const currentCounter = query.counter ? parseInt(query.counter) : 0
+		const href = `/?counter=${currentCounter + 1}`
+
+	}
+	const goToPage = (url) => {
+		const href = "/create/" + url.toLowerCase();
+		router.push(href, href, { shallow: true })
+	};
 
 	console.log('wallet-address:', address, error);
 
@@ -79,6 +90,24 @@ export default function HeaderLinks(props) {
                     Website Builder
                 </Button>
             </ListItem>
+			<ListItem className={classes.listItem}>
+				<CustomDropdown
+					navDropdown
+					buttonText="Create"
+					dropdownHeader="Create Collection & Item"
+					onClick={(url) => {
+						goToPage(url);
+					}}
+					buttonProps={{
+						className: classes.navLink,
+						color: "transparent",
+					}}
+					dropdownList={[
+						"Collection",
+						"Item",
+					]}
+				/>
+			</ListItem>
             <ListItem className={classes.listItem}>
 				{address ? (
 					<Button

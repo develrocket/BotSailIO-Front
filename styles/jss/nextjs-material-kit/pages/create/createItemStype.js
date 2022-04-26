@@ -12,6 +12,11 @@ const createItemFormStyle = {
 			borderRadius: '10px',
 			padding: "4px",
 
+			'&.w-h-160': {
+				width: '160px',
+				height: '160px'
+			},
+
 			'& .rbFileInput': {
 				cursor: 'pointer',
 				borderRadius: '10px',
@@ -97,12 +102,82 @@ const createItemFormStyle = {
 		},
 
 		'& .modal-box': {
-			display: "flex",
-			padding: "12px 10px 0px 10px",
-			flexDirection: "row",
-			justifyContent: "space-between",
-			alignItems: "center",
 			borderBottom: "1px solid darkgray",
+
+			'& .pro-item-list': {
+				display: "flex",
+				flexWrap: "wrap",
+				marginBottom: "10px",
+
+				'& .pro-item': {
+					margin: "5px",
+					width: "150px",
+					borderRadius: "6px",
+					border: "1px solid rgb(21, 178, 229)",
+					padding: "10px",
+					textAlign: "center",
+					background: '#212529',
+
+					'& .pro-item-type': {
+						color: "rgb(21, 178, 229)",
+						fontSize: "11px",
+						fontWeight: 500,
+						textTransform: "uppercase"
+					},
+
+					'& .pro-item-name': {
+						color: "white",
+						fontSize: "15px",
+						fontWeight: 500,
+						lineHeight: "30px",
+						overflow: "hidden",
+						textOverflow: "ellipsis",
+						whiteSpace: "nowrap",
+					}
+				}
+			},
+
+			'& .lvl-item-list': {
+				display: "flex",
+				flexDirection: "column",
+				marginBottom: "10px",
+
+				'& .lvl-item': {
+					borderRadius: "10px",
+					border: "1px solid rgb(229, 232, 235)",
+					padding: "12px",
+					maxWidth: "428px",
+					marginTop: "8px",
+
+					'& .lvl-item-info': {
+						width: "100%",
+						display: "inline-flex",
+						justifyContent: "space-between",
+					},
+
+					'& .lvl-item-bar': {
+						backgroundColor: "rgb(251, 253, 255)",
+						border: "1px solid rgb(229, 232, 235)",
+						borderRadius: "14px",
+						height: "14px",
+						marginTop: "4px",
+						overflow: "hidden",
+
+						'& .lvl-item-content': {
+							backgroundColor: "rgb(32, 129, 226)",
+							height: "100%",
+						}
+					}
+				}
+			},
+
+			'& .box-header': {
+				display: "flex",
+				flexDirection: "row",
+				justifyContent: "space-between",
+				padding: "12px 10px 0px 10px",
+				alignItems: "center",
+			},
 
 			'& .round-border': {
 				border: "1px solid gray",
@@ -113,11 +188,20 @@ const createItemFormStyle = {
 				justifyContent: "center",
 				alignItems: "center",
 				color: "gray",
+				cursor: "pointer",
 
 				'&:hover': {
 					border: "1px solid darkgray",
 					color: "darkgray"
 				}
+			},
+
+			'& .check-box': {
+				width: "40px",
+				height: "40px",
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center",
 			},
 
 			'& .content-box': {
@@ -143,6 +227,11 @@ const createItemFormStyle = {
 
 		'& .text-danger': {
 			color: "#eb5757",
+			margin: "0px 3px"
+		},
+
+		'& .text-blue': {
+			color: "#339af0",
 			margin: "0px 3px"
 		}
 	}

@@ -1,31 +1,23 @@
 import React, {Component, useRef, useState} from "react";
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
-import CollectionFilter from "components/CollectionFilter/CollectionFilter";
+import PropertyModal from "components/Create/Item/PropertyModal";
 import ItemList from "components/Collection/Item/ItemList";
 import {makeStyles} from "@material-ui/core/styles";
 import {FormatListBulleted, AddSharp, Star, BarChart, LockOpen, Warning, ErrorOutline, Close} from '@material-ui/icons';
 import Slide from "@material-ui/core/Slide";
-import IconButton from "@material-ui/core/IconButton";
-import Dialog from "@material-ui/core/Dialog";
-import DialogTitle from "@material-ui/core/DialogTitle";
-import DialogContent from "@material-ui/core/DialogContent";
-import DialogActions from "@material-ui/core/DialogActions";
 import ReactPlayer from 'react-player';
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Switch from "@material-ui/core/Switch";
+import Tooltip from "@material-ui/core/Tooltip";
 
 import styles from "styles/jss/nextjs-material-kit/pages/components.js";
 import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
 import pageStyles from "styles/jss/nextjs-material-kit/pages/create/createItemStype.js";
-import modalStyle from "styles/jss/nextjs-material-kit/modalStyle.js";
+import tooltipStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/javascriptStyles.js";
 import Button from "components/CustomButtons/Button";
 
-const useStyles = makeStyles({...basicsStyles, ...styles, ...pageStyles, ...modalStyle});
-
-const Transition = React.forwardRef(function Transition(props, ref) {
-	return <Slide direction="down" ref={ref} {...props} />;
-});
-
-Transition.displayName = "Transition";
+const useStyles = makeStyles({...basicsStyles, ...styles, ...pageStyles, ...tooltipStyles});
 
 export default function Item({}) {
 	const classes = useStyles();
@@ -34,7 +26,16 @@ export default function Item({}) {
 	const [ isShowVideo, showVideo ] = useState(false);
 	const [isPlaying, setIsPlaying] = useState(true);
 	const [ isShowPreview, showPreview ] = useState(false);
-	const [classicModal, setClassicModal] = React.useState(false);
+
+	const [ isShowProModal, setIsShowProModal ] = useState(false);
+	const [ proData, setProData ] = useState([]);
+	const [ isShowLvlModal, setIsShowLvlModal ] = useState(false);
+	const [ lvlData, setLvlData ] = useState([]);
+	const [ isShowStatsModal, setIsShowStatsModal ] = useState(false);
+	const [ statsData, setStatsData ] = useState([]);
+
+	const [isUnlockable, setUnlockable] = React.useState(false);
+	const [isSensitive, setSensitive] = React.useState(false);
 
 	const onChangeMainFile =(e) => {
 		if (e.target.files && e.target.files.length > 0) {
@@ -62,6 +63,7 @@ export default function Item({}) {
 	}
 
 	const removePreviewImg =(e) => {
+		e.preventDefault();
 		setPreviewImg("");
 	}
 
@@ -100,16 +102,18 @@ export default function Item({}) {
 						<p className="text-label">Preview Image<span className="text-danger">*</span></p>
 						<p>Because you’ve included multimedia, you’ll need to provide an image (PNG, JPG, or GIF) for the card
 							display of your item.</p>
-						<label className="rbFileInput" htmlFor="preview_input">
-							<input type="file" id="preview_input" name="main_file" accept=".jpg,.png,.gif,.svg"
-								   style={{ display: 'none' }} onChange={onChangePreviewImg} />
-							{ !previewImg ? <i className="fa fa-image" style={{ fontSize: '4.5em' }} /> :
-								<i className="fa fa-image rbFileIcon" /> }
-							{ previewImg && <div className="rbFile">
-								<span className={'removeImg'} onClick={removePreviewImg}>&times;</span>
-								<img src={ URL.createObjectURL(previewImg) } width={300} height={200} />
-							</div> }
-						</label>
+						<div className="fileContainer w-h-160">
+							<label className="rbFileInput" htmlFor="preview_input">
+								<input type="file" id="preview_input" name="main_file" accept=".jpg,.png,.gif,.svg"
+									   style={{ display: 'none' }} onChange={onChangePreviewImg} />
+								{ !previewImg ? <i className="fa fa-image" style={{ fontSize: '4.5em' }} /> :
+									<i className="fa fa-image rbFileIcon" /> }
+								{ previewImg && <div className="rbFile">
+									<span className={'removeImg'} onClick={removePreviewImg}>&times;</span>
+									<img src={ URL.createObjectURL(previewImg) } width={160} height={160} />
+								</div> }
+							</label>
+						</div>
 					</>
 				}
 
@@ -129,7 +133,16 @@ export default function Item({}) {
 
 				<p className="text-label">Collection</p>
 				<p>
-					This is the collection where your item will appear.<ErrorOutline/>
+					<span>This is the collection where your item will appear.</span>
+					<Tooltip
+						id="tooltip-top"
+						title="Moving items to a different collection may take up to 30 minutes.
+						You can manage your collections here."
+						placement="top"
+						classes={{ tooltip: classes.tooltip }}
+					>
+						<ErrorOutline/>
+					</Tooltip>
 				</p>
 				<div className="select">
 					<select className="bordered-input select-box" placeholder="Select Collection">
@@ -141,128 +154,161 @@ export default function Item({}) {
 				</div>
 
 				<div className="modal-box m-t-15">
-					<div className="content-box">
-						<FormatListBulleted />
-						<div style={{marginLeft: "15px"}}>
-							<p className="text-label">Properties</p>
-							<p>Textual traits that show up as rectangles</p>
+					<div className="box-header">
+						<div className="content-box">
+							<FormatListBulleted />
+							<div style={{marginLeft: "15px"}}>
+								<p className="text-label">Properties</p>
+								<p>Textual traits that show up as rectangles</p>
+							</div>
 						</div>
+						<div className="round-border" onClick={() => setIsShowProModal(true)}>
+							<AddSharp />
+						</div>
+						<PropertyModal target="property" isShow={isShowProModal}
+						   	handleClose={(data) => {
+								setIsShowProModal(false);
+								if (data) {
+									setProData(data);
+								}
+							}} />
 					</div>
-					<div className="round-border">
-						<AddSharp onClick={() => setClassicModal(true)} />
-						<Dialog
-							classes={{
-								root: classes.center,
-								paper: classes.modal,
-							}}
-							open={classicModal}
-							TransitionComponent={Transition}
-							keepMounted
-							onClose={() => setClassicModal(false)}
-							aria-labelledby="classic-modal-slide-title"
-							aria-describedby="classic-modal-slide-description"
-						>
-							<DialogTitle
-								id="classic-modal-slide-title"
-								disableTypography
-								className={classes.modalHeader}
-								style={{borderBottom: "1px solid gray"}}
-							>
-								<IconButton
-									className={classes.modalCloseButton}
-									key="close"
-									aria-label="Close"
-									color="inherit"
-									onClick={() => setClassicModal(false)}
-								>
-									<Close className={classes.modalClose} />
-								</IconButton>
-								<h3 className={classes.modalTitle}>Add Properties</h3>
-							</DialogTitle>
-							<DialogContent
-								id="classic-modal-slide-description"
-								className={classes.modalBody}
-								style={{borderBottom: "1px solid gray"}}
-							>
-								<p>
-									Properties show up underneath your item, are clickable, and can be filtered in your
-									collection's sidebar.
-								</p>
-								<div className="properties-list">
-									<div className="header">
-										<div className="header-label">Type</div>
-										<div className="header-label">Name</div>
+					<div className="pro-item-list">
+					{
+						proData.map((item, key) =>
+							<div className="pro-item" key={key}>
+								<div className="pro-item-type">{item.type}</div>
+								<div className="pro-item-name">{item.name}</div>
+							</div>
+						)
+					}
+					</div>
+				</div>
+
+				<div className="modal-box">
+					<div className="box-header">
+						<div className="content-box">
+							<Star />
+							<div style={{marginLeft: "15px"}}>
+								<p className="text-label">Levels</p>
+								<p>Numerical traits that show as a progress bar</p>
+							</div>
+						</div>
+						<div className="round-border" onClick={() => setIsShowLvlModal(true)}>
+							<AddSharp />
+						</div>
+						<PropertyModal target="level" isShow={isShowLvlModal}
+						   	handleClose={(data) => {
+								setIsShowLvlModal(false);
+								if (data) {
+									setLvlData(data);
+								}
+							}} />
+					</div>
+					<div className="lvl-item-list">
+						{
+							lvlData.map((item, key) =>
+								<div className="lvl-item" key={key}>
+									<div className="lvl-item-info">
+										<span>{item.name}</span>
+										<span>{item.value} of {item.total}</span>
 									</div>
-									<>
-										<div className="properties-row">
-											<div className="properties-close"><Close /></div>
-											<div className="properties-char">
-												<input className="bordered-input" placeholder="Character" />
-											</div>
-											<div className="properties-close">
-												<input className="bordered-input" placeholder="Male" />
-											</div>
-										</div>
-									</>
-									<Button color="info" size="lg">Add more</Button>
+									<div className="lvl-item-bar">
+										<div className="lvl-item-content" style={{width: (100*item.value)/item.total + "%"}} />
+									</div>
 								</div>
-							</DialogContent>
-							<DialogActions className={classes.modalFooter}>
-								<Button color="success" size="lg">Save</Button>
-							</DialogActions>
-						</Dialog>
+							)
+						}
 					</div>
 				</div>
 
 				<div className="modal-box">
-					<div className="content-box">
-						<Star />
-						<div style={{marginLeft: "15px"}}>
-							<p className="text-label">Levels</p>
-							<p>Numerical traits that show as a progress bar</p>
+					<div className="box-header">
+						<div className="content-box">
+							<BarChart />
+							<div style={{marginLeft: "15px"}}>
+								<p className="text-label">Stats</p>
+								<p>Numerical traits that just show as numbers</p>
+							</div>
 						</div>
+						<div className="round-border" onClick={() => setIsShowStatsModal(true)}>
+							<AddSharp />
+						</div>
+						<PropertyModal target="stats" isShow={isShowStatsModal}
+						   	handleClose={(data) => {
+								setIsShowStatsModal(false);
+							   	if (data) {
+								   	setStatsData(data);
+							   	}
+						   	}} />
 					</div>
-					<div className="round-border">
-						<AddSharp />
+					<div className="lvl-item-list">
+						{
+							statsData.map((item, key) =>
+								<div className="lvl-item" key={key}>
+									<div className="lvl-item-info">
+										<span>{item.name}</span>
+										<span>{item.value} of {item.total}</span>
+									</div>
+								</div>
+							)
+						}
 					</div>
 				</div>
 
 				<div className="modal-box">
-					<div className="content-box">
-						<BarChart />
-						<div style={{marginLeft: "15px"}}>
-							<p className="text-label">Stats</p>
-							<p>Numerical traits that just show as numbers</p>
+					<div className="box-header">
+						<div className="content-box">
+							<LockOpen />
+							<div style={{marginLeft: "15px"}}>
+								<p className="text-label">Unlockable Content</p>
+								<p>Include unlockable content that can only be revealed by the owner of the item.</p>
+							</div>
+						</div>
+						<div className="check-box">
+							<Switch
+								checked={isUnlockable}
+								onChange={(event) => setUnlockable(event.target.checked)}
+								classes={{
+									switchBase: classes.switchBase,
+									checked: classes.switchChecked,
+									thumb: classes.switchIcon,
+									track: classes.switchBar,
+								}}
+							/>
 						</div>
 					</div>
-					<div className="round-border">
-						<AddSharp />
-					</div>
+					{
+						isUnlockable &&
+							<>
+								<textarea className="bordered-input height-3x" rows="3"
+										  placeholder="Enter content." />
+								<p><span className="text-blue">Markdown</span> syntax is supported.</p>
+							</>
+					}
 				</div>
 
 				<div className="modal-box">
-					<div className="content-box">
-						<LockOpen />
-						<div style={{marginLeft: "15px"}}>
-							<p className="text-label">Unlockable Content</p>
-							<p>Include unlockable content that can only be revealed by the owner of the item.</p>
+					<div className="box-header">
+						<div className="content-box">
+							<Warning />
+							<div style={{marginLeft: "15px"}}>
+								<p className="text-label">Explicit & Sensitive Content</p>
+								<p>Set this item as explicit and sensitive content<ErrorOutline /></p>
+							</div>
 						</div>
-					</div>
-					<div className="round-border">
-						<AddSharp />
-					</div>
-				</div>
-
-				<div className="modal-box">
-					<div className="content-box">
-						<Warning />
-						<div style={{marginLeft: "15px"}}>
-							<p className="text-label">Explicit & Sensitive Content</p>
-							<p>Set this item as explicit and sensitive content<ErrorOutline /></p>
+						<div className="check-box">
+							<Switch
+								checked={isSensitive}
+								onChange={(event) => setSensitive(event.target.checked)}
+								classes={{
+									switchBase: classes.switchBase,
+									checked: classes.switchChecked,
+									thumb: classes.switchIcon,
+									track: classes.switchBar,
+								}}
+							/>
 						</div>
-					</div>
-					<div className="round-border">
-						<AddSharp />
 					</div>
 				</div>
 

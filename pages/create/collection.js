@@ -1,9 +1,8 @@
-import React, {Component, useState} from "react";
-import GridContainer from "../components/Grid/GridContainer";
-import GridItem from "../components/Grid/GridItem";
-import CreateForm from "../components/CreateForm/CreateForm";
+import React from "react";
+import GridContainer from "../../components/Grid/GridContainer";
+import GridItem from "../../components/Grid/GridItem";
+import CreateForm from "../../components/CreateForm/CreateForm";
 import {makeStyles} from "@material-ui/core/styles";
-import Button from "components/CustomButtons/Button.js";
 
 import styles from "styles/jss/nextjs-material-kit/pages/components.js";
 import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";

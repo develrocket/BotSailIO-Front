@@ -74,10 +74,10 @@ export default function PropertyModal(props) {
 				id="classic-modal-slide-title"
 				disableTypography
 				className={classes.modalHeader}
-				style={{borderBottom: "1px solid gray"}}
+				style={{borderBottom: "1px solid #e5e8eb"}}
 			>
 				<IconButton
-					className={classes.modalCloseButton}
+					className={classes.closeModal}
 					key="close"
 					aria-label="Close"
 					color="inherit"
@@ -85,9 +85,9 @@ export default function PropertyModal(props) {
 						props.handleClose(null);
 					}}
 				>
-					<Close className={classes.modalClose} />
+					<Close width="30px" height="30px" />
 				</IconButton>
-				<h3 className={classes.modalTitle}>Add {
+				<h3 className={classes.modalTitle} style={{fontWeight: "bold", textAlign: "center"}}>Add {
 					props.target === "property" ? "Properties"
 					: (props.target === "level" ? "Levels"
 					: "Stats")}
@@ -96,15 +96,30 @@ export default function PropertyModal(props) {
 			<DialogContent
 				id="classic-modal-slide-description"
 				className={classes.modalBody + " " + classes.propertyModal}
-				style={{borderBottom: "1px solid gray"}}
+				style={{borderBottom: "1px solid #e5e8eb"}}
 			>
-				<p>
-					Properties show up underneath your item, are clickable, and can be filtered in your
-					collection's sidebar.
-				</p>
+				{
+					props.target === "property" &&
+					<p>
+						Properties show up underneath your item, are clickable, and can be filtered in your
+						collection's sidebar.
+					</p>
+				}
+				{
+					props.target === "level" &&
+					<p>
+						Levels show up underneath your item, are clickable, and can be filtered in your collection's sidebar.
+					</p>
+				}
+				{
+					props.target === "stats" &&
+					<p>
+						Stats show up underneath your item, are clickable, and can be filtered in your collection's sidebar.
+					</p>
+				}
 				<div className="properties-list">
 					<div className="properties-row">
-						<div className="properties-close" />
+						<div className="properties-close border-none" />
 						<div className="properties-type header">
 							{props.target === "property" ? "Type" : "Name"}
 						</div>
@@ -117,7 +132,7 @@ export default function PropertyModal(props) {
 							<div key={key}>
 								<div className="properties-row">
 									<div className="properties-close">
-										<Close onClick={() => {
+										<Close className="text-gray" onClick={() => {
 											removeData(key);
 										}} />
 									</div>
@@ -136,7 +151,7 @@ export default function PropertyModal(props) {
 													<input className="bordered-input first" type="number" name="value"
 														   onChange={(e) => {handleChangeInput(e, key);}}
 														   value={item.value} />
-													<div className="properties-close">Of</div>
+													<div className="properties-close br-0">Of</div>
 													<input className="bordered-input last" type="number" name="total"
 														   onChange={(e) => {handleChangeInput(e, key);}}
 														   value={item.total} />
@@ -147,11 +162,11 @@ export default function PropertyModal(props) {
 							</div>
 						)
 					}
-					<Button onClick={addItem} color="info" size="lg">Add more</Button>
+					<Button onClick={addItem} className="add-btn" size="lg">Add more</Button>
 				</div>
 			</DialogContent>
-			<DialogActions className={classes.modalFooter}>
-				<Button color="success" size="lg" onClick={handleSubmit}>Save</Button>
+			<DialogActions className={classes.displayCenter}>
+				<Button color="info" size="lg" onClick={handleSubmit}>Save</Button>
 			</DialogActions>
 		</Dialog>
 	);

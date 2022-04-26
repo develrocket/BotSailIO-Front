@@ -86,19 +86,15 @@ const createItemFormStyle = {
 			width: "100%",
 			height: "48px",
 			fontSize: "20px",
-			background: "transparent",
-			border: "1px solid darkgray",
+			background: "white",
+			border: "1px solid #212529",
 			borderRadius: "8px",
 			padding: "10px",
-			color: "white",
+			color: "black",
 
 			'&.height-3x': {
 				height: '144px',
 			},
-
-			'&.select-box': {
-
-			}
 		},
 
 		'& .modal-box': {
@@ -145,6 +141,7 @@ const createItemFormStyle = {
 				'& .lvl-item': {
 					borderRadius: "10px",
 					border: "1px solid rgb(229, 232, 235)",
+					background: "#212529",
 					padding: "12px",
 					maxWidth: "428px",
 					marginTop: "8px",
@@ -221,6 +218,14 @@ const createItemFormStyle = {
 			marginTop: "4px"
 		},
 
+		'& .tooltip-icon': {
+			marginLeft: "4px",
+
+			'&:hover': {
+				color: "#212529"
+			}
+		},
+
 		'& .m-t-15': {
 			marginTop: "15px"
 		},
@@ -233,6 +238,10 @@ const createItemFormStyle = {
 		'& .text-blue': {
 			color: "#339af0",
 			margin: "0px 3px"
+		},
+
+		'& .display-flex': {
+			display: "flex"
 		}
 	}
 };

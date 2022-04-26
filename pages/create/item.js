@@ -2,7 +2,8 @@ import React, {Component, useRef, useState} from "react";
 import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
 import PropertyModal from "components/Create/Item/PropertyModal";
-import ItemList from "components/Collection/Item/ItemList";
+import formatOptionLabel from "components/Create/Item/FormatOptionLabel";
+import formatCollectionOptionLabel from "components/Create/Item/FormatCollectionOptionLabel";
 import {makeStyles} from "@material-ui/core/styles";
 import {FormatListBulleted, AddSharp, Star, BarChart, LockOpen, Warning, ErrorOutline, Close} from '@material-ui/icons';
 import Slide from "@material-ui/core/Slide";
@@ -10,6 +11,7 @@ import ReactPlayer from 'react-player';
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
 import Tooltip from "@material-ui/core/Tooltip";
+import Select from "react-select";
 
 import styles from "styles/jss/nextjs-material-kit/pages/components.js";
 import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
@@ -18,6 +20,18 @@ import tooltipStyles from "styles/jss/nextjs-material-kit/pages/componentsSectio
 import Button from "components/CustomButtons/Button";
 
 const useStyles = makeStyles({...basicsStyles, ...styles, ...pageStyles, ...tooltipStyles});
+
+const options = [
+	{ value: "ethereum", label: "Ethereum", customAbbreviation: "an open-source blockchain that powers most NFT sails" },
+	{ value: "polygon", label: "Polygon", customAbbreviation: "A fast gas-free blockchain experience that works with Ethereum" },
+];
+
+const collectionOptions = [
+	{ value: "NFTrees", label: "NFTrees", customAbbreviation: ""},
+	{ value: "Tank Wars Zone NFT", label: "Tank Wars Zone NFT", customAbbreviation: ""},
+	{ value: "PIXEL GHOST", label: "PIXEL GHOST", customAbbreviation: ""},
+	{ value: "Velas Pingy", label: "Velas Pingy", customAbbreviation: ""},
+];
 
 export default function Item({}) {
 	const classes = useStyles();
@@ -68,7 +82,7 @@ export default function Item({}) {
 	}
 
 	return (
-		<div className={classes.container}>
+		<div className={classes.container} style={{paddingTop: "120px"}}>
 			<div className={classes.createItemForm}>
 				<h1 className="header">Create New Item</h1>
 				<p><span className="text-danger">*</span>Required fields</p>
@@ -121,7 +135,7 @@ export default function Item({}) {
 				<input className="bordered-input" placeholder="Item name"/>
 
 				<p className="text-label">External link</p>
-				<p>OpenSea will include a link to this URL on this item's detail page, so that users can click to learn
+				<p>Botsail will include a link to this URL on this item's detail page, so that users can click to learn
 					more about it. You are welcome to link to your own webpage with more details.</p>
 				<input className="bordered-input" placeholder="https://yoursite.io/item/123"/>
 
@@ -132,26 +146,22 @@ export default function Item({}) {
 						  placeholder="Provide a detailed description of your item." />
 
 				<p className="text-label">Collection</p>
-				<p>
+				<p className="display-flex">
 					<span>This is the collection where your item will appear.</span>
 					<Tooltip
 						id="tooltip-top"
-						title="Moving items to a different collection may take up to 30 minutes.
-						You can manage your collections here."
+						title="Moving items to a different collection may take up to 30 minutes."
 						placement="top"
 						classes={{ tooltip: classes.tooltip }}
 					>
-						<ErrorOutline/>
+						<ErrorOutline className="tooltip-icon" />
 					</Tooltip>
 				</p>
-				<div className="select">
-					<select className="bordered-input select-box" placeholder="Select Collection">
-						<option>1</option>
-						<option>2</option>
-						<option>3</option>
-						<option>4</option>
-					</select>
-				</div>
+				<Select
+					defaultValue={collectionOptions[0]}
+					formatOptionLabel={formatCollectionOptionLabel}
+					options={collectionOptions}
+				/>
 
 				<div className="modal-box m-t-15">
 					<div className="box-header">
@@ -294,7 +304,18 @@ export default function Item({}) {
 							<Warning />
 							<div style={{marginLeft: "15px"}}>
 								<p className="text-label">Explicit & Sensitive Content</p>
-								<p>Set this item as explicit and sensitive content<ErrorOutline /></p>
+								<p className="display-flex">
+									Set this item as explicit and sensitive content
+									<Tooltip
+										id="tooltip-top"
+										title="Setting your asset as explicit and sensitive content, like pornography and other not safe
+											for work (NSFW) content, will protect users with safe search while browsing us."
+										placement="top"
+										classes={{ tooltip: classes.tooltip }}
+									>
+										<ErrorOutline className="tooltip-icon" />
+									</Tooltip>
+								</p>
 							</div>
 						</div>
 						<div className="check-box">
@@ -313,15 +334,40 @@ export default function Item({}) {
 				</div>
 
 				<p className="text-label">Supply</p>
-				<p>
-					The number of items that can be minted. No gas cost to you!<ErrorOutline/>
+				<p className="display-flex">
+					The number of items that can be minted. No gas cost to you!
+					<Tooltip
+						id="tooltip-top"
+						title='Minting is an action that brings an item into existence on the blockchain, and costs gas
+						to do so. The maximum supply ("hard cap") of your NFT will be encoded in its ID.'
+						placement="top"
+						classes={{ tooltip: classes.tooltip }}
+					>
+						<ErrorOutline className="tooltip-icon" />
+					</Tooltip>
 				</p>
 				<input className="bordered-input" placeholder="1" type="number"/>
 
 				<p className="text-label">Blockchain</p>
-				<input className="bordered-input" placeholder="1" type="number"/>
+				<Select
+					defaultValue={options[0]}
+					formatOptionLabel={formatOptionLabel}
+					options={options}
+				/>
 
-				<p className="text-label">Freeze metada`ta</p>
+				<p className="text-label display-flex">
+					Freeze metadata
+					<Tooltip
+						id="tooltip-top"
+						title="Once locked, your content cannot be edited or removed as it is
+										permanently stored in decentralized file storage, which will be accessible for
+										other clients to view and use."
+						placement="top"
+						classes={{ tooltip: classes.tooltip }}
+					>
+						<ErrorOutline className="tooltip-icon" />
+					</Tooltip>
+				</p>
 				<p>Freezing your metadata will allow you to permanently lock and store all of this item's content in
 					decentralized file storage.</p>
 				<input className="bordered-input" type="text"

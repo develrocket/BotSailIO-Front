@@ -11,9 +11,15 @@ const itemStyle = {
 		},
 
 		'& .height-full': {
-			height: "100%",
+			height: "unset",
+			width: "100%",
 			display: "flex",
-			justifyContent: "center"
+			justifyContent: "center",
+			position: "unset !important",
+
+			"@media (min-width: 576px)": {
+				height: "100%",
+			},
 		},
 
 		'& .detail-contain': {
@@ -22,8 +28,12 @@ const itemStyle = {
 		},
 
 		'& .detail-img': {
+			objectFit: "contain",
+			width: "100% !important",
+			position: "relative !important",
+			height: "unset !important",
 			margin: "30px",
-			borderRadius: "24px"
+			borderRadius: "24px",
 		},
 	}
 };

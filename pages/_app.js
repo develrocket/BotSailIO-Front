@@ -10,7 +10,6 @@ import "regenerator-runtime/runtime";
 import PageChange from "components/PageChange/PageChange.js";
 
 import "styles/scss/nextjs-material-kit.scss?v=1.2.0";
-import "styles/scss/custom.scss?v=1.2.0";
 
 Router.events.on("routeChangeStart", (url) => {
 	console.log(`Loading: ${url}`);
@@ -59,7 +58,7 @@ export default class MyApp extends App {
 						name="viewport"
 						content="width=device-width, initial-scale=1, shrink-to-fit=no"
 					/>
-					<title>BotSail.io</title>
+					<title>BoatSail.io</title>
 				</Head>
 				<ThirdwebWeb3Provider
 					supportedChainIds={supportedChainIds}

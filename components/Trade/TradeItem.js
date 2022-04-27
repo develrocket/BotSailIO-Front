@@ -14,7 +14,7 @@ export default function TradeItem() {
 	const classes = useStyles();
 	return (
 		<li>
-			<a href="/offer/1">
+			<a href="/velas/velas-apes-club/215">
 				<div className="media">
 					<Image src="https://m.raregems.io/t/5122702?optimizer=image&width=400" width={200} height={200} loading="lazy"/>
 				</div>

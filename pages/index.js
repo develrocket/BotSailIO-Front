@@ -13,7 +13,7 @@ export default function Index(props) {
 	const classes = useStyles();
 
 	return (
-		<Parallax filter responsive style={{height: '100vh'}}>
+		<Parallax filter responsive image="/img/bg8.jpg" style={{height: '100vh'}}>
 			<div className={classes.container}>
 				<GridContainer>
 					<GridItem xs={12} sm={12} md={12} className={classes.textCenter}>

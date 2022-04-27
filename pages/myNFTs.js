@@ -8,10 +8,13 @@ import Button from "components/CustomButtons/Button.js";
 import styles from "styles/jss/nextjs-material-kit/pages/components.js";
 import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
 import pageStyles from "styles/jss/nextjs-material-kit/pages/myNFTs";
+import {useWeb3} from "@3rdweb/hooks";
+import CopyBox from "../components/Collection/Item/CopyBox";
 const useStyles = makeStyles({...basicsStyles, ...styles, ...pageStyles});
 
 export default function Index(props) {
 	const classes = useStyles();
+	const { connectWallet, address, error } = useWeb3();
 
 	return (
 		<div className={classes.container}>
@@ -19,6 +22,9 @@ export default function Index(props) {
 				<GridItem xs={12} sm={12} md={8} lg={9}>
 					<div className={classes.partTitle}>
 						<h1 className="top">My NFTs</h1>
+						{address &&
+							<CopyBox value={address} />
+						}
 						<ul className="stats">
 							<li>
 								<div className="name" style={{ lineHeight: '0.9em' }}>Tokens</div>
@@ -35,15 +41,21 @@ export default function Index(props) {
 						</ul>
 					</div>
 
-					{/*<MyNFTsList/>*/}
-					<p style={{ textAlign: 'center', color: '#868e96', fontSize: '19px' }}>
-						Nothing found 👀
-					</p>
-					<div style={{ textAlign: 'center', margin: '64px 0' }}>
-						<Button color="primary" round size="lg" style={{ textTransform: 'capitalize', padding: '10px 40px' }}>
-							<h3 style={{ margin: '0' }}>Connect Wallet</h3>
-						</Button>
-					</div>
+					{
+						address
+							? <MyNFTsList/>
+							: <>
+								<p style={{ textAlign: 'center', color: '#868e96', fontSize: '19px' }}>
+									Nothing found 👀
+								</p>
+								<div style={{ textAlign: 'center', margin: '64px 0' }}>
+									<Button color="primary" round size="lg" onClick={()=>connectWallet("injected")}
+											style={{ textTransform: 'capitalize', padding: '10px 40px' }}>
+										<h3 style={{ margin: '0' }}>Connect Wallet</h3>
+									</Button>
+								</div>
+							</>
+					}
 				</GridItem>
 			</GridContainer>
 		</div>

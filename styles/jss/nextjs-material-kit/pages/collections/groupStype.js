@@ -18,30 +18,6 @@ const groupStyle = {
 			},
 		},
 
-		'& .copy-token-box': {
-			display: "flex",
-			flexDirection: "row",
-			justifyContent: "center",
-			alignItems: "center",
-			marginBottom: "10px",
-
-			'& .label-token': {
-				color: "#495057",
-				fontSize: "12px",
-				marginLeft: "5px",
-				marginRight: "5px",
-				background: "transparent",
-				border: "none",
-				width: "287px"
-			},
-
-			'& .img-copy': {
-				width: "18px",
-				height: "18px",
-				color: "#495057"
-			},
-		},
-
 		'& .desc': {
 			color: "#868e96",
 			fontSize: "12px"

@@ -12,27 +12,29 @@ const formStyle = {
 		'& .formControl': {
 			marginBottom: '30px',
 
-
 			'& .logoImgInput': {
 				cursor: 'pointer',
 				borderRadius: '50%',
-				border: '3px dashed rgb(204, 204, 204)',
+				outline: '3px dashed rgb(204, 204, 204)',
+				outlineOffset: '4px',
 				width: '160px',
 				height: '160px',
 				display: 'flex',
 				alignItems: 'center',
 				justifyContent: 'center',
 				position: 'relative',
+				background: 'none',
+				transition: 'background 100ms ease 0s',
 
 				'& .imgIcon': {
 					fontSize: '4.5em',
 					opacity: '0',
-					transition: 'opacity 400ms ease 0s'
+					transition: 'opacity 100ms ease 0s'
 				},
 
 				'& .fa:not(.imgIcon)': {
 					opacity: '1',
-					transition: 'opacity 400ms ease 0s'
+					transition: 'opacity 100ms ease 0s'
 				},
 
 				'& .logoImg': {
@@ -46,13 +48,14 @@ const formStyle = {
 						maxWidth: "100%",
 						height: "100%",
 						borderRadius: '50%',
-						transition: 'opacity 400ms ease 0s',
+						transition: 'opacity 100ms ease 0s',
 						opacity: '1'
 					}
 				}
 			},
 
 			'& .logoImgInput:hover': {
+				background: '#353840',
 				'& .imgIcon': {
 					zIndex: '1',
 					opacity: '1',
@@ -66,11 +69,14 @@ const formStyle = {
 				'& .fa:not(.imgIcon)': {
 					opacity: '0.7'
 				},
+
 			},
 
 			'& .FeaturedImgInput': {
 				borderRadius: '10px',
-				border: '3px dashed rgb(204, 204, 204)',
+				outline: '3px dashed rgb(204, 204, 204)',
+				outlineOffset: '4px',
+				transition: 'background 100ms ease 0s',
 				width: '300px',
 				height: '200px',
 				display: 'flex',
@@ -90,12 +96,12 @@ const formStyle = {
 				'& .FeaturedImgIcon': {
 					fontSize: '4.5em',
 					opacity: '0',
-					transition: 'opacity 400ms ease 0s'
+					transition: 'opacity 100ms ease 0s'
 				},
 
 				'& .fa:not(.FeaturedImgIcon)': {
 					opacity: '1',
-					transition: 'opacity 400ms ease 0s'
+					transition: 'opacity 100ms ease 0s'
 				},
 
 				'& .FeaturedImg': {
@@ -109,7 +115,7 @@ const formStyle = {
 						maxWidth: "100%",
 						height: "100%",
 						borderRadius: '10px',
-						transition: 'opacity 400ms ease 0s',
+						transition: 'opacity 100ms ease 0s',
 						opacity: '1',
 						objectFit: 'cover'
 					}
@@ -122,12 +128,13 @@ const formStyle = {
 					color: 'rgb(204, 204, 204)',
 					lineHeight: '50%',
 					fontSize: '38px',
-					transition: 'opacity 400ms ease 0s',
+					transition: 'opacity 100ms ease 0s',
 					cursor: 'pointer'
 				}
 			},
 
 			'& .FeaturedImgInput:hover': {
+				background: '#353840',
 				'& .FeaturedImgIcon': {
 					zIndex: '1',
 					opacity: '1',
@@ -145,7 +152,9 @@ const formStyle = {
 
 			'& .BannerImgInput': {
 				borderRadius: '10px',
-				border: '3px dashed rgb(204, 204, 204)',
+				outline: '3px dashed rgb(204, 204, 204)',
+				outlineOffset: '4px',
+				transition: 'background 100ms ease 0s',
 				maxWidth: '700px',
 				height: '200px',
 				display: 'flex',
@@ -165,12 +174,12 @@ const formStyle = {
 				'& .BannerImgIcon': {
 					fontSize: '4.5em',
 					opacity: '0',
-					transition: 'opacity 400ms ease 0s'
+					transition: 'opacity 100ms ease 0s'
 				},
 
 				'& .fa:not(.BannerImgIcon)': {
 					opacity: '1',
-					transition: 'opacity 400ms ease 0s'
+					transition: 'opacity 100ms ease 0s'
 				},
 
 				'& .BannerImg': {
@@ -184,7 +193,7 @@ const formStyle = {
 						maxWidth: "100%",
 						height: "100%",
 						borderRadius: '10px',
-						transition: 'opacity 400ms ease 0s',
+						transition: 'opacity 100ms ease 0s',
 						opacity: '1',
 						objectFit: 'cover'
 					}
@@ -197,12 +206,13 @@ const formStyle = {
 					color: 'rgb(204, 204, 204)',
 					lineHeight: '50%',
 					fontSize: '38px',
-					transition: 'opacity 400ms ease 0s',
+					transition: 'opacity 100ms ease 0s',
 					cursor: 'pointer'
 				}
 			},
 
 			'& .BannerImgInput:hover': {
+				background: '#353840',
 				'& .BannerImgIcon': {
 					zIndex: '1',
 					opacity: '1',
@@ -219,7 +229,7 @@ const formStyle = {
 			},
 
 			'& .textInput': {
-				background: 'none',
+				background: '#353840',
 				color: '#ffffff',
 				width: '100%',
 				height: '48px',
@@ -231,7 +241,7 @@ const formStyle = {
 			},
 
 			'& .textareaInput': {
-				background: 'none',
+				background: '#353840',
 				color: '#ffffff',
 				width: '100%',
 				border: '1px solid #ced4da',
@@ -252,12 +262,21 @@ const formStyle = {
 				},
 
 				'& input': {
-					background: 'none',
+					background: '#353840',
 					border: 'none',
 					height: '48px',
 				}
 			}
 		},
+	},
+
+	mySelect: {
+		'&>div:first-of-type': {
+			background: '#353840',
+			'& div' :{
+				color: '#ffffff !important'
+			}
+		}
 	}
 };
 

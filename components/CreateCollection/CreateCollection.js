@@ -1,16 +1,30 @@
-import React, { useState,useEffect } from "react";
-import Image from "next/image";
+import React, { useState } from "react";
 
-// material-ui components
-
-import Dropdown from "components/Dropdown/Dropdown.js";
-import BlockchainDropdown from "components/Dropdown/BlockchainDropdown";
-
+//components
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Switch from "@material-ui/core/Switch";
+import Button from "components/CustomButtons/Button.js";
+import Select from "react-select";
 import PaymentTokens from "./PaymentTokens";
+import Dropdown from "components/Dropdown/Dropdown.js";
+import Theme from "./Theme"
+import formatOptionLabel from "../Create/Item/FormatOptionLabel";
+import Logo from "./Logo";
+import Tooltip from "@material-ui/core/Tooltip";
+import {ErrorOutline} from "@material-ui/icons";
+
+// style
 import {makeStyles} from "@material-ui/core/styles";
 import styles from "styles/jss/nextjs-material-kit/components/createCollectionStyle";
+import javascriptStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/javascriptStyles.js";
 
-const useStyles = makeStyles(styles);
+const useStyles = makeStyles({...styles, ...javascriptStyles});
+
+
+const options = [
+	{ value: "ethereum", label: "Ethereum", customAbbreviation: "an open-source blockchain that powers most NFT sails" },
+	{ value: "polygon", label: "Polygon", customAbbreviation: "A fast gas-free blockchain experience that works with Ethereum" },
+];
 
 export default function CreateCollection() {
 	const classes = useStyles();
@@ -28,6 +42,7 @@ export default function CreateCollection() {
 	const [ tme, setTme ] = useState("https://t.me/");
 	const [ fee, setFee ] = useState("");
 	const [ blockchain, setBlockchain ] = useState([]);
+	const [ isExplicit, setIsExplicit] = useState(false);
 	const logoChange = (e) => {
 		if (e.target.files && e.target.files.length > 0) {
 			setLogo(e.target.files[0]);
@@ -92,18 +107,20 @@ export default function CreateCollection() {
 
 			<p><span style={{ color: 'red' }}>*</span> Required fields</p>
 
-			<div className={'formControl'}>
-				<h4 className="requireHead"><strong>Logo image</strong></h4>
-				<p>This image will also be used for navigation. 350 x 350 recommended.</p>
-				<label className="logoImgInput" htmlFor="logoInput">
-					<input type="file" id="logoInput" name="logoInput" accept="image/*" style={{ display: 'none' }} onChange={logoChange} />
-					{ !logo ? <i className="fa fa-image" style={{ fontSize: '4.5em' }} /> :
-						<i className="fa fa-image imgIcon" /> }
-					{ logo && <div className="logoImg">
-						<img src={ URL.createObjectURL(logo) } width={160} height={160} />
-					</div> }
-				</label>
-			</div>
+			<Logo onChange={(e)=>logoChange(e)} />
+
+			{/*<div className={'formControl'}>*/}
+			{/*	<h4 className="requireHead"><strong>Logo image</strong></h4>*/}
+			{/*	<p>This image will also be used for navigation. 350 x 350 recommended.</p>*/}
+			{/*	<label className="logoImgInput" htmlFor="logoInput">*/}
+			{/*			<input type="file" id="logoInput" name="logoInput" accept="image/*" style={{ display: 'none' }} onChange={logoChange} />*/}
+			{/*			{ !logo ? <i className="fa fa-image" style={{ fontSize: '4.5em' }} /> :*/}
+			{/*				<i className="fa fa-image imgIcon" /> }*/}
+			{/*			{ logo && <div className="logoImg">*/}
+			{/*				<img src={ URL.createObjectURL(logo) } width={160} height={160} />*/}
+			{/*			</div> }*/}
+			{/*	</label>*/}
+			{/*</div>*/}
 
 			<div className={'formControl'}>
 				<h4><strong>Featured image</strong></h4>
@@ -152,7 +169,7 @@ export default function CreateCollection() {
 			<div className={'formControl'}>
 				<h4><strong>Description</strong></h4>
 				<p><a target={'_blank'} href={"https://www.markdownguide.org/cheat-sheet/"} style={{color: 'rgb(32, 129, 226)'}}>Markdown</a> syntax is supported. 0 of 1000 characters used.</p>
-				<textarea className={'textareaInput'} rows="4" onChange={descriptionHandle} required value={description}> </textarea>
+				<textarea className={'textareaInput'} rows="4" onChange={descriptionHandle} required value={description}/>
 			</div>
 
 			<div className={'formControl'}>
@@ -185,7 +202,7 @@ export default function CreateCollection() {
 
 			<div className={'formControl'}>
 				<h4><strong>Links</strong></h4>
-				<div>
+				<div style={{ background: '#353840' }}>
 					<div className={"linkInput"} style={{ borderRadius: '6px 6px 0 0' }}>
 						<i className="fa fa-globe"/>
 						<input type={"text"} onChange={yourSiteHandle} value={yourSite} placeholder={'yoursite.io'} />
@@ -195,7 +212,7 @@ export default function CreateCollection() {
 						<input type={"text"} onChange={discordHandle} value={discord} />
 					</div>
 					<div className={"linkInput"}>
-						<i className="fab fa-youtube fa-fw"/>
+						<i className="fa fa-globe"/>
 						<input type={"text"} onChange={instagramHandle} value={instagram}  />
 					</div>
 					<div className={"linkInput"}>
@@ -220,26 +237,63 @@ export default function CreateCollection() {
 			<div className={'formControl'}>
 				<h4><strong>Blockchain</strong></h4>
 				<p>Select the blockchain where you'd like new items from this collection to be added by default.</p>
-				<BlockchainDropdown
-					navDropdown
-					buttonText="Add Category"
-					buttonProps={{
-						className: classes.navLink,
-						color: "transparent",
-						width: "100%"
-					}}
-					onChangeHandle={(val) => blockchainHandle(val)}
-					dropdownList={[
-						{ divider: true },
-						"Ethereum",
-						{ divider: true },
-						"Polygon",
-						{ divider: true },
-					]}
+				<Select
+					defaultValue={options[0]}
+					formatOptionLabel={formatOptionLabel}
+					options={options}
+					className={classes.mySelect}
+					instanceId='blockChainSelect'
 				/>
 			</div>
 
 			<PaymentTokens />
+
+			<Theme />
+
+			<div className={'formControl'}>
+				<div style={{ display: 'flex', justifyContent: 'space-between' }}>
+					<div>
+						<h4><strong>Explicit & sensitive content</strong></h4>
+						<div style={{ display: 'flex' }}>
+							<p>Set this collection as explicit and sensitive content.</p>
+							<Tooltip
+								id="tooltip-top"
+								title="Once locked, your content cannot be edited or removed as it is
+										permanently stored in decentralized file storage, which will be accessible for
+										other clients to view and use."
+								placement="top"
+								classes={{ tooltip: classes.tooltip }}
+							>
+								<ErrorOutline className="tooltip-icon" />
+							</Tooltip>
+						</div>
+					</div>
+					<div style={{ display: 'flex', alignItems: 'center' }}>
+						<FormControlLabel
+							control={
+								<Switch
+									checked={isExplicit}
+									onChange={(event) => setIsExplicit(event.target.checked)}
+									value={"false"}
+									classes={{
+										switchBase: classes.switchBase,
+										checked: classes.switchChecked,
+										thumb: classes.switchIcon,
+										track: classes.switchBar,
+									}}
+								/>
+							}
+							classes={{
+								label: classes.label,
+							}}
+							label="Set"
+						/>
+					</div>
+				</div>
+			</div>
+
+
+			<Button color="info" type={'submit'}><strong>Create</strong></Button>
 
 		</form>
 	);

@@ -102,6 +102,7 @@ export default function HeaderLinks(props) {
 					<Button
 						color="actionButton"
 						target="_blank"
+						className={'wallet-button'}
 					>
 						<MiddleTruncate
 							text={address}
@@ -112,6 +113,7 @@ export default function HeaderLinks(props) {
 					<Button
 						color="actionButton"
 						target="_blank"
+						className={'wallet-button'}
 						onClick={()=>connectWallet("injected")}
 					>
 						Connect Wallet

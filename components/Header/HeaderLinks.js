@@ -57,7 +57,7 @@ export default function HeaderLinks(props) {
                 <Button
                     href="/myNFTs"
                     color="transparent"
-                    className={classes.navLink}
+                    className={classes.navLink + (router.pathname.indexOf('myNFTs') >= 0 ? ' ' + classes.activeLink  : '')}
                 >
                     My NFTs
                 </Button>
@@ -66,7 +66,7 @@ export default function HeaderLinks(props) {
                 <Button
                     href="/offers"
                     color="transparent"
-                    className={classes.navLink}
+                    className={classes.navLink + (router.pathname.indexOf('offers') >= 0 ? ' ' + classes.activeLink  : '')}
                 >
                     Latest Offer
                 </Button>
@@ -75,26 +75,15 @@ export default function HeaderLinks(props) {
                 <Button
                     href="/trades"
                     color="transparent"
-                    className={classes.navLink}
+                    className={classes.navLink + (router.pathname.indexOf('trades') >= 0 ? ' ' + classes.activeLink  : '')}
                 >
                     Latest Trade
-                </Button>
-            </ListItem>
-            <ListItem className={classes.listItem}>
-                <Button
-                    href="https://www.creative-tim.com/product/nextjs-material-kit-pro?ref=njsmk-navbar"
-                    color="transparent"
-                    target="_blank"
-                    className={classes.navLink}
-                >
-                    Website Builder
                 </Button>
             </ListItem>
 			<ListItem className={classes.listItem}>
 				<CustomDropdown
 					navDropdown
 					buttonText="Create"
-					dropdownHeader="Create Collection & Item"
 					onClick={(url) => {
 						goToPage(url);
 					}}
@@ -122,9 +111,8 @@ export default function HeaderLinks(props) {
 					</Button>
 				) : (
 					<Button
-						color="primary"
+						color="actionButton"
 						target="_blank"
-						className={classes.navLink}
 						onClick={()=>connectWallet("injected")}
 					>
 						Connect Wallet

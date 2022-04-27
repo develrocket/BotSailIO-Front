@@ -3,6 +3,7 @@ import GridContainer from "components/Grid/GridContainer";
 import GridItem from "components/Grid/GridItem";
 import CollectionFilter from "components/CollectionFilter/CollectionFilter";
 import ItemList from "components/Collection/Item/ItemList";
+import CopyBox from "components/Collection/Item/CopyBox";
 import {makeStyles} from "@material-ui/core/styles";
 import {FileCopy, Done, Twitter, Telegram, Widgets, Language} from '@material-ui/icons';
 
@@ -10,26 +11,14 @@ import styles from "styles/jss/nextjs-material-kit/pages/components.js";
 import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
 import pageStyles from "styles/jss/nextjs-material-kit/pages/collections/groupStype.js";
 import Button from "components/CustomButtons/Button";
+import {useWeb3} from "@3rdweb/hooks";
 
 const useStyles = makeStyles({...basicsStyles, ...styles, ...pageStyles});
 
 export default function Group({items}) {
 	const classes = useStyles();
 	const [isShowFilter, setIsShowFilter] = useState(false);
-
-	const [copySuccess, setCopySuccess] = useState('');
-	const tokenInputRef = useRef(null);
-
-	function copyToClipboard(e) {
-		if (copySuccess !== "Copied!") {
-			tokenInputRef.current.select();
-			document.execCommand('copy');
-			e.target.focus();
-			setCopySuccess('Copied!');
-		} else {
-			setCopySuccess('');
-		}
-	};
+	const { connectWallet, address, error } = useWeb3();
 
 	const showFilter = () => {
 		setIsShowFilter(!isShowFilter);
@@ -48,18 +37,10 @@ export default function Group({items}) {
 							NFTrees
 							<img src="/img/verified.svg" alt="..." className="img-mark" />
 						</h1>
-						<div className="copy-token-box">
-							<img src="/img/parts/moonriver.svg" alt="..." className="img-mark-16" />
-							<input ref={tokenInputRef} value='0x4082D7b7A416554279148139ef0F707846B60dd9'
-								   className="label-token" />
-							{
-								copySuccess !== "Copied!" &&
-								<FileCopy onClick={copyToClipboard} className="img-copy" />
-							}
-							{
-								copySuccess === "Copied!" && <Done onClick={copyToClipboard} className="img-copy" />
-							}
-						</div>
+						{
+							address &&
+							<CopyBox value={address} />
+						}
 						<p className="desc">
 							Grow NFTrees backed by Real Trees 🌳<br/>
 							Have Fun and make Real World Impact

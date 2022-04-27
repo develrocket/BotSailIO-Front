@@ -36,22 +36,21 @@ const headerLinksStyle = (theme) => ({
 	listItemText: {
 		padding: "0 !important",
 	},
+
 	navLink: {
 		color: "inherit",
 		position: "relative",
-		padding: "0.9375rem",
-		fontWeight: "400",
-		fontSize: "12px",
+		padding: "16px 20px",
+		fontWeight: "600",
+		fontSize: "14px",
 		textTransform: "uppercase",
 		borderRadius: "3px",
 		lineHeight: "20px",
 		textDecoration: "none",
-		margin: "0px",
+		margin: "0px 15px",
 		display: "inline-flex",
-		"&:hover,&:focus": {
-			color: "inherit",
-			background: "rgba(200, 200, 200, 0.2)",
-		},
+		transition: 'all 0.3s',
+
 		[theme.breakpoints.down("sm")]: {
 			width: "calc(100% - 30px)",
 			marginLeft: "15px",
@@ -61,11 +60,47 @@ const headerLinksStyle = (theme) => ({
 			"& > span:first-child": {
 				justifyContent: "flex-start",
 			},
+		},
+
+		'&:before': {
+			content: '""',
+			position: 'absolute',
+			bottom: 0,
+			width: 0,
+			left: 0,
+			height: '2px',
+			background: '#fd562a',
+			transition: 'width 0.3s ease'
+		},
+
+		'&:hover:before': {
+			width: '50%',
+			transition: 'width 0.5s ease'
+		},
+
+		'&:after': {
+			content: '""',
+			position: 'absolute',
+			bottom: 0,
+			width: 0,
+			right: 0,
+			height: '2px',
+			background: '#fd562a',
+			transition: 'width 0.3s ease'
+		},
+
+		'&:hover:after': {
+			width: '50%',
+			transition: 'width 0.5s ease'
+		},
+
+		'&:hover': {
+			color: '#fd562a',
+			transition: 'all 0.3s'
 		}
 	},
 	activeLink: {
-		color: "inherit",
-		background: "rgba(200, 200, 200, 0.2)",
+		color: "#fd562a"
 	},
 	notificationNavLink: {
 		[theme.breakpoints.down("md")]: {

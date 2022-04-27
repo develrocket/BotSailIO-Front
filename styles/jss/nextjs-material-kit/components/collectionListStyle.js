@@ -1,4 +1,51 @@
 const collectionListStyle = {
+	moreActionBox: {
+		width: "35px",
+		height: "35px",
+		display: "flex",
+		justifyContent: "center",
+		alignItems: "center",
+		position: "absolute",
+		bottom: "5px",
+		right: "5px",
+
+		'&:hover': {
+			color: "#3c4858"
+		}
+	},
+	actionList: {
+		display: "flex",
+		flexDirection: "column",
+
+		'& .action-item': {
+			display: "flex",
+			justifyContent: "space-between",
+			alignItems: "center",
+			borderBottom: "1px solid rgb(229, 232, 235)",
+			cursor: "pointer",
+
+			'&:hover': {
+				transition: "all 0.2s ease 0s",
+				boxShadow: "rgb(4 17 29 / 25%) 0px 0px 8px 0px",
+				backgroundColor: "rgb(251, 253, 255)"
+			},
+
+			'& .action-icon': {
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center",
+				width: "60px",
+				height: "40px",
+			},
+
+			'& .action-label': {
+				flex: 1,
+				minWidth: "100px",
+				fontWeight: 500,
+				fontSize: "20px"
+			}
+		}
+	},
 	items: {
 		listStyle: 'none',
 		padding: 0,
@@ -45,14 +92,19 @@ const collectionListStyle = {
 				borderRadius: '8px'
 			},
 
-			'&.verified:after': {
-				content: '" "',
-				width: '24px',
-				height: '24px',
-				background: 'url(/img/verified.svg) 0 0/contain',
-				position: 'absolute',
-				top: '-6px',
-				right: '-6px'
+			'&.selected': {
+				boxShadow: "0 0 0 2px #228be6",
+				borderRadius: '8px',
+
+				'&:after': {
+					content: '" "',
+					width: '24px',
+					height: '24px',
+					background: 'url(/img/verified.svg) 0 0/contain',
+					position: 'absolute',
+					top: '-6px',
+					right: '-6px'
+				}
 			}
 		},
 

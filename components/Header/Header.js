@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import Image from "next/image";
 // nodejs library that concatenates classes
 import classNames from "classnames";
 // nodejs library to set properties for components
@@ -63,7 +64,9 @@ export default function Header(props) {
 	});
 	const brandComponent = (
 		<Link href="/" as="/">
-			<Button className={classes.title}>{brand}</Button>
+			<Button className={classes.title}>
+				<Image src={'/img/logos/logo_white.png'} width={200} height={52} />
+			</Button>
 		</Link>
 	);
 	return (

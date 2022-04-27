@@ -30,7 +30,6 @@ export default function PropertyModal(props) {
 		: (props.target === "level" ? {name: "", total: 5, value: 3}
 		: {name: "", total: 5, value: 3});
 	const [ proItems, setProItems ] = useState([defaultData]);
-	console.log("123", proItems);
 
 	const removeData = (key) => {
 		const data = proItems;

@@ -100,9 +100,8 @@ export default function HeaderLinks(props) {
             <ListItem className={classes.listItem}>
 				{address ? (
 					<Button
-						color="default"
+						color="actionButton"
 						target="_blank"
-						className={classes.navLink}
 					>
 						<MiddleTruncate
 							text={address}

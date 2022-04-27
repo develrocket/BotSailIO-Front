@@ -1,7 +1,7 @@
 import React from "react";
 import GridContainer from "../../components/Grid/GridContainer";
 import GridItem from "../../components/Grid/GridItem";
-import CreateForm from "../../components/CreateForm/CreateForm";
+import CreateCollection from "../../components/CreateCollection/CreateCollection";
 import {makeStyles} from "@material-ui/core/styles";
 
 import styles from "styles/jss/nextjs-material-kit/pages/components.js";
@@ -18,7 +18,7 @@ export default function Index(props) {
 				<GridItem xs={12} sm={12} md={8} lg={9}>
 					<div className={classes.partTitle}>
 						<h1 className="top">Create a Collection</h1>
-						<CreateForm />
+						<CreateCollection />
 					</div>
 				</GridItem>
 			</GridContainer>

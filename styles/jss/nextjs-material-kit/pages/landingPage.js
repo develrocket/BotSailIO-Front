@@ -31,6 +31,21 @@ const landingPageStyle = {
 		boxShadow:
 			"0 16px 24px 2px rgba(0, 0, 0, 0.14), 0 6px 30px 5px rgba(0, 0, 0, 0.12), 0 8px 10px -5px rgba(0, 0, 0, 0.2)",
 	},
+	homeLogoBox: {
+		textAlign: 'center',
+		marginTop: '60px',
+		marginBottom: '60px',
+
+		'& img': {
+			width: '48px',
+			height: '48px',
+			marginLeft: '10px',
+			marginRight: '10px'
+		}
+	},
+	textCenter: {
+		textAlign: 'center'
+	}
 };
 
 export default landingPageStyle;

@@ -16,11 +16,11 @@ export default function Index(props) {
 		<Parallax filter responsive image="/img/landing-bg.jpg" style={{height: '100vh'}}>
 			<div className={classes.container}>
 				<GridContainer>
-					<GridItem xs={12} sm={12} md={12} className={'text-center'}>
+					<GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
 						<h4 style={{margin: 0}}>Non-Custodial</h4>
 						<h2 style={{margin: 0}}>Multi-Chain</h2>
 						<h1 className={classes.title} style={{marginTop: 0}}>NFT Marketplace</h1>
-						<div className={'home-logo-box'}>
+						<div className={classes.homeLogoBox}>
 							<img src={'/img/logos/velas.svg'} />
 							<img src={'/img/logos/celo.svg'} />
 							<img src={'/img/logos/moonbeam.svg'} />

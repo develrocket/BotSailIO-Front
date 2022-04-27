@@ -10,7 +10,7 @@ export default function Layout({ children }) {
 			<Header
 			  	color="transparent"
 			  	routes={dashboardRoutes}
-			  	brand="Botsail.io"
+			  	brand="BoatSail.io"
 			  	rightLinks={<HeaderLinks />}
 			  	fixed
 			  	changeColorOnScroll={{

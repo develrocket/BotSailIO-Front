@@ -1,4 +1,54 @@
 const collectionListStyle = {
+	moreActionBox: {
+		display: "flex",
+		justifyContent: "space-between",
+		alignItems: "center",
+
+		'& .more-action-btn': {
+			width: "35px",
+			height: "35px",
+			display: "flex",
+			justifyContent: "center",
+			alignItems: "center",
+
+			'&:hover': {
+				color: "#3c4858"
+			}
+		},
+	},
+	actionList: {
+		display: "flex",
+		flexDirection: "column",
+
+		'& .action-item': {
+			display: "flex",
+			justifyContent: "space-between",
+			alignItems: "center",
+			borderBottom: "1px solid rgb(229, 232, 235)",
+			cursor: "pointer",
+
+			'&:hover': {
+				transition: "all 0.2s ease 0s",
+				boxShadow: "rgb(4 17 29 / 25%) 0px 0px 8px 0px",
+				backgroundColor: "rgb(251, 253, 255)"
+			},
+
+			'& .action-icon': {
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center",
+				width: "60px",
+				height: "40px",
+			},
+
+			'& .action-label': {
+				flex: 1,
+				minWidth: "140px",
+				fontWeight: 500,
+				fontSize: "20px"
+			}
+		}
+	},
 	items: {
 		listStyle: 'none',
 		padding: 0,

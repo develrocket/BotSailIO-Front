@@ -1,5 +1,7 @@
 import React from "react";
 import Image from "next/image";
+import {MoreVert, Storefront, Send, VisibilityOff} from "@material-ui/icons";
+import Popover from "@material-ui/core/Popover";
 
 // material-ui components
 import {makeStyles} from "@material-ui/core/styles";
@@ -9,6 +11,12 @@ const useStyles = makeStyles(styles);
 
 export default function MyNFTItem() {
 	const classes = useStyles();
+	const [anchorElTop, setAnchorElTop] = React.useState(null);
+	const showMoreActions = (e) => {
+		e.preventDefault();
+		setAnchorElTop(e.currentTarget);
+	}
+
 	return (
 		<li className="verified">
 			<a href="/velas/velas-apes-club">
@@ -25,6 +33,51 @@ export default function MyNFTItem() {
 						124 offers
 					</div>
 				</div>
+				<div className={classes.moreActionBox}>
+					<div className="more-action-btn" onClick={showMoreActions}>
+						<MoreVert />
+					</div>
+				</div>
+				<Popover
+					classes={{
+						paper: classes.popover,
+					}}
+					open={Boolean(anchorElTop)}
+					anchorEl={anchorElTop}
+					onClose={() => setAnchorElTop(null)}
+					anchorOrigin={{
+						vertical: "top",
+						horizontal: "left",
+					}}
+					transformOrigin={{
+						vertical: "bottom",
+						horizontal: "left",
+					}}
+					style={{marginLeft: "8px"}}
+				>
+					<div className={classes.popoverBody}>
+						<div className={classes.actionList}>
+							<div className="action-item">
+								<div className="action-icon">
+									<Storefront />
+								</div>
+								<div className="action-label">Sell</div>
+							</div>
+							<div className="action-item">
+								<div className="action-icon">
+									<Send />
+								</div>
+								<div className="action-label">Transfer</div>
+							</div>
+							<div className="action-item">
+								<div className="action-icon">
+									<VisibilityOff />
+								</div>
+								<div className="action-label">Hide</div>
+							</div>
+						</div>
+					</div>
+				</Popover>
 			</a>
 		</li>
 	);

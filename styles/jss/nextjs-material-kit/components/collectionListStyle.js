@@ -1,20 +1,17 @@
 const collectionListStyle = {
 	moreActionBox: {
+		width: "35px",
+		height: "35px",
 		display: "flex",
-		justifyContent: "space-between",
+		justifyContent: "center",
 		alignItems: "center",
+		position: "absolute",
+		bottom: "5px",
+		right: "5px",
 
-		'& .more-action-btn': {
-			width: "35px",
-			height: "35px",
-			display: "flex",
-			justifyContent: "center",
-			alignItems: "center",
-
-			'&:hover': {
-				color: "#3c4858"
-			}
-		},
+		'&:hover': {
+			color: "#3c4858"
+		}
 	},
 	actionList: {
 		display: "flex",

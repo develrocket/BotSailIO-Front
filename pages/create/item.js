@@ -73,6 +73,7 @@ export default function Item({}) {
 
 	const removeMainImage =(e) => {
 		e.preventDefault();
+		console.log(4705);
 		setMainFile("");
 	}
 

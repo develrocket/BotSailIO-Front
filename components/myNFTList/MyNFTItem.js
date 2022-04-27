@@ -20,7 +20,10 @@ export default function MyNFTItem(props) {
 
 	return (
 		<li className={props.isSelected ? "selected" : ""}>
-			<a href="/velas/velas-apes-club">
+			<a href="/velas/velas-apes-club" onClick={(e) => {
+				e.preventDefault();
+				props.handleClickItem(props.info.token);
+			}}>
 				<div className="media">
 					<Image src="https://m.raregems.io/c/21725?optimizer=image&amp;width=400" width={400} height={400} loading="lazy"/>
 				</div>
@@ -34,10 +37,8 @@ export default function MyNFTItem(props) {
 						124 offers
 					</div>
 				</div>
-				<div className={classes.moreActionBox}>
-					<div className="more-action-btn" onClick={showMoreActions}>
-						<MoreVert />
-					</div>
+				<div className={classes.moreActionBox} onClick={showMoreActions}>
+					<MoreVert />
 				</div>
 				<Popover
 					classes={{
@@ -48,13 +49,13 @@ export default function MyNFTItem(props) {
 					onClose={() => setAnchorElTop(null)}
 					anchorOrigin={{
 						vertical: "top",
-						horizontal: "left",
+						horizontal: "right",
 					}}
 					transformOrigin={{
 						vertical: "bottom",
-						horizontal: "left",
+						horizontal: "right",
 					}}
-					style={{marginLeft: "8px"}}
+					style={{marginRight: "8px"}}
 				>
 					<div className={classes.popoverBody}>
 						<div className={classes.actionList}>

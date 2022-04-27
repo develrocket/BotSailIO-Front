@@ -17,11 +17,24 @@ const collectionsStyle = {
 			fontSize: "19px",
 
 			'& .cart-box': {
+				height: "80px",
 				flex: 1,
 
 				'& p': {
 					color: "white",
 					margin: 0,
+				},
+
+				'& .cart-item': {
+					width: "80px",
+					padding: "10px"
+				},
+
+				'& .cart-img': {
+					width: "60px",
+					height: "60px",
+					borderRadius: "15px",
+					overflow: "hidden"
 				}
 			},
 

@@ -40,7 +40,7 @@ const collectionListStyle = {
 
 			'& .action-label': {
 				flex: 1,
-				minWidth: "140px",
+				minWidth: "100px",
 				fontWeight: 500,
 				fontSize: "20px"
 			}

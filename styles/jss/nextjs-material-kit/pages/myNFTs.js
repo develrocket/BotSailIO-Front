@@ -11,7 +11,7 @@ const collectionsStyle = {
 
 		'& .cart-container': {
 			display: "flex",
-			justifyContent: "space-between",
+			justifyContent: "center",
 			alignItems: "center",
 			width: "100%",
 			fontSize: "19px",
@@ -19,6 +19,11 @@ const collectionsStyle = {
 			'& .cart-box': {
 				height: "80px",
 				flex: 1,
+				display: "flex",
+
+				"@media (max-width: 768px)": {
+					display: "none"
+				},
 
 				'& p': {
 					color: "white",
@@ -41,14 +46,40 @@ const collectionsStyle = {
 			'& .transfer-btn': {
 				height: "48px",
 				width: "130px",
-				fontSize: "19px",
+				textTransform: "none",
+				display:" inlineFlex",
+				flexDirection: "row",
+				webkitBoxAlign: "center",
+				alignItems: "center",
+				borderRadius: "10px",
+				webkitBoxPack: "center",
+				justifyContent: "center",
+				fontSize: "16px",
+				fontWeight: 600,
+				padding: "12px 20px",
+				backgroundColor: "rgb(32, 129, 226)",
+				border: "1px solid rgb(32, 129, 226)",
+				color: "rgb(255, 255, 255)",
 			},
 
 			'& .transfer-cancel-btn': {
 				height: "48px",
 				width: "130px",
-				fontSize: "19px",
-				marginLeft: "4px"
+				marginLeft: "4px",
+				textTransform: "none",
+				display:" inlineFlex",
+				flexDirection: "row",
+				webkitBoxAlign: "center",
+				alignItems: "center",
+				borderRadius: "10px",
+				webkitBoxPack: "center",
+				justifyContent: "center",
+				fontSize: "16px",
+				fontWeight: 600,
+				padding: "12px 20px",
+				backgroundColor: "rgb(32, 34, 37)",
+				border: "1px solid rgb(112, 122, 131)",
+				color: "rgb(229, 232, 235)",
 			}
 		}
 	},

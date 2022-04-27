@@ -80,16 +80,6 @@ export default function HeaderLinks(props) {
                     Latest Trade
                 </Button>
             </ListItem>
-            <ListItem className={classes.listItem}>
-                <Button
-                    href="/"
-                    color="transparent"
-                    target="_blank"
-                    className={classes.navLink}
-                >
-                    Website Builder
-                </Button>
-            </ListItem>
 			<ListItem className={classes.listItem}>
 				<CustomDropdown
 					navDropdown

@@ -33,16 +33,14 @@ export default function Index(props) {
 
 	const handleClickItem = (token) => {
 		token = token + '';
-		console.log(0, token, selectedList);
 		if (commandType !== "") {
-			console.log(1, token, selectedList);
 			if (selectedList.includes(token)) {
-				console.log(2, token, selectedList);
 				const data = selectedList;
-				data.splice(token, 1);
-				setSelectedList([...data]);
+				let filtered = data.filter(function(value, index, arr){
+					return value !== token;
+				});
+				setSelectedList([...filtered]);
 			} else {
-				console.log(3, token, selectedList);
 				setSelectedList([...selectedList, token]);
 			}
 		}
@@ -54,11 +52,13 @@ export default function Index(props) {
 		setSelectedList([]);
 	};
 
-	const handleClickTransfer = () => {
-		router.push({
-			pathname: '/transfer',
-			query: { assets: selectedList },
-		})
+	const handleClickCommand = () => {
+		if (selectedList.length > 0 && commandType !== "hide") {
+			router.push({
+				pathname: '/' + commandType,
+				query: { assets: selectedList },
+			})
+		}
 	};
 
 	return (
@@ -113,7 +113,7 @@ export default function Index(props) {
 						<div className="cart-box">
 							{
 								selectedList.map((item, key) =>
-									<div className="cart-item">
+									<div className="cart-item" key={key}>
 										<img src="https://m.raregems.io/c/21725?optimizer=image&amp;width=400"
 											 className="cart-img" alt="cart-img" />
 									</div>
@@ -126,7 +126,10 @@ export default function Index(props) {
 									verification status.</p>
 							}
 						</div>
-						<Button color="info" className="transfer-btn" onClick={handleClickTransfer}><Send />Transfer</Button>
+						<Button color="info" className="transfer-btn" onClick={handleClickCommand}>
+							{commandType === "transfer" ? <Send /> : (commandType === "sell" ? <Storefront /> : <VisibilityOff />)}
+							{commandType === "transfer" ? "Transfer" : (commandType === "sell" ? "Sell" : "Hide")}
+						</Button>
 						<Button className="transfer-cancel-btn" onClick={handleClickCancel}><Block />Cancel</Button>
 					</div>
 				</div>

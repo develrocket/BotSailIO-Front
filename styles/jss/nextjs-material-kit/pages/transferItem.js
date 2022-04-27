@@ -45,11 +45,11 @@ const pageStyle = {
 			width: "100%",
 			height: "48px",
 			fontSize: "20px",
-			background: "white",
+			background: "#353840",
 			border: "1px solid #212529",
 			borderRadius: "8px",
 			padding: "10px",
-			color: "black",
+			color: "white",
 		},
 
 		'& .text-label': {
@@ -61,7 +61,24 @@ const pageStyle = {
 		'& .send-box': {
 			display: "flex",
 			justifyContent: "center",
-			marginTop: "20px"
+			marginTop: "20px",
+			paddingBottom: "40px"
+		},
+
+		'& .send-btn': {
+			display:" inlineFlex",
+			flexDirection: "row",
+			webkitBoxAlign: "center",
+			alignItems: "center",
+			borderRadius: "10px",
+			webkitBoxPack: "center",
+			justifyContent: "center",
+			fontSize: "16px",
+			fontWeight: 600,
+			padding: "12px 20px",
+			backgroundColor: "rgb(32, 129, 226)",
+			border: "1px solid rgb(32, 129, 226)",
+			color: "rgb(255, 255, 255)",
 		},
 
 		'& .text-white': {

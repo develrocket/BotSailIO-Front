@@ -10,12 +10,19 @@ import {makeStyles} from "@material-ui/core/styles";
 import styles from "styles/jss/nextjs-material-kit/pages/components.js";
 import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
 import pageStyles from "styles/jss/nextjs-material-kit/pages/transferItem.js";
+import item from "./create/item";
 const useStyles = makeStyles({...basicsStyles, ...styles, ...pageStyles});
 
 export default function Transfer(props) {
 	const classes = useStyles();
 	const router = useRouter();
 	const { assets } = router.query;
+	let items = [];
+	if (assets && !Array.isArray(assets)) {
+		items.push(assets);
+	} else {
+		items = assets;
+	}
 
 	return (
 		<>
@@ -24,8 +31,8 @@ export default function Transfer(props) {
 					<GridItem xs={12} sm={12} md={8} lg={9}>
 						<h1 className="top text-white" align="center">Transfer Items</h1>
 						{
-							assets.map((item, key) =>
-								<div className="item-list">
+							items.map((item, key) =>
+								<div className="item-list" key={key}>
 									<div className="item">
 										<img src="https://m.raregems.io/c/21725?optimizer=image&amp;width=400" alt="item img"
 											 className="item-img" />
@@ -40,7 +47,7 @@ export default function Transfer(props) {
 						<p className="text-white text-label">Address</p>
 						<input className="bordered-input" placeholder="e.g. 0x8eA3F... or destination.eth"/>
 						<div className="send-box">
-							<Button color="info">Send {assets.length} Items<ChevronRight /></Button>
+							<button className="send-btn">Transfer</button>
 						</div>
 					</GridItem>
 				</GridContainer>

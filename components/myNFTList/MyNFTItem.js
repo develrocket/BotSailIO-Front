@@ -59,25 +59,30 @@ export default function MyNFTItem(props) {
 				>
 					<div className={classes.popoverBody}>
 						<div className={classes.actionList}>
-							<div className="action-item">
+							<div className="action-item" onClick={() => {
+								setAnchorElTop(null);
+								props.handleClickCommand("sell", props.info.token);
+							}}>
 								<div className="action-icon">
 									<Storefront />
 								</div>
 								<div className="action-label">Sell</div>
 							</div>
-							<div className="action-item">
+							<div className="action-item" onClick={() => {
+								setAnchorElTop(null);
+								props.handleClickCommand("transfer", props.info.token);
+							}}>
 								<div className="action-icon">
 									<Send />
 								</div>
-								<div className="action-label"
-									 onClick={() => {
-										 setAnchorElTop(null);
-										 props.handleClickCommand("transfer", props.info.token);
-									 }}>
+								<div className="action-label">
 									Transfer
 								</div>
 							</div>
-							<div className="action-item">
+							<div className="action-item" onClick={() => {
+								setAnchorElTop(null);
+								props.handleClickCommand("hide", props.info.token);
+							}}>
 								<div className="action-icon">
 									<VisibilityOff />
 								</div>

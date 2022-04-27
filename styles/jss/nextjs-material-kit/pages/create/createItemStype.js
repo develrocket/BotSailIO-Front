@@ -86,15 +86,24 @@ const createItemFormStyle = {
 			width: "100%",
 			height: "48px",
 			fontSize: "20px",
-			background: "white",
+			background: "#353840",
 			border: "1px solid #212529",
 			borderRadius: "8px",
 			padding: "10px",
-			color: "black",
+			color: "white",
 
 			'&.height-3x': {
 				height: '144px',
 			},
+		},
+
+		'& .select-gray': {
+			'&>div:first-of-type': {
+				background: '#353840',
+				'& div' :{
+					color: '#ffffff !important'
+				}
+			}
 		},
 
 		'& .modal-box': {

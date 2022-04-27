@@ -16,10 +16,10 @@ import Select from "react-select";
 import styles from "styles/jss/nextjs-material-kit/pages/components.js";
 import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
 import pageStyles from "styles/jss/nextjs-material-kit/pages/create/createItemStype.js";
-import tooltipStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/javascriptStyles.js";
+import tooltipsStyle from "styles/jss/nextjs-material-kit/tooltipsStyle.js";
 import Button from "components/CustomButtons/Button";
 
-const useStyles = makeStyles({...basicsStyles, ...styles, ...pageStyles, ...tooltipStyles});
+const useStyles = makeStyles({...basicsStyles, ...styles, ...tooltipsStyle, ...pageStyles});
 
 const options = [
 	{ value: "ethereum", label: "Ethereum", customAbbreviation: "an open-source blockchain that powers most NFT sails" },
@@ -159,9 +159,11 @@ export default function Item({}) {
 					</Tooltip>
 				</p>
 				<Select
+					className="select-gray"
 					defaultValue={collectionOptions[0]}
 					formatOptionLabel={formatCollectionOptionLabel}
 					options={collectionOptions}
+					instanceId='collectionSelect'
 				/>
 
 				<div className="modal-box m-t-15">
@@ -347,13 +349,15 @@ export default function Item({}) {
 						<ErrorOutline className="tooltip-icon" />
 					</Tooltip>
 				</p>
-				<input className="bordered-input" placeholder="1" type="number"/>
+				<input className="bordered-input" placeholder="1"/>
 
 				<p className="text-label">Blockchain</p>
 				<Select
 					defaultValue={options[0]}
 					formatOptionLabel={formatOptionLabel}
 					options={options}
+					instanceId='chainSelect'
+					className="select-gray"
 				/>
 
 				<p className="text-label display-flex">

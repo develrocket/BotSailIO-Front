@@ -95,14 +95,19 @@ const collectionListStyle = {
 				borderRadius: '8px'
 			},
 
-			'&.verified:after': {
-				content: '" "',
-				width: '24px',
-				height: '24px',
-				background: 'url(/img/verified.svg) 0 0/contain',
-				position: 'absolute',
-				top: '-6px',
-				right: '-6px'
+			'&.selected': {
+				boxShadow: "0 0 0 2px #228be6",
+				borderRadius: '8px',
+
+				'&:after': {
+					content: '" "',
+					width: '24px',
+					height: '24px',
+					background: 'url(/img/verified.svg) 0 0/contain',
+					position: 'absolute',
+					top: '-6px',
+					right: '-6px'
+				}
 			}
 		},
 

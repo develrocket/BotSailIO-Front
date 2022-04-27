@@ -37,7 +37,10 @@ export default function Group({items}) {
 							NFTrees
 							<img src="/img/verified.svg" alt="..." className="img-mark" />
 						</h1>
-						<CopyBox value={address} />
+						{
+							address &&
+							<CopyBox value={address} />
+						}
 						<p className="desc">
 							Grow NFTrees backed by Real Trees 🌳<br/>
 							Have Fun and make Real World Impact

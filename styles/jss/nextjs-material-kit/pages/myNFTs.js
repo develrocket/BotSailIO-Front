@@ -1,5 +1,44 @@
 const collectionsStyle = {
+	transferBox: {
+		position: "fixed",
+		bottom: 0,
+		height: "100px",
+		width: "100vw",
+		background: "#303339",
+		borderTop: "1px solid rgb(21, 27, 34)",
+		padding: "0 24px",
+		display: "flex",
 
+		'& .cart-container': {
+			display: "flex",
+			justifyContent: "space-between",
+			alignItems: "center",
+			width: "100%",
+			fontSize: "19px",
+
+			'& .cart-box': {
+				flex: 1,
+
+				'& p': {
+					color: "white",
+					margin: 0,
+				}
+			},
+
+			'& .transfer-btn': {
+				height: "48px",
+				width: "130px",
+				fontSize: "19px",
+			},
+
+			'& .transfer-cancel-btn': {
+				height: "48px",
+				width: "130px",
+				fontSize: "19px",
+				marginLeft: "4px"
+			}
+		}
+	},
 	partTitle: {
 		textAlign: 'center',
 

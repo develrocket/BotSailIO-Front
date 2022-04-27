@@ -9,16 +9,17 @@ import styles from "styles/jss/nextjs-material-kit/components/collectionListStyl
 
 const useStyles = makeStyles(styles);
 
-export default function MyNFTItem() {
+export default function MyNFTItem(props) {
 	const classes = useStyles();
 	const [anchorElTop, setAnchorElTop] = React.useState(null);
+
 	const showMoreActions = (e) => {
 		e.preventDefault();
 		setAnchorElTop(e.currentTarget);
 	}
 
 	return (
-		<li className="verified">
+		<li className={props.isSelected ? "selected" : ""}>
 			<a href="/velas/velas-apes-club">
 				<div className="media">
 					<Image src="https://m.raregems.io/c/21725?optimizer=image&amp;width=400" width={400} height={400} loading="lazy"/>
@@ -67,7 +68,13 @@ export default function MyNFTItem() {
 								<div className="action-icon">
 									<Send />
 								</div>
-								<div className="action-label">Transfer</div>
+								<div className="action-label"
+									 onClick={() => {
+										 setAnchorElTop(null);
+										 props.handleClickCommand("transfer", props.info.token);
+									 }}>
+									Transfer
+								</div>
 							</div>
 							<div className="action-item">
 								<div className="action-icon">

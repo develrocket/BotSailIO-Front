@@ -15,7 +15,7 @@ export default function Layout({ children }) {
 			  	fixed
 			  	changeColorOnScroll={{
 					height: 70,
-					color: "info",
+					color: "dark",
 			  	}}
 			/>
 

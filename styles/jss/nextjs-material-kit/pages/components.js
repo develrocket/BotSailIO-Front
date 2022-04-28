@@ -33,7 +33,7 @@ const componentsStyle = {
 		},
 	},
 	filterOptionContainer: {
-		background: '#212529',
+		background: '#361b97',
 		height: 'calc(100vh - 100px)',
 		borderRadius: '10px',
 		color: 'white',

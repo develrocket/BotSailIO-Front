@@ -26,7 +26,7 @@ const collectionsStyle = {
 
 			'& li': {
 				textAlign: 'center',
-				background: '#212529',
+				background: '#361b97',
 				borderRadius: '8px',
 				padding: '8px 24px',
 

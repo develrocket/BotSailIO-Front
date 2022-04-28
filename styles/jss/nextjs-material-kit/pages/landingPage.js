@@ -39,7 +39,7 @@ const landingPageStyle = {
 	},
 	homeLogoBox: {
 		textAlign: 'center',
-		marginTop: '30px',
+		marginTop: '90px',
 		marginBottom: '60px',
 
 		'& img': {

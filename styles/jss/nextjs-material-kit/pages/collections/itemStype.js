@@ -33,7 +33,7 @@ const itemStyle = {
 			position: "relative !important",
 			height: "unset !important",
 			margin: "30px",
-			borderRadius: "24px",
+			maxWidth: "480px"
 		},
 	}
 };

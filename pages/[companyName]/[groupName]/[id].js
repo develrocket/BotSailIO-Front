@@ -12,13 +12,13 @@ import pageStyles from "styles/jss/nextjs-material-kit/pages/collections/itemSty
 import Button from "components/CustomButtons/Button";
 import Image from "next/image";
 
-const useStyles = makeStyles({...basicsStyles, ...styles, ...pageStyles});
+const useStyles = makeStyles({ ...styles, ...basicsStyles, ...pageStyles});
 
 export default function Detail({item}) {
 	const classes = useStyles();
 
 	return (
-		<div className={classes.detailContainer}>
+		<div className={classes.container + " " + classes.detailContainer}>
 			<GridContainer className="detail-div">
 				<GridItem xs={12} sm={12} md={7} lg={8} className="height-full">
 					<img src="https://m.raregems.io/c/21725?optimizer=image&amp;width=400" alt="icon"

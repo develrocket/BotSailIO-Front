@@ -47,7 +47,7 @@ const groupStyle = {
 
 			'& li': {
 				textAlign: 'center',
-				background: '#212529',
+				background: '#361b97e6',
 				borderRadius: '8px',
 				padding: '8px 24px',
 

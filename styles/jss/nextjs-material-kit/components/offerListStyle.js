@@ -94,10 +94,15 @@ const offerListStyle = {
 		},
 
 		'& .chain': {
-			color: '#868e96',
-			display: 'block',
+			color: '#e4f1ff',
+			display: 'flex',
 			marginBottom: '4px',
 			fontSize: '10px',
+
+			'&>div': {
+				margin: '0 5px 0 0 !important',
+				color: '#e4f1ff'
+			},
 
 			'& img': {
 				width: '12px',
@@ -115,7 +120,7 @@ const offerListStyle = {
 		},
 
 		'& .counters': {
-			color: '#868e96',
+			color: '#e4f1ff',
 			marginTop: '4px',
 			fontSize: '10px'
 		},

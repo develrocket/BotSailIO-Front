@@ -59,7 +59,8 @@ export default function Sell(props) {
 				<GridContainer className={classes.sellStyle}>
 					<GridItem xs={0} sm={0} md={6} lg={6} className="preview-box">
 						<h3 className="header" style={{padding: 0}}>Preview</h3>
-							<Carousel {...settings}>
+						<div style={{width: "100%", display: "flex", justifyContent: "center"}}>
+							<Carousel {...settings} className="carousel-box">
 								<div style={{margin: "0px 10px"}}>
 									<img
 										src="https://m.raregems.io/c/21725?optimizer=image&amp;width=400"
@@ -82,6 +83,7 @@ export default function Sell(props) {
 									/>
 								</div>
 							</Carousel>
+						</div>
 					</GridItem>
 					<GridItem xs={12} sm={12} md={6} lg={6}>
 						<h3 className="header">List item for sale</h3>

@@ -96,7 +96,7 @@ export default function Index(props) {
 										Nothing found 👀
 									</p>
 									<div style={{ textAlign: 'center', margin: '64px 0' }}>
-										<Button color="primary" round size="lg" onClick={()=>connectWallet("injected")}
+										<Button color="actionButton" round size="lg" onClick={()=>connectWallet("injected")}
 												style={{ textTransform: 'capitalize', padding: '10px 40px' }}>
 											<h3 style={{ margin: '0' }}>Connect Wallet</h3>
 										</Button>

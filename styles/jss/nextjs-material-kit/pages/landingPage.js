@@ -14,6 +14,12 @@ const landingPageStyle = {
 		minHeight: "32px",
 		color: "#FFFFFF",
 		textDecoration: "none",
+		width: '535px',
+		'&+h4': {
+			width: '570px',
+			margin: '20px auto',
+			color: '#979ea5',
+		}
 	},
 	subtitle: {
 		fontSize: "1.313rem",
@@ -33,7 +39,7 @@ const landingPageStyle = {
 	},
 	homeLogoBox: {
 		textAlign: 'center',
-		marginTop: '60px',
+		marginTop: '30px',
 		marginBottom: '60px',
 
 		'& img': {

@@ -378,7 +378,7 @@ export default function Item({}) {
 				<input className="bordered-input" type="text"
 					   placeholder="To freeze your metadata, you must create your item first."/>
 
-				<Button color="info" size="lg" style={{margin: "20px 0"}}>Create</Button>
+				<Button color="actionButton" size="lg" style={{margin: "20px 0"}}>Create</Button>
 			</div>
 		</div>
 	);

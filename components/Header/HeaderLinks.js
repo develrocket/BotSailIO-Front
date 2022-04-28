@@ -42,6 +42,8 @@ export default function HeaderLinks(props) {
 	};
 
 	console.log('wallet-address:', address, error);
+	console.log('router pathname', (router.pathname.indexOf('myNFTs') >= 0));
+
 
     return (
         <List className={classes.list}>

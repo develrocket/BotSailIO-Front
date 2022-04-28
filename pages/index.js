@@ -17,7 +17,7 @@ export default function Index(props) {
 			<div className={classes.container}>
 				<GridContainer>
 					<GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
-						<h1 className={classes.title} style={{marginTop: '20px'}}>NFT Marketplace For Musical Arts</h1>
+						<h1 className={classes.title} style={{marginTop: '20px'}}>NFT Marketplace</h1>
 						<h4>Unit of data stored on a digital ledger, called a blockchain,
 							that certifies a digital asset to be unique and therefore not interchangeable</h4>
 						<Button

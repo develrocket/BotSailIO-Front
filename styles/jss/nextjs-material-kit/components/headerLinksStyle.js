@@ -100,7 +100,9 @@ const headerLinksStyle = (theme) => ({
 		}
 	},
 	activeLink: {
-		color: "#fd562a"
+		'& *':{
+			color: "#fd562a"
+		}
 	},
 	notificationNavLink: {
 		[theme.breakpoints.down("md")]: {

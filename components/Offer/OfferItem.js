@@ -19,11 +19,14 @@ export default function OfferItem() {
 				</div>
 				<div className="meta">
 					<div className="counters">
-						VelasApesClub
+						Code ID
 					</div>
-					<div className="name">Velas Apes # #251</div>
+					<div className="chain">
+						<Image src="https://s.raregems.io/97/img/chains/velas.svg" width={16} height={16} loading="lazy"/>Velas
+					</div>
+					<div className="name">Name of Project</div>
 					<div className="btn">
-						<Button color="primary" size="sm" round>Buy for <b>&nbsp;1500 VLX</b></Button>
+						<Button color="actionButton" size="sm" round>Buy for <b>&nbsp;1500 VLX</b></Button>
 					</div>
 				</div>
 			</a>

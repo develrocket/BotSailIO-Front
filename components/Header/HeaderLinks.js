@@ -42,6 +42,8 @@ export default function HeaderLinks(props) {
 	};
 
 	console.log('wallet-address:', address, error);
+	console.log('router pathname', (router.pathname.indexOf('myNFTs') >= 0));
+
 
     return (
         <List className={classes.list}>
@@ -95,14 +97,15 @@ export default function HeaderLinks(props) {
 						"Collection",
 						"Item",
 					]}
+					className={classes.activeLink}
 				/>
 			</ListItem>
             <ListItem className={classes.listItem}>
 				{address ? (
 					<Button
-						color="default"
+						color="actionButton"
 						target="_blank"
-						className={classes.navLink}
+						className={'wallet-button'}
 					>
 						<MiddleTruncate
 							text={address}
@@ -113,6 +116,7 @@ export default function HeaderLinks(props) {
 					<Button
 						color="actionButton"
 						target="_blank"
+						className={'wallet-button'}
 						onClick={()=>connectWallet("injected")}
 					>
 						Connect Wallet

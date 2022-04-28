@@ -3,8 +3,6 @@ const pageStyle = {
 		paddingBottom: "50px",
 
 		'& .preview-box': {
-			padding: "0 50px",
-
 			'& .img-box': {
 				display: "flex",
 				justifyContent: "center"
@@ -32,6 +30,15 @@ const pageStyle = {
 
 			"@media (max-width: 576px)": {
 				flex: 1,
+			},
+		},
+
+		'& .carousel-box': {
+			marginTop: "24px",
+			maxWidth: "480px",
+
+			"@media (max-width: 576px)": {
+				maxWidth: "360px",
 			},
 		},
 
@@ -101,7 +108,11 @@ const pageStyle = {
 
 			'& .end-date-picker': {
 				flex: 1,
-				marginLeft: "5px",
+
+
+				"@media (min-width: 576px)": {
+					marginLeft: "5px",
+				},
 			}
 		},
 

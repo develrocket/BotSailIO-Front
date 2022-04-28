@@ -28,14 +28,13 @@ export default function MyNFTItem(props) {
 					<Image src="https://m.raregems.io/c/21725?optimizer=image&amp;width=400" width={400} height={400} loading="lazy"/>
 				</div>
 				<div className="meta">
+					<div className="counters">
+						Code ID: 0x42e2f3ac3d2...
+					</div>
 					<div className="chain">
 						<Image src="https://s.raregems.io/97/img/chains/velas.svg" width={16} height={16} loading="lazy"/>Velas
 					</div>
 					<div className="name">VelasApesClub</div>
-					<div className="counters">
-						1030 tokens,
-						124 offers
-					</div>
 				</div>
 				<div className={classes.moreActionBox} onClick={showMoreActions}>
 					<MoreVert />

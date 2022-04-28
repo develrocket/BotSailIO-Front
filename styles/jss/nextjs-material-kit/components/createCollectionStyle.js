@@ -246,7 +246,9 @@ const formStyle = {
 				width: '100%',
 				border: '1px solid #ced4da',
 				borderRadius: '6px',
-				fontSize: '107%'
+				fontSize: '107%',
+				paddingLeft: '10px',
+				paddingRight: '10px'
 			},
 
 			'& .linkInput': {
@@ -265,6 +267,7 @@ const formStyle = {
 					background: '#353840',
 					border: 'none',
 					height: '48px',
+					flexGrow: '1'
 				}
 			}
 		},

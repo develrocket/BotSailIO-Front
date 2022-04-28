@@ -15,6 +15,7 @@ const itemStyle = {
 			width: "100%",
 			display: "flex",
 			justifyContent: "center",
+			alignItems: "center",
 			position: "unset !important",
 
 			"@media (min-width: 576px)": {
@@ -33,6 +34,7 @@ const itemStyle = {
 			position: "relative !important",
 			height: "unset !important",
 			margin: "30px",
+			borderRadius: "24px",
 			maxWidth: "480px"
 		},
 	}

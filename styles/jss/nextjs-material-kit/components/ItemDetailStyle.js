@@ -7,7 +7,7 @@ const ItemDetailStyle = {
 		},
 
 		'& .property-box': {
-			background: "#212529",
+			background: "rgba(54, 27, 154, 0.8)",
 			borderRadius: "24px",
 			padding: "30px",
 			height: "100%",

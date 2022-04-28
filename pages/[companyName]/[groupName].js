@@ -93,7 +93,7 @@ export default function Group({items}) {
 				</GridItem>
 
 				<div className={classes.mobileFilterButton}>
-					<Button color="info" size="sm" onClick={showFilter}>
+					<Button color="actionButton" size="sm" onClick={showFilter}>
 						{isShowFilter ? 'Apply Filter' : 'Filter'}
 					</Button>
 				</div>

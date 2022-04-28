@@ -27,7 +27,7 @@ export default function TradeItem() {
 					</div>
 					<div className="name">Name of Project</div>
 					<div className="btn">
-						<Button color="primary" size="sm" round>Buy for <b>&nbsp;1500 VLX</b></Button>
+						<Button color="actionButton" size="sm" round>Buy for <b>&nbsp;1500 VLX</b></Button>
 					</div>
 				</div>
 			</a>

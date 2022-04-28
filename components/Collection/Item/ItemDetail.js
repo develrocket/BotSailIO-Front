@@ -102,7 +102,7 @@ export default function ItemDetail() {
 					<span className="hover-blue">@ block #14773518: 0x0000…0000 ➞ 0xc501…776F </span>
 					<div className="buy-div">
 						<Button
-							color="primary"
+							color="actionButton"
 							target="_blank"
 							className="buy-btn"
 							onClick={()=>buyToken("injected")}

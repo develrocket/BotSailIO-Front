@@ -47,7 +47,7 @@ export default function Transfer(props) {
 						<p className="text-white text-label">Address</p>
 						<input className="bordered-input" placeholder="e.g. 0x8eA3F... or destination.eth"/>
 						<div className="send-box">
-							<button className="send-btn">Transfer</button>
+							<Button color="actionButton">Transfer</Button>
 						</div>
 					</GridItem>
 				</GridContainer>

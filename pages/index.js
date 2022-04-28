@@ -17,15 +17,9 @@ export default function Index(props) {
 			<div className={classes.container}>
 				<GridContainer>
 					<GridItem xs={12} sm={12} md={12} className={classes.textCenter}>
-						<h4 style={{margin: 0}}>Non-Custodial</h4>
-						<h2 style={{margin: 0}}>Multi-Chain</h2>
-						<h1 className={classes.title} style={{marginTop: 0}}>NFT Marketplace</h1>
-						<div className={classes.homeLogoBox}>
-							<img src={'/img/logos/velas.svg'} />
-							<img src={'/img/logos/celo.svg'} />
-							<img src={'/img/logos/moonbeam.svg'} />
-						</div>
-						<br/>
+						<h1 className={classes.title} style={{marginTop: '20px'}}>NFT Marketplace For Musical Arts</h1>
+						<h4>Unit of data stored on a digital ledger, called a blockchain,
+							that certifies a digital asset to be unique and therefore not interchangeable</h4>
 						<Button
 							color="actionButton"
 							size="lg"
@@ -34,6 +28,11 @@ export default function Index(props) {
 						>
 							Browse All Collections
 						</Button>
+						<div className={classes.homeLogoBox}>
+							<img src={'/img/logos/velas.svg'} />
+							<img src={'/img/logos/celo.svg'} />
+							<img src={'/img/logos/moonbeam.svg'} />
+						</div>
 					</GridItem>
 				</GridContainer>
 			</div>

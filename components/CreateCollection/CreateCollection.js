@@ -280,7 +280,7 @@ export default function CreateCollection() {
 			</div>
 
 
-			<Button color="info" type={'submit'}><strong>Create</strong></Button>
+			<Button color="actionButton" type={'submit'}><strong>Create</strong></Button>
 
 		</form>
 	);

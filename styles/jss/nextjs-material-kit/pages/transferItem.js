@@ -79,6 +79,7 @@ const pageStyle = {
 			backgroundColor: "rgb(32, 129, 226)",
 			border: "1px solid rgb(32, 129, 226)",
 			color: "rgb(255, 255, 255)",
+			textTransform: "lowercase"
 		},
 
 		'& .text-white': {

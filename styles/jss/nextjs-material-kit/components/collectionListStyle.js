@@ -139,9 +139,10 @@ const collectionListStyle = {
 
 		'& .chain': {
 			color: '#868e96',
-			display: 'block',
+			display: 'flex',
 			marginBottom: '4px',
 			fontSize: '10px',
+
 
 			'& img': {
 				width: '12px',

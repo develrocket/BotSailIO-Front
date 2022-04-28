@@ -102,9 +102,9 @@ export default function HeaderLinks(props) {
             <ListItem className={classes.listItem}>
 				{address ? (
 					<Button
-						color="default"
+						color="actionButton"
 						target="_blank"
-						className={classes.navLink}
+						className={'wallet-button'}
 					>
 						<MiddleTruncate
 							text={address}
@@ -115,6 +115,7 @@ export default function HeaderLinks(props) {
 					<Button
 						color="actionButton"
 						target="_blank"
+						className={'wallet-button'}
 						onClick={()=>connectWallet("injected")}
 					>
 						Connect Wallet

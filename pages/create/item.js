@@ -15,7 +15,7 @@ import Select from "react-select";
 
 import styles from "styles/jss/nextjs-material-kit/pages/components.js";
 import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
-import pageStyles from "styles/jss/nextjs-material-kit/pages/create/createItemStype.js";
+import pageStyles from "styles/jss/nextjs-material-kit/pages/create/createItemStyle.js";
 import tooltipsStyle from "styles/jss/nextjs-material-kit/tooltipsStyle.js";
 import Button from "components/CustomButtons/Button";
 
@@ -83,9 +83,9 @@ export default function Item({}) {
 	}
 
 	return (
-		<div className={classes.container} style={{paddingTop: "120px"}}>
+		<div className={classes.container} style={{ display: 'flex', justifyContent: 'center' }}>
 			<div className={classes.createItemForm}>
-				<h1 className="header">Create New Item</h1>
+				<h1 className="top">Create New Item</h1>
 				<p><span className="text-danger">*</span>Required fields</p>
 
 				<p className="text-label">Image, Video, Audio, or 3D Model<span className="text-danger">*</span></p>

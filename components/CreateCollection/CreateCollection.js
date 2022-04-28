@@ -109,19 +109,6 @@ export default function CreateCollection() {
 
 			<Logo onChange={(e)=>logoChange(e)} />
 
-			{/*<div className={'formControl'}>*/}
-			{/*	<h4 className="requireHead"><strong>Logo image</strong></h4>*/}
-			{/*	<p>This image will also be used for navigation. 350 x 350 recommended.</p>*/}
-			{/*	<label className="logoImgInput" htmlFor="logoInput">*/}
-			{/*			<input type="file" id="logoInput" name="logoInput" accept="image/*" style={{ display: 'none' }} onChange={logoChange} />*/}
-			{/*			{ !logo ? <i className="fa fa-image" style={{ fontSize: '4.5em' }} /> :*/}
-			{/*				<i className="fa fa-image imgIcon" /> }*/}
-			{/*			{ logo && <div className="logoImg">*/}
-			{/*				<img src={ URL.createObjectURL(logo) } width={160} height={160} />*/}
-			{/*			</div> }*/}
-			{/*	</label>*/}
-			{/*</div>*/}
-
 			<div className={'formControl'}>
 				<h4><strong>Featured image</strong></h4>
 				<p>This image will be used for featuring your collection on the homepage, category pages, or other promotional areas of OpenSea. 600 x 400 recommended.</p>

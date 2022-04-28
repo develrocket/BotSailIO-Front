@@ -29,12 +29,12 @@ export default function MyNFTItem(props) {
 				</div>
 				<div className="meta">
 					<div className="counters">
-						Code ID: 0x42e2f3ac3d2...
+						Code ID
 					</div>
 					<div className="chain">
 						<Image src="https://s.raregems.io/97/img/chains/velas.svg" width={16} height={16} loading="lazy"/>Velas
 					</div>
-					<div className="name">VelasApesClub</div>
+					<div className="name">Name of project</div>
 				</div>
 				<div className={classes.moreActionBox} onClick={showMoreActions}>
 					<MoreVert />

@@ -5,6 +5,13 @@ const createItemFormStyle = {
 		color: "white",
 		padding: "24px",
 
+		'& .top': {
+			color: '#ced4da',
+			marginBottom: '16px',
+			paddingTop: '32px',
+			fontWeight: 'bold'
+		},
+
 		'& .fileContainer': {
 			border: '3px dashed rgb(204, 204, 204)',
 			width: '350px',

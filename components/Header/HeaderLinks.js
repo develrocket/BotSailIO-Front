@@ -97,6 +97,7 @@ export default function HeaderLinks(props) {
 						"Collection",
 						"Item",
 					]}
+					className={classes.activeLink}
 				/>
 			</ListItem>
             <ListItem className={classes.listItem}>

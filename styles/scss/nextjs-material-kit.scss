@@ -30,7 +30,9 @@
 @import "plugins/plugin-react-slick";
 
 body {
-	background: #131316;
+	//background: #131316;
+	background: url('/img/bg8.jpg') no-repeat center;
+	background-size: cover;
 }
 
 @keyframes criss-cross-left {

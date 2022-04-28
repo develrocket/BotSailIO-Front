@@ -4,6 +4,18 @@ const pageStyle = {
 
 		'& .preview-box': {
 			padding: "0 50px",
+
+			'& .img-box': {
+				display: "flex",
+				justifyContent: "center"
+			},
+
+			'& .detail-img': {
+				objectFit: "contain",
+				width: "100% !important",
+				position: "relative !important",
+				height: "unset !important",
+			},
 		},
 
 		'& .price-box': {
@@ -75,9 +87,16 @@ const pageStyle = {
 			display: "flex",
 			flexDirection: "row",
 
+			"@media (max-width: 576px)": {
+				flexDirection: "column",
+			},
+
 			'& .start-date-picker': {
 				flex: 1,
-				marginRight: "5px",
+
+				"@media (min-width: 576px)": {
+					marginRight: "5px",
+				},
 			},
 
 			'& .end-date-picker': {

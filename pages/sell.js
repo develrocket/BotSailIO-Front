@@ -4,16 +4,17 @@ import React, {useState} from "react";
 import GridContainer from "../components/Grid/GridContainer";
 import GridItem from "../components/Grid/GridItem";
 import Button from "../components/CustomButtons/Button";
-import {AttachMoney, Timelapse, ChevronRight, ErrorOutline} from "@material-ui/icons";
+import {AttachMoney, Timelapse, LocationOn, ErrorOutline} from "@material-ui/icons";
 import {makeStyles} from "@material-ui/core/styles";
 import Datetime from "react-datetime";
+import Carousel from "react-slick";
 import FormControl from "@material-ui/core/FormControl";
 
 import styles from "styles/jss/nextjs-material-kit/pages/components.js";
 import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
 import tooltipsStyle from "styles/jss/nextjs-material-kit/tooltipsStyle.js";
 import pageStyles from "styles/jss/nextjs-material-kit/pages/sellItem.js";
-import item from "./create/item";
+
 import Tooltip from "@material-ui/core/Tooltip";
 import formatMoneyOptionLabel from "../components/Sell/formatMoneyOptionLabel";
 import formatMethodOptionLabel from "../components/Sell/formatMethodOptionLabel";
@@ -25,13 +26,21 @@ export default function Sell(props) {
 	const classes = useStyles();
 	const router = useRouter();
 	const { assets } = router.query;
-	const [isShowToDate, setIsShowToDate] = useState(false);
 	let items = [];
 	if (assets && !Array.isArray(assets)) {
 		items.push(assets);
 	} else {
 		items = assets;
 	}
+
+	const settings = {
+		dots: true,
+		infinite: true,
+		speed: 500,
+		slidesToShow: 1,
+		slidesToScroll: 1,
+		autoplay: false,
+	};
 
 	const [isBundle, setIsBundle] = React.useState(true);
 	const [isFixed, setIsFixed] = React.useState(true);
@@ -40,7 +49,6 @@ export default function Sell(props) {
 	const options = [
 		{ value: "eth", label: "ETH", customAbbreviation: "Eth" },
 	];
-
 	const methodOptions = [
 		{ value: "declining", label: "Sell with declining price", customAbbreviation: "declining" },
 	];
@@ -49,6 +57,32 @@ export default function Sell(props) {
 		<>
 			<div className={classes.container}>
 				<GridContainer className={classes.sellStyle}>
+					<GridItem xs={0} sm={0} md={6} lg={6} className="preview-box">
+						<h3 className="header" style={{padding: 0}}>Preview</h3>
+							<Carousel {...settings}>
+								<div style={{margin: "0px 10px"}}>
+									<img
+										src="https://m.raregems.io/c/21725?optimizer=image&amp;width=400"
+										alt="First slide"
+										className="slick-image detail-img"
+									/>
+								</div>
+								<div style={{margin: "0px 10px"}}>
+									<img
+										src="https://m.raregems.io/c/21725?optimizer=image&amp;width=400"
+										alt="Second slide"
+										className="slick-image detail-img"
+									/>
+								</div>
+								<div style={{margin: "0px 10px"}}>
+									<img
+										src="https://m.raregems.io/c/21725?optimizer=image&amp;width=400"
+										alt="Third slide"
+										className="slick-image detail-img"
+									/>
+								</div>
+							</Carousel>
+					</GridItem>
 					<GridItem xs={12} sm={12} md={6} lg={6}>
 						<h3 className="header">List item for sale</h3>
 						{
@@ -77,80 +111,76 @@ export default function Sell(props) {
 						}
 						{
 							isFixed
-							? <>
-								<p className="text-label display-flex flex-between">
-									<span>Price</span>
-									<Tooltip
-										id="tooltip-top"
-										title="List price and listing schedule cannot be edited once the item is listed. You
+								? <>
+									<p className="text-label display-flex flex-between">
+										<span>Price</span>
+										<Tooltip
+											id="tooltip-top"
+											title="List price and listing schedule cannot be edited once the item is listed. You
 										will need to cancel your listing and relist the item with the updated price and dates."
-										placement="top"
-										classes={{ tooltip: classes.tooltip }}
-									>
-										<ErrorOutline className="tooltip-icon" />
-									</Tooltip>
-								</p>
-								<div className="price-box">
-									<Select
-										defaultValue={options[0]}
-										formatOptionLabel={formatMoneyOptionLabel}
-										options={options}
-										instanceId='chainSelect'
-										className="select-gray flex-1"
-									/>
-									<input className="bordered-input flex-2" style={{marginLeft: "10px"}} placeholder="Amount"/>
-								</div>
-							</>
-							: <>
-								<p className="text-label display-flex flex-between">
-									<span>Method</span>
-									<Tooltip
-										id="tooltip-top"
-										title="Sell to the highest bidder or sell with a declining price, which allows
+											placement="top"
+											classes={{ tooltip: classes.tooltip }}
+										>
+											<ErrorOutline className="tooltip-icon" />
+										</Tooltip>
+									</p>
+									<div className="price-box">
+										<Select
+											defaultValue={options[0]}
+											formatOptionLabel={formatMoneyOptionLabel}
+											options={options}
+											instanceId='chainSelect'
+											className="select-gray flex-1"
+										/>
+										<input className="bordered-input flex-2" style={{marginLeft: "10px"}} placeholder="Amount"/>
+									</div>
+								</>
+								: <>
+									<p className="text-label display-flex flex-between">
+										<span>Method</span>
+										<Tooltip
+											id="tooltip-top"
+											title="Sell to the highest bidder or sell with a declining price, which allows
 										the listing to reduce in price until a buyer is found"
-										placement="top"
-										classes={{ tooltip: classes.tooltip }}
-									>
-										<ErrorOutline className="tooltip-icon" />
-									</Tooltip>
-								</p>
-								<Select
-									defaultValue={methodOptions[0]}
-									formatOptionLabel={formatMethodOptionLabel}
-									options={methodOptions}
-									instanceId='chainSelect'
-									className="select-gray flex-1"
-								/>
-								<p className="text-label display-flex flex-between">
-									<span>Starting price</span>
-								</p>
-								<div className="price-box">
+											placement="top"
+											classes={{ tooltip: classes.tooltip }}
+										>
+											<ErrorOutline className="tooltip-icon" />
+										</Tooltip>
+									</p>
 									<Select
-										defaultValue={options[0]}
-										formatOptionLabel={formatMoneyOptionLabel}
-										options={options}
+										defaultValue={methodOptions[0]}
+										formatOptionLabel={formatMethodOptionLabel}
+										options={methodOptions}
 										instanceId='chainSelect'
 										className="select-gray flex-1"
 									/>
-									<input className="bordered-input flex-2" style={{marginLeft: "10px"}} placeholder="Amount"/>
-								</div>
-							</>
+									<p className="text-label display-flex flex-between">
+										<span>Starting price</span>
+									</p>
+									<div className="price-box">
+										<Select
+											defaultValue={options[0]}
+											formatOptionLabel={formatMoneyOptionLabel}
+											options={options}
+											instanceId='chainSelect'
+											className="select-gray flex-1"
+										/>
+										<input className="bordered-input flex-2" style={{marginLeft: "10px"}} placeholder="Amount"/>
+									</div>
+								</>
 						}
 						<p className="text-label">Duration</p>
 						<div className="date-ranger-box">
 							<Datetime
 								className="start-date-picker"
 								inputProps={{ placeholder: "From" }}
-								onOpen={() => setIsShowToDate(false)}
-								onClose={() => setIsShowToDate(true)}
 								closeOnSelect={true}
 							/>
 							<Datetime
 								className="end-date-picker"
 								inputProps={{ placeholder: "To" }}
-								onOpen={() => setIsShowToDate(true)}
-								open={isShowToDate}
-								onChange={() => setIsShowToDate(false)}
+								closeOnSelect={true}
 							/>
 						</div>
 						<div className="display-flex flex-between item-center m-t-20">
@@ -168,11 +198,11 @@ export default function Sell(props) {
 						</div>
 						{
 							isBundle &&
-								<>
-									<input className="bordered-input" style={{margin: "10px 0"}} placeholder="Bundle Name"/>
-									<textarea className="bordered-input height-3x" rows="3"
-											  placeholder="Bundle description" />
-								</>
+							<>
+								<input className="bordered-input" style={{margin: "10px 0"}} placeholder="Bundle Name"/>
+								<textarea className="bordered-input height-3x" rows="3"
+										  placeholder="Bundle description" />
+							</>
 						}
 						<div className="display-flex flex-between item-center m-t-20">
 							<p className="text-label m-0">Reserve for specific buyer</p>
@@ -190,7 +220,7 @@ export default function Sell(props) {
 						<p style={{color: "white"}}>This bundle can be purchased as soon as it's listed.</p>
 						{
 							isReserved &&
-								<input className="bordered-input" placeholder="0x8eA3F..."/>
+							<input className="bordered-input" placeholder="0x8eA3F..."/>
 						}
 						<p className="text-label display-flex flex-between">
 							<span>Fees</span>
@@ -210,9 +240,6 @@ export default function Sell(props) {
 						<div className="send-box">
 							<Button className="send-btn">Complete Listing</Button>
 						</div>
-					</GridItem>
-					<GridItem xs={0} sm={0} md={6} lg={6}>
-						<h3 className="header preview-box">Preview</h3>
 					</GridItem>
 				</GridContainer>
 			</div>

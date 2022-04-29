@@ -200,7 +200,7 @@ const ProfileTagList = (props) => {
 					</div>
 				</Popover>
 			</div>
-			<ProfileTabBody />
+			<ProfileTabBody tab={props.tab} />
 		</div>
 	);
 }

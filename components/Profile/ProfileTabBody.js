@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import {ArrowForward, Block, Send, Storefront, VisibilityOff,} from '@material-ui/icons';
+import {ArrowForward, Block, Send, Storefront, VisibilityOff, Close} from '@material-ui/icons';
 import styles from "styles/jss/nextjs-material-kit/components/profile/tagBodyStyle.js";
 const useStyles = makeStyles(styles);
 import Select from "react-select";
@@ -29,6 +29,8 @@ const ProfileTagList = (props) => {
 	const [isShowLeftMenu, setIsShowLeftMenu] = useState(false);
 	const [commandType, setCommandType] = useState("");
 	const [selectedList, setSelectedList] = useState([]);
+
+	const [filterConditions, setFilterConditions] = useState([]);
 
 	const handleClickToggleBtn = () => {
 		setIsShowLeftMenu(!isShowLeftMenu);
@@ -73,14 +75,17 @@ const ProfileTagList = (props) => {
 
 	return (
 		<div className={classes.container}>
-			<div className={"left-filter-bar" + (isShowLeftMenu ? " active" : "")}>
-				{isShowLeftMenu
-					? <LeftFilterBox handleClickToggleBtn={handleClickToggleBtn} />
-					: <div className="toggle-box" onClick={handleClickToggleBtn}>
-						<ArrowForward className="toggle-btn"/>
-					</div>
-				}
-			</div>
+			{props.tab !== "favorites" &&
+				<div className={"left-filter-bar" + (isShowLeftMenu ? " active" : "")}>
+					{isShowLeftMenu
+						? <LeftFilterBox handleChangeFilterCondition={setFilterConditions} filterConditions={filterConditions}
+										 handleClickToggleBtn={handleClickToggleBtn} />
+						: <div className="toggle-box" onClick={handleClickToggleBtn}>
+							<ArrowForward className="toggle-btn"/>
+						</div>
+					}
+				</div>
+			}
 			<div className="content-box">
 				<div className="search-box">
 					<input className="bordered-input m-r-5 flex-1" placeholder="Search"/>
@@ -101,8 +106,27 @@ const ProfileTagList = (props) => {
 						/>
 					</div>
 				</div>
-				<MyNFTsList handleCommand={handleCommand} handleClickItem={handleClickItem}
-							selectedList={selectedList} isDoingCommand={false} />
+				{filterConditions.length > 0 &&
+					<div className="filter-content">
+						{
+							filterConditions.map((label, key) =>
+								<div className="filter-button" key={key}>
+									{label}<Close className="filter-close" />
+								</div>
+							)
+						}
+						<div className="clear-btn">Clear All</div>
+					</div>
+				}
+				{(props.tab === "collection" || props.tab === "created" || props.tab === "created_collection"
+					|| props.tab === "hidden") &&
+					<MyNFTsList handleCommand={handleCommand} handleClickItem={handleClickItem}
+								selectedList={selectedList} isDoingCommand={false} />
+				}
+				{props.tab === "favorites" &&
+					<MyNFTsList handleCommand={handleCommand} handleClickItem={handleClickItem}
+								selectedList={selectedList} isDoingCommand={false} hasAction={false} />
+				}
 			</div>
 			{
 				isShowSubMenu &&

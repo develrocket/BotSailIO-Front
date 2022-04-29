@@ -110,6 +110,39 @@ const style = {
 			}
 		},
 
+		'& .icon-30': {
+			height: "30px",
+			width: "30px",
+			margin: "5px",
+			display: "flex",
+			justifyContent: "center",
+			alignItems: "center",
+			borderRadius: "50%",
+			overflow: "hidden",
+
+			'& img': {
+				width: "30px",
+				height: "30px",
+			}
+		},
+
+		'& .w-100-pro': {
+			width: "100%",
+		},
+
+		'& .filter-btn-full': {
+			width: "100%",
+			textTransform: "uppercase",
+
+			'&>label>span:last-of-type': {
+				color: "white"
+			}
+		},
+
+		'& .p-0': {
+			padding: "0px",
+		},
+
 		'& .h-48': {
 			height: "48px !important",
 		},

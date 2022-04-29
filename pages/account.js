@@ -21,9 +21,9 @@ export default function Page({userInfo}) {
 	const classes = useStyles();
 
 	const router = useRouter();
-	const tab = router.query.tab ? router.query.tab : "collection";
 
 	const { connectWallet, address, error } = useWeb3();
+	const tab = router.query.tab ? router.query.tab : "collection";
 	const [ bannerFile, setBannerFile ] = useState(null);
 	const [ avatarFile, setAvatarFile ] = useState(null);
 	const [anchorElTop, setAnchorElTop] = React.useState(null);

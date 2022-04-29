@@ -149,6 +149,54 @@ const style = {
 					display: "flex",
 					flexDirection: "row"
 				}
+			},
+
+			'& .filter-content': {
+				display: "flex",
+				flexWrap: "wrap",
+				alignItems: "center",
+				marginTop: "10px",
+
+				'& .filter-button': {
+					webkitBoxAlign: "center",
+					alignItems: "center",
+					cursor: "pointer",
+					display: "flex",
+					minHeight: "54px",
+					padding: "10px 20px",
+					borderWidth: "1px",
+					borderStyle: "solid",
+					backgroundColor: "rgb(32, 34, 37)",
+					borderColor: "rgb(21, 178, 229)",
+					fontSize: "14.5px",
+					borderRadius: "10px",
+					margin: "0 10px 10px 0",
+					color: "white",
+
+					'& .filter-close': {
+						marginLeft: "5px",
+						color: "#8a939b",
+					},
+
+					'&:hover': {
+						borderColor: "white",
+
+						'& .filter-close': {
+							color: "white"
+						}
+					}
+				},
+
+				'& .clear-btn': {
+					webkitBoxAlign: "center",
+					alignItems: "center",
+					cursor: "pointer",
+					minHeight: "54px",
+					fontSize: "16px",
+					fontWeight: 500,
+					color: "rgb(32, 129, 226)",
+					padding: "10px 20px",
+				},
 			}
 		},
 

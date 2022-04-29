@@ -1,10 +1,12 @@
 import React, {useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
-import {FilterList, ArrowBack, KeyboardArrowDown, KeyboardArrowUp} from '@material-ui/icons';
+import {FilterList, ArrowBack, KeyboardArrowDown, KeyboardArrowUp, Check} from '@material-ui/icons';
 import styles from "styles/jss/nextjs-material-kit/components/profile/leftFilterBoxStyle.js";
-const useStyles = makeStyles(styles);
+import customCheckboxRadioSwitch from "styles/jss/nextjs-material-kit/customCheckboxRadioSwitch.js";
+const useStyles = makeStyles({...styles, ...customCheckboxRadioSwitch});
 import Select from "react-select";
-
+import FormControlLabel from "@material-ui/core/FormControlLabel";
+import Checkbox from "@material-ui/core/Checkbox";
 import formatMoneyOptionLabel from "components/Profile/formatMoneyOptionLabel";
 
 const LeftFilterBox = (props) => {
@@ -15,23 +17,26 @@ const LeftFilterBox = (props) => {
 	const [isShowChains, setIsShowChains] = useState(false);
 	const [isShowCategories, setIsShowCategories] = useState(false);
 	const [isShowSale, setIsShowSale] = useState(false);
-	const [filterConditions, setFilterConditions] = useState([]);
+	const filterConditions = props.filterConditions;
+	const [categoryCondition, setCategoryCondition] = useState("");
 
+	const coinTypes = ["eth", "weth", "ash", "bat", "cube", "dai", "gala", "klay", "link"];
 	const options = [
 		{ value: "usd", label: "United Status Dollar (USD)", customAbbreviation: "" },
 		{ value: "eth", label: "Ether (ETH)", customAbbreviation: "" },
 		{ value: "sol", label: "Solana (SOL)", customAbbreviation: "" },
 	];
 
-	const handleClickButton = (item) => {
-		if (filterConditions.includes(item)) {
-			const filtered = filterConditions.filter(function(value, index, arr){
-				return value !== item;
-			});
-			setFilterConditions([...filtered]);
+	const handleClickButton = (value) => {
+		const currentIndex = filterConditions.indexOf(value);
+		const newChecked = [...filterConditions];
+
+		if (currentIndex === -1) {
+			newChecked.push(value);
 		} else {
-			setFilterConditions([...filterConditions, item]);
+			newChecked.splice(currentIndex, 1);
 		}
+		props.handleChangeFilterCondition(newChecked);
 	}
 
 	return (
@@ -117,6 +122,38 @@ const LeftFilterBox = (props) => {
 					}
 				</div>
 			</div>
+			{isShowChains &&
+			<div className="filter-bar">
+				<div className={"filter-btn p-0" + (filterConditions.includes("ether") ? " selected" : "")}
+					 onClick={() => handleClickButton("ether")}>
+					<div className="icon-30">
+						<img src="/img/parts/eth.png" />
+					</div>
+					Ethereum
+				</div>
+				<div className={"filter-btn p-0" + (filterConditions.includes("polygon") ? " selected" : "")}
+					 onClick={() => handleClickButton("polygon")}>
+					<div className="icon-30">
+						<img src="/img/parts/pol.svg" />
+					</div>
+					Polygon
+				</div>
+				<div className={"filter-btn p-0" + (filterConditions.includes("klaytn") ? " selected" : "")}
+					 onClick={() => handleClickButton("klaytn")}>
+					<div className="icon-30">
+						<img src="/img/parts/klaytn.png" />
+					</div>
+					Klaytn
+				</div>
+				<div className={"filter-btn p-50" + (filterConditions.includes("solana") ? " selected" : "")}
+					 onClick={() => handleClickButton("solana")}>
+					<div className="icon-30">
+						<img src="/img/parts/solana.svg" />
+					</div>
+					Solana
+				</div>
+			</div>
+			}
 			<div className="filter-row" onClick={() => setIsShowCategories(!isShowCategories)}>
 				<p className="filter-header-label">Categories</p>
 				<div className="toggle-more">
@@ -126,6 +163,73 @@ const LeftFilterBox = (props) => {
 					}
 				</div>
 			</div>
+			{isShowCategories &&
+			<div className="filter-bar">
+				<div className={"filter-btn p-0" + (categoryCondition === "art" ? " selected" : "")}
+					 onClick={() => {categoryCondition === "art" ? setCategoryCondition("") : setCategoryCondition("art")}}>
+					<div className="icon-30">
+						<img src="/img/parts/art-dark.svg" />
+					</div>
+					Art
+				</div>
+				<div className={"filter-btn p-0" + (categoryCondition === "collectibles" ? " selected" : "")}
+					 onClick={() => {categoryCondition === "collectibles" ? setCategoryCondition("") : setCategoryCondition("collectibles")}}>
+					<div className="icon-30">
+						<img src="/img/parts/collectibles-dark.svg" />
+					</div>
+					Collectibles
+				</div>
+				<div className={"filter-btn p-0" + (categoryCondition === "domains" ? " selected" : "")}
+					 onClick={() => {categoryCondition === "domains" ? setCategoryCondition("") : setCategoryCondition("domains")}}>
+					<div className="icon-30">
+						<img src="/img/parts/domain-names-dark.svg" />
+					</div>
+					Domain Names
+				</div>
+				<div className={"filter-btn p-50" + (categoryCondition === "music" ? " selected" : "")}
+					 onClick={() => {categoryCondition === "music" ? setCategoryCondition("") : setCategoryCondition("music")}}>
+					<div className="icon-30">
+						<img src="/img/parts/music-dark.svg" />
+					</div>
+					Music
+				</div>
+				<div className={"filter-btn p-50" + (categoryCondition === "photo" ? " selected" : "")}
+					 onClick={() => {categoryCondition === "photo" ? setCategoryCondition("") : setCategoryCondition("photo")}}>
+					<div className="icon-30">
+						<img src="/img/parts/photography-category-dark.svg" />
+					</div>
+					Photography
+				</div>
+				<div className={"filter-btn p-50" + (categoryCondition === "sport" ? " selected" : "")}
+					 onClick={() => {categoryCondition === "sport" ? setCategoryCondition("") : setCategoryCondition("sport")}}>
+					<div className="icon-30">
+						<img src="/img/parts/sports-dark.svg" />
+					</div>
+					Sports
+				</div>
+				<div className={"filter-btn p-50" + (categoryCondition === "tradings" ? " selected" : "")}
+					 onClick={() => {categoryCondition === "tradings" ? setCategoryCondition("") : setCategoryCondition("tradings")}}>
+					<div className="icon-30">
+						<img src="/img/parts/trading-cards-dark.svg" />
+					</div>
+					Trading Cards
+				</div>
+				<div className={"filter-btn p-50" + (categoryCondition === "utility" ? " selected" : "")}
+					 onClick={() => {categoryCondition === "utility" ? setCategoryCondition("") : setCategoryCondition("utility")}}>
+					<div className="icon-30">
+						<img src="/img/parts/utility-dark.svg" />
+					</div>
+					Utility
+				</div>
+				<div className={"filter-btn p-50" + (categoryCondition === "v_world" ? " selected" : "")}
+					 onClick={() => {categoryCondition === "v_world" ? setCategoryCondition("") : setCategoryCondition("v_world")}}>
+					<div className="icon-30">
+						<img src="/img/parts/virtual-worlds-dark.svg" />
+					</div>
+					Virtual Worlds
+				</div>
+			</div>
+			}
 			<div className="filter-row" onClick={() => setIsShowSale(!isShowSale)}>
 				<p className="filter-header-label">On Sale In</p>
 				<div className="toggle-more">
@@ -135,6 +239,33 @@ const LeftFilterBox = (props) => {
 					}
 				</div>
 			</div>
+			{isShowSale &&
+			<div className="filter-bar">
+				<input className="bordered-input w-100-pro flex-1" placeholder="Search"/>
+				{
+					coinTypes.map((item, key) =>
+						<div className="filter-btn-full">
+							<FormControlLabel
+								control={
+									<Checkbox
+										tabIndex={-1}
+										onClick={() => handleClickButton(item)}
+										checkedIcon={<Check className={classes.checkedIcon} />}
+										icon={<Check className={classes.uncheckedIcon} />}
+										classes={{
+											checked: classes.checked,
+											root: classes.checkRoot,
+										}}
+									/>
+								}
+								classes={{ label: classes.label, root: classes.labelRoot }}
+								label={item}
+							/>
+						</div>
+					)
+				}
+			</div>
+			}
 		</div>
 	);
 }

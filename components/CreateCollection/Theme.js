@@ -62,12 +62,12 @@ export default function CreateCollection() {
 				{
 					theme === 'contain' ?
 						<div className={'item activeTheme'}>
-							<img src={"/img/theme/card-display-Contain.svg"} alt={"Contain"} style={{width: '100%'}}/>
+							<img src={"/img/theme/card-display-contain.svg"} alt={"Contain"} style={{width: '100%'}}/>
 							<h4>Contained</h4>
 							<div>Recommended for assets that are not a 1:1 ratio</div>
 						</div> :
 						<div className={'item'} onClick={() => themeHandle('contain')}>
-							<img src={"/img/theme/card-display-Contain.svg"} alt={"Contain"} style={{width: '100%'}}/>
+							<img src={"/img/theme/card-display-contain.svg"} alt={"Contain"} style={{width: '100%'}}/>
 							<h4>Contained</h4>
 							<div>Recommended for assets that are not a 1:1 ratio</div>
 						</div>
@@ -75,12 +75,12 @@ export default function CreateCollection() {
 				{
 					theme === 'cover' ?
 						<div className={'item activeTheme'}>
-							<img src={"/img/theme/card-display-Cover.svg"} alt={"Cover"} style={{width: '100%'}}/>
+							<img src={"/img/theme/card-display-cover.svg"} alt={"Cover"} style={{width: '100%'}}/>
 							<h4>Covered</h4>
 							<div>Recommended for assets that can extend to the edge</div>
 						</div> :
 						<div className={'item'} onClick={() => themeHandle('cover')}>
-							<img src={"/img/theme/card-display-Cover.svg"} alt={"Cover"} style={{width: '100%'}}/>
+							<img src={"/img/theme/card-display-cover.svg"} alt={"Cover"} style={{width: '100%'}}/>
 							<h4>Covered</h4>
 							<div>Recommended for assets that can extend to the edge</div>
 						</div>

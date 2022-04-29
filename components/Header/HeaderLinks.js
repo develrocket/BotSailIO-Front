@@ -100,6 +100,15 @@ export default function HeaderLinks(props) {
 					className={classes.activeLink}
 				/>
 			</ListItem>
+			<ListItem className={classes.listItem}>
+				<Button
+					href="/account"
+					color="transparent"
+					className={classes.navLink + (router.pathname.indexOf('account') >= 0 ? ' ' + classes.activeLink  : '')}
+				>
+					Account
+				</Button>
+			</ListItem>
             <ListItem className={classes.listItem}>
 				{address ? (
 					<Button

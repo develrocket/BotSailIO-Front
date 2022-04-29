@@ -97,7 +97,7 @@ const offerListStyle = {
 			color: '#e4f1ff',
 			display: 'flex',
 			marginBottom: '4px',
-			fontSize: '10px',
+			fontSize: '12x',
 
 			'&>div': {
 				margin: '0 5px 0 0 !important',

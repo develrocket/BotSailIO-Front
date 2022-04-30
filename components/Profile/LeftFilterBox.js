@@ -56,7 +56,7 @@ const LeftFilterBox = (props) => {
 			</div>
 
 
-			{props.tab === "activity" &&
+			{(props.tab === "activity" || props.tab.includes("bids") || props.tab.includes("listings")) &&
 			<>
 				<div className="filter-row" onClick={() => setIsShowEvents(!isShowEvents)}>
 					<p className="filter-header-label">Event Type</p>
@@ -127,7 +127,7 @@ const LeftFilterBox = (props) => {
 			}
 
 
-			{props.tab !== "activity" &&
+			{!(props.tab === "activity" || props.tab.includes("bids") || props.tab.includes("listings")) &&
 			<>
 				<div className="filter-row" onClick={() => setIsShowStatus(!isShowStatus)}>
 					<p className="filter-header-label">Status</p>
@@ -235,7 +235,7 @@ const LeftFilterBox = (props) => {
 				</div>
 			</div>
 			}
-			{props.tab !== "activity" &&
+			{!(props.tab === "activity" || props.tab.includes("bids") || props.tab.includes("listings")) &&
 			<>
 				<div className="filter-row" onClick={() => setIsShowCategories(!isShowCategories)}>
 					<p className="filter-header-label">Categories</p>

@@ -9,6 +9,7 @@ import formatsortOptionLabel from "components/Profile/formatsortOptionLabel";
 import LeftFilterBox from "components/Profile/LeftFilterBox";
 import MyNFTsList from "../myNFTList/MyNFTsList";
 import ActivitiesTable from "components/Profile/ActivitiesTable";
+import DataCard from "components/Profile/dataCard";
 import Button from "../CustomButtons/Button";
 
 const ProfileTagList = (props) => {
@@ -99,7 +100,7 @@ const ProfileTagList = (props) => {
 				</div>
 			}
 			<div className="content-box">
-				{props.tab !== "activity" &&
+				{!(props.tab === "activity" || props.tab.includes("bids") || props.tab.includes("listings")) &&
 					<div className="search-box">
 						<input className="bordered-input m-r-5 flex-1" placeholder="Search"/>
 						<div className="flex-1 sort-box">
@@ -144,6 +145,9 @@ const ProfileTagList = (props) => {
 				}
 				{props.tab === "activity" &&
 					<ActivitiesTable />
+				}
+				{(props.tab.includes("bids") || props.tab.includes("listings")) &&
+					<DataCard />
 				}
 			</div>
 			{

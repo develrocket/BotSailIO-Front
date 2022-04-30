@@ -13,7 +13,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import Icon from "@material-ui/core/Icon";
 
 // @material-ui/icons
-import {Person, FavoriteBorder, Settings, ExitToApp} from "@material-ui/icons";
+import {Person, FavoriteBorder, Settings, ExitToApp, Apps} from "@material-ui/icons";
 import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
 
@@ -57,6 +57,9 @@ export default function HeaderLinks(props) {
 			const href = "/account?tab=favorites";
 			router.push(href, href, { shallow: true })
 		} else if (url === "Settings") {
+			const href = "/settings";
+			router.push(href, href, { shallow: true })
+		} else if (url === "My Collections") {
 			const href = "/settings";
 			router.push(href, href, { shallow: true })
 		}
@@ -140,6 +143,7 @@ export default function HeaderLinks(props) {
 					dropdownList={[
 						"Profile",
 						"Favorites",
+						"My Collections",
 						"Settings",
 						"Log Out",
 					]}
@@ -191,6 +195,17 @@ export default function HeaderLinks(props) {
 							</div>
 							<div className="action-label">
 								Favorites
+							</div>
+						</div>
+						<div className="action-item" onClick={() => {
+							setAnchorElTop(null);
+							goToUrl("/collections/untitled-collection-316120299");
+						}}>
+							<div className="action-icon">
+								<Apps />
+							</div>
+							<div className="action-label">
+								My Collections
 							</div>
 						</div>
 						<div className="action-item" onClick={() => {

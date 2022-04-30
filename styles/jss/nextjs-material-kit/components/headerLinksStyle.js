@@ -38,7 +38,7 @@ const headerLinksStyle = (theme) => ({
 		}
 	},
 	mobileMenu: {
-		display: "none",
+		display: "none !important",
 
 		"@media (max-width: 576px)": {
 			display: "block !important"

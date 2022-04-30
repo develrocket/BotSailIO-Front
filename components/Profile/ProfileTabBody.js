@@ -8,6 +8,7 @@ import Select from "react-select";
 import formatsortOptionLabel from "components/Profile/formatsortOptionLabel";
 import LeftFilterBox from "components/Profile/LeftFilterBox";
 import MyNFTsList from "../myNFTList/MyNFTsList";
+import ActivitiesTable from "components/Profile/ActivitiesTable";
 import Button from "../CustomButtons/Button";
 
 const ProfileTagList = (props) => {
@@ -140,6 +141,9 @@ const ProfileTagList = (props) => {
 				{props.tab === "favorites" &&
 					<MyNFTsList handleCommand={handleCommand} handleClickItem={handleClickItem}
 								selectedList={selectedList} isDoingCommand={false} hasAction={false} />
+				}
+				{props.tab === "activity" &&
+					<ActivitiesTable />
 				}
 			</div>
 			{

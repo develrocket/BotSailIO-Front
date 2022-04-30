@@ -14,7 +14,7 @@ const LeftFilterBox = (props) => {
 	return (
 		<div className={classes.container + " " + "table-responsive"}>
 			<table className="activity-table">
-				<thead>
+				<thead className="mobile-hidden">
 				<tr>
 					<th />
 					<th width="30%">Item</th>
@@ -27,7 +27,7 @@ const LeftFilterBox = (props) => {
 				</thead>
 				<tbody>
 				<tr className="activity-row">
-					<td>
+					<td className="mobile-hidden">
 						<div style={{display: "inline-flex"}}>
 							<ShoppingCart />
 							<span style={{marginLeft: "10px"}}>Minted</span>
@@ -44,14 +44,19 @@ const LeftFilterBox = (props) => {
 							</div>
 						</div>
 					</td>
-					<td>- - -</td>
-					<td>1</td>
-					<td>NullAddress</td>
-					<td>You</td>
-					<td>2 days ago</td>
+					<td className="mobile-hidden">- - -</td>
+					<td className="mobile-hidden">1</td>
+					<td className="mobile-hidden">NullAddress</td>
+					<td className="mobile-hidden">You</td>
+					<td className="mobile-hidden">2 days ago</td>
+					<td className="mobile-show">
+						<p>Minted</p>
+						<p>- - -</p>
+						<p>3 days ago</p>
+					</td>
 				</tr>
 				<tr className="activity-row">
-					<td>
+					<td className="mobile-hidden">
 						<div style={{display: "inline-flex"}}>
 							<ShoppingCart />
 							<span style={{marginLeft: "10px"}}>Minted</span>
@@ -68,14 +73,19 @@ const LeftFilterBox = (props) => {
 							</div>
 						</div>
 					</td>
-					<td>- - -</td>
-					<td>1</td>
-					<td>NullAddress</td>
-					<td>You</td>
-					<td>2 days ago</td>
+					<td className="mobile-hidden">- - -</td>
+					<td className="mobile-hidden">1</td>
+					<td className="mobile-hidden">NullAddress</td>
+					<td className="mobile-hidden">You</td>
+					<td className="mobile-hidden">2 days ago</td>
+					<td className="mobile-show">
+						<p>Minted</p>
+						<p>- - -</p>
+						<p>3 days ago</p>
+					</td>
 				</tr>
 				<tr className="activity-row">
-					<td>
+					<td className="mobile-hidden">
 						<div style={{display: "inline-flex"}}>
 							<ShoppingCart />
 							<span style={{marginLeft: "10px"}}>Minted</span>
@@ -92,14 +102,19 @@ const LeftFilterBox = (props) => {
 							</div>
 						</div>
 					</td>
-					<td>- - -</td>
-					<td>1</td>
-					<td>NullAddress</td>
-					<td>You</td>
-					<td>2 days ago</td>
+					<td className="mobile-hidden">- - -</td>
+					<td className="mobile-hidden">1</td>
+					<td className="mobile-hidden">NullAddress</td>
+					<td className="mobile-hidden">You</td>
+					<td className="mobile-hidden">2 days ago</td>
+					<td className="mobile-show">
+						<p>Minted</p>
+						<p>- - -</p>
+						<p>3 days ago</p>
+					</td>
 				</tr>
 				<tr className="activity-row">
-					<td>
+					<td className="mobile-hidden">
 						<div style={{display: "inline-flex"}}>
 							<ShoppingCart />
 							<span style={{marginLeft: "10px"}}>Minted</span>
@@ -116,35 +131,16 @@ const LeftFilterBox = (props) => {
 							</div>
 						</div>
 					</td>
-					<td>- - -</td>
-					<td>1</td>
-					<td>NullAddress</td>
-					<td>You</td>
-					<td>2 days ago</td>
-				</tr>
-				<tr className="activity-row">
-					<td>
-						<div style={{display: "inline-flex"}}>
-							<ShoppingCart />
-							<span style={{marginLeft: "10px"}}>Minted</span>
-						</div>
+					<td className="mobile-hidden">- - -</td>
+					<td className="mobile-hidden">1</td>
+					<td className="mobile-hidden">NullAddress</td>
+					<td className="mobile-hidden">You</td>
+					<td className="mobile-hidden">2 days ago</td>
+					<td className="mobile-show">
+						<p>Minted</p>
+						<p>- - -</p>
+						<p>3 days ago</p>
 					</td>
-					<td>
-						<div className="item-box">
-							<div className="img-box">
-								<img src="https://m.raregems.io/c/21725?optimizer=image&amp;width=400" />
-							</div>
-							<div className="detail-box">
-								<span className="collection-label">Untitled Collection #231123123</span>
-								<span className="name-label">Beach</span>
-							</div>
-						</div>
-					</td>
-					<td>- - -</td>
-					<td>1</td>
-					<td>NullAddress</td>
-					<td>You</td>
-					<td>2 days ago</td>
 				</tr>
 				</tbody>
 			</table>

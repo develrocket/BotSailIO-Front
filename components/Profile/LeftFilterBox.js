@@ -45,6 +45,12 @@ const LeftFilterBox = (props) => {
 
 	return (
 		<div className={classes.container}>
+			{props.isMobile ?
+			<div className="filter-header">
+				<p align="left" onClick={() => props.handleChangeFilterCondition([])}
+				   className="flex-1 header-label blue-label m-l-10">Clear All</p>
+				<p align="right" onClick={props.hideMenu} className="flex-1 header-label blue-label m-r-10">Done</p>
+			</div> :
 			<div className="filter-header">
 				<div className="toggle-box color-white">
 					<FilterList />
@@ -54,7 +60,7 @@ const LeftFilterBox = (props) => {
 					<ArrowBack className="toggle-btn"/>
 				</div>
 			</div>
-
+			}
 
 			{(props.tab === "activity" || props.tab.includes("bids") || props.tab.includes("listings")) &&
 			<>

@@ -29,6 +29,7 @@ const ProfileTagList = (props) => {
 
 	const [isShowSubMenu, setIsShowSubMenu] = useState(false);
 	const [isShowLeftMenu, setIsShowLeftMenu] = useState(false);
+	const [isShowMobileFilterMenu, setIsShowMobileFilterMenu] = useState(false);
 	const [commandType, setCommandType] = useState("");
 	const [selectedList, setSelectedList] = useState([]);
 
@@ -97,6 +98,13 @@ const ProfileTagList = (props) => {
 							<ArrowForward className="toggle-btn"/>
 						</div>
 					}
+				</div>
+			}
+			{isShowMobileFilterMenu &&
+				<div className="mobile-filter-bar">
+					<LeftFilterBox handleChangeFilterCondition={setFilterConditions} filterConditions={filterConditions}
+								   handleClickToggleBtn={handleClickToggleBtn} tab={props.tab}
+								   hideMenu={() => setIsShowMobileFilterMenu(false)} isMobile={true} />
 				</div>
 			}
 			<div className="content-box">
@@ -179,9 +187,9 @@ const ProfileTagList = (props) => {
 				</div>
 			}
 			{
-				!isShowSubMenu &&
+				!isShowSubMenu && !isShowMobileFilterMenu && props.tab !== "favorites" &&
 				<div className={classes.filterButton}>
-					<div className="filter-btn">
+					<div className="filter-btn" onClick={() => setIsShowMobileFilterMenu(!isShowMobileFilterMenu)}>
 						Filter
 					</div>
 				</div>

@@ -1,5 +1,13 @@
 const style = {
 	container: {
+		paddingBottom: "70px",
+
+		"@media (max-width: 576px)": {
+			paddingTop: "24px",
+			paddingLeft: "24px",
+			paddingRight: "24px",
+		},
+
 		'& .card-box': {
 			borderRadius: "10px",
 			border: "1px solid rgb(21, 27, 34)",
@@ -29,6 +37,10 @@ const style = {
 				'& .card-detail-box': {
 					color: "#2081e2",
 					display: "inline-flex",
+
+					"@media (max-width: 576px)": {
+						display: "none"
+					},
 				}
 			},
 

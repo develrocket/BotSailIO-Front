@@ -37,9 +37,19 @@ const headerLinksStyle = (theme) => ({
 			}
 		}
 	},
+	mobileMenu: {
+		display: "none",
 
+		"@media (max-width: 576px)": {
+			display: "block !important"
+		},
+	},
 	imgLink: {
 		color: "#333 !important",
+
+		"@media (max-width: 576px)": {
+			display: "none !important"
+		},
 
 		'&>a': {
 			padding: "0px",

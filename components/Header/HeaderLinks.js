@@ -49,6 +49,20 @@ export default function HeaderLinks(props) {
 		router.push(href, href, { shallow: true })
 	};
 
+	const goToProfilePage = (url) => {
+		if (url === "Profile") {
+			const href = "/account";
+			router.push(href, href, { shallow: true })
+		} else if (url === "Favorites") {
+			const href = "/account?tab=favorites";
+			router.push(href, href, { shallow: true })
+		} else if (url === "Settings") {
+			const href = "/settings";
+			router.push(href, href, { shallow: true })
+		}
+		// TODO Logout logic
+	};
+
 	const goToUrl = (url) => {
 		router.push(url, url, { shallow: true })
 	};
@@ -108,6 +122,26 @@ export default function HeaderLinks(props) {
 					dropdownList={[
 						"Collection",
 						"Item",
+					]}
+					className={classes.activeLink}
+				/>
+			</ListItem>
+			<ListItem className={classes.listItem + " " + classes.mobileMenu}>
+				<CustomDropdown
+					navDropdown
+					buttonText="Account"
+					onClick={(url) => {
+						goToProfilePage(url);
+					}}
+					buttonProps={{
+						className: classes.navLink,
+						color: "transparent",
+					}}
+					dropdownList={[
+						"Profile",
+						"Favorites",
+						"Settings",
+						"Log Out",
 					]}
 					className={classes.activeLink}
 				/>

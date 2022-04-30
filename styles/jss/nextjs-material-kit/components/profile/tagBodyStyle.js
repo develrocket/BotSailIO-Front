@@ -104,6 +104,7 @@ const style = {
 				fontSize: "21px",
 				fontWeight: "bold",
 				cursor: "pointer",
+				color: "white",
 				borderRadius: "25px",
 			}
 		},
@@ -114,10 +115,23 @@ const style = {
 		display: "flex",
 		flexDirection: "row",
 
+		'& .mobile-filter-bar': {
+			position: "fixed",
+			height: "100vh",
+			width: "100vw",
+			backgroundColor: "#202225",
+			top: "87px",
+			zIndex: 10,
+		},
+
 		'& .left-filter-bar': {
 			width: "60px",
 			borderRight: "1px solid #fd562a",
 			minHeight: "300px",
+
+			'@media (max-width: 478px)': {
+				display: "none"
+			},
 
 			'&.active': {
 				width: "340px"
@@ -200,6 +214,10 @@ const style = {
 				flexWrap: "wrap",
 				alignItems: "center",
 				marginTop: "10px",
+
+				"@media (max-width: 576px)": {
+					padding: "0 24px"
+				},
 
 				'& .filter-button': {
 					webkitBoxAlign: "center",

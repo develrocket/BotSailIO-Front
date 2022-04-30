@@ -14,6 +14,18 @@ const style = {
 			color: "white"
 		},
 
+		'& .blue-label': {
+			color: "#2081e2",
+		},
+
+		'& .m-l-10': {
+			marginLeft: "10px !important"
+		},
+
+		'& .m-r-10': {
+			marginRight: "10px !important"
+		},
+
 		'& .flex-1': {
 			flex: 1
 		},

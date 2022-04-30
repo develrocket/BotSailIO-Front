@@ -1,6 +1,22 @@
 const style = {
 	container: {
 		width: "100%",
+		paddingBottom: "50px",
+
+		'& .mobile-hidden': {
+			"@media (max-width: 576px)": {
+				display: "none"
+			},
+		},
+
+		'& .mobile-show': {
+			display: "none",
+			lineHeight: "4px",
+
+			"@media (max-width: 576px)": {
+				display: "table-cell",
+			},
+		},
 
 		'& .activity-table': {
 			width: "100%",

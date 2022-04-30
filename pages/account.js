@@ -60,7 +60,7 @@ export default function Page({userInfo}) {
 				</div>
 			</label>
 			<div className="sub-box">
-				<div style={{flex: 1}} />
+				<div className="empty-box" style={{flex: 1}} />
 				<div className="user-info-box" htmlFor="avatar_file">
 					<label className="avatar-box">
 						<input type="file" id="avatar_file" name="avatar_file" style={{ display: 'none' }}

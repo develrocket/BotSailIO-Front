@@ -13,7 +13,7 @@ import Tooltip from "@material-ui/core/Tooltip";
 import Icon from "@material-ui/core/Icon";
 
 // @material-ui/icons
-import {Apps, CloudDownload} from "@material-ui/icons";
+import {Person, FavoriteBorder, Settings, ExitToApp} from "@material-ui/icons";
 import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
 
@@ -22,6 +22,7 @@ import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
 import Button from "components/CustomButtons/Button.js";
 
 import styles from "styles/jss/nextjs-material-kit/components/headerLinksStyle.js";
+import Popover from "@material-ui/core/Popover";
 
 const useStyles = makeStyles(styles);
 
@@ -30,15 +31,26 @@ export default function HeaderLinks(props) {
 	const router = useRouter();
 	const { pathname, query } = router
 	const { connectWallet, address, error } = useWeb3();
+	const [anchorElTop, setAnchorElTop] = React.useState(null);
+
+	const showMoreActions = (e) => {
+		e.preventDefault();
+		setAnchorElTop(e.currentTarget);
+	}
 
 	const incrementCounter = () => {
 		const currentCounter = query.counter ? parseInt(query.counter) : 0
 		const href = `/?counter=${currentCounter + 1}`
 
 	}
+
 	const goToPage = (url) => {
 		const href = "/create/" + url.toLowerCase();
 		router.push(href, href, { shallow: true })
+	};
+
+	const goToUrl = (url) => {
+		router.push(url, url, { shallow: true })
 	};
 
 	console.log('wallet-address:', address, error);
@@ -100,14 +112,73 @@ export default function HeaderLinks(props) {
 					className={classes.activeLink}
 				/>
 			</ListItem>
-			<ListItem className={classes.listItem}>
+			<ListItem className={classes.listItem + " " + classes.imgLink}>
 				<Button
 					href="/account"
+					onClick={showMoreActions}
 					color="transparent"
 					className={classes.navLink + (router.pathname.indexOf('account') >= 0 ? ' ' + classes.activeLink  : '')}
 				>
-					Account
+					<img src="/img/faces/avatar.jpg" className="round-avatar" />
 				</Button>
+				<Popover
+					classes={{
+						paper: classes.popover,
+					}}
+					open={Boolean(anchorElTop)}
+					anchorEl={anchorElTop}
+					onClose={() => setAnchorElTop(null)}
+					anchorOrigin={{
+						vertical: "bottom",
+						horizontal: "left",
+					}}
+					transformOrigin={{
+						vertical: "top",
+						horizontal: "left",
+					}}
+					style={{marginTop: "8px"}}
+				>
+					<div className={classes.actionList}>
+						<div className="action-item" onClick={() => {
+							setAnchorElTop(null);
+							goToUrl("/account");
+						}}>
+							<div className="action-icon">
+								<Person />
+							</div>
+							<div className="action-label">Profile</div>
+						</div>
+						<div className="action-item" onClick={() => {
+							setAnchorElTop(null);
+							goToUrl("/account?tab=favorites");
+						}}>
+							<div className="action-icon">
+								<FavoriteBorder />
+							</div>
+							<div className="action-label">
+								Favorites
+							</div>
+						</div>
+						<div className="action-item" onClick={() => {
+							setAnchorElTop(null);
+							goToUrl("/settings");
+						}}>
+							<div className="action-icon">
+								<Settings />
+							</div>
+							<div className="action-label">Settings</div>
+						</div>
+						<div className="action-item" onClick={() => {
+							setAnchorElTop(null);
+							// TODO Logout logic
+						}}>
+							<div className="action-icon">
+								<ExitToApp />
+							</div>
+							<div className="action-label">Log Out</div>
+						</div>
+					</div>
+				</Popover>
 			</ListItem>
             <ListItem className={classes.listItem}>
 				{address ? (

@@ -37,12 +37,17 @@ const style = {
 	container: {
 		'& .tab-header': {
 			width: "100%",
+			overflowX: "auto",
 			display: "flex",
 			flexDirection: "row",
-			justifyContent: "center",
 			alignItems: "center",
 			height: "fit-content",
 			borderBottom: "1px solid #fd562a",
+			justifyContent: "center",
+
+			"@media (max-width: 1200px)": {
+				justifyContent: "start",
+			},
 
 			'& .tab-item': {
 				height: "100%",
@@ -60,7 +65,7 @@ const style = {
 
 				'&.selected': {
 					color: "white",
-					borderBottom: "2px solid rgb(32, 129, 226)",
+					borderBottom: "4px solid rgb(32, 129, 226)",
 				},
 
 				'& .tab-icon': {

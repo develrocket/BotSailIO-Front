@@ -3,6 +3,62 @@ import {defaultFont} from "styles/jss/nextjs-material-kit.js";
 import tooltip from "styles/jss/nextjs-material-kit/tooltipsStyle.js";
 
 const headerLinksStyle = (theme) => ({
+	actionList: {
+		display: "flex",
+		flexDirection: "column",
+
+		'& .action-item': {
+			display: "flex",
+			justifyContent: "space-between",
+			alignItems: "center",
+			borderBottom: "1px solid rgb(229, 232, 235)",
+			cursor: "pointer",
+			paddingRight: "20px",
+
+			'&:hover': {
+				transition: "all 0.2s ease 0s",
+				boxShadow: "rgb(4 17 29 / 25%) 0px 0px 8px 0px",
+				backgroundColor: "rgb(251, 253, 255)"
+			},
+
+			'& .action-icon': {
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center",
+				width: "60px",
+				height: "40px",
+			},
+
+			'& .action-label': {
+				flex: 1,
+				minWidth: "100px",
+				fontWeight: 500,
+				fontSize: "20px"
+			}
+		}
+	},
+
+	imgLink: {
+		color: "#333 !important",
+
+		'&>a': {
+			padding: "0px",
+
+			'&>span': {
+				width: "52px",
+				height: "52px",
+				display: "flex",
+				justifyContent: "center",
+				alignItems: "center"
+			}
+		},
+
+		'& .round-avatar': {
+			width: "45px",
+			height: "45px",
+			borderRadius: "50%"
+		}
+	},
 	list: {
 		...defaultFont,
 		fontSize: "14px",

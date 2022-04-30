@@ -84,6 +84,31 @@ const style = {
 		}
 	},
 
+	filterButton: {
+		display: "none",
+
+		'@media (max-width: 478px)': {
+			position: "fixed",
+			bottom: "10px",
+			height: "50px",
+			width: "100vw",
+			display: "flex",
+			justifyContent: "center",
+
+			'& .filter-btn': {
+				height: "50px",
+				width: "120px",
+				textAlign: "center",
+				background: "#2081e2",
+				lineHeight: "50px",
+				fontSize: "21px",
+				fontWeight: "bold",
+				cursor: "pointer",
+				borderRadius: "25px",
+			}
+		},
+	},
+
 	container: {
 		width: "100%",
 		display: "flex",
@@ -128,8 +153,12 @@ const style = {
 		'& .select-gray': {
 			'&>div:first-of-type': {
 				background: '#353840',
+				borderColor: "#353840",
 				'& div' :{
 					color: '#ffffff !important'
+				},
+				'& input' :{
+					// display: 'none !important'
 				}
 			}
 		},
@@ -140,14 +169,28 @@ const style = {
 			flexDirection: "column",
 			padding: "24px",
 
-			'& .search-box': {
+			'@media (max-width: 478px)': {
+				padding: "0"
+			},
+
+				'& .search-box': {
 				display: "flex",
 				flexDirection: "row",
+
+				"@media (max-width: 576px)": {
+					flexDirection: "column",
+					padding: "24px"
+				},
 
 				'& .sort-box': {
 					marginLeft: "5px",
 					display: "flex",
-					flexDirection: "row"
+					flexDirection: "row",
+
+					"@media (max-width: 576px)": {
+						marginLeft: 0,
+						marginTop: "5px",
+					},
 				}
 			},
 

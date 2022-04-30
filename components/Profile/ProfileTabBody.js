@@ -156,6 +156,14 @@ const ProfileTagList = (props) => {
 					</div>
 				</div>
 			}
+			{
+				!isShowSubMenu &&
+				<div className={classes.filterButton}>
+					<div className="filter-btn">
+						Filter
+					</div>
+				</div>
+			}
 		</div>
 	);
 }

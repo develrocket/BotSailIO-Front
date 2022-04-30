@@ -13,7 +13,7 @@ const collectionListStyle = {
 			marginRight: "5px",
 			background: "transparent",
 			border: "none",
-			width: "287px"
+			width: "150px"
 		},
 
 		'& .img-copy': {

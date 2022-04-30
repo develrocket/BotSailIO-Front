@@ -155,6 +155,12 @@ const style = {
 				}
 			},
 
+			'& .empty-box': {
+				"@media (max-width: 576px)": {
+					display: "none",
+				},
+			},
+
 			'& .setting-box': {
 				flex: 1,
 				display: "flex",
@@ -163,6 +169,10 @@ const style = {
 				marginTop: "20px",
 				color: "rgb(229, 232, 235)",
 				width: "fit-content",
+
+				"@media (max-width: 576px)": {
+					display: "none",
+				},
 
 				'& .share-btn': {
 					cursor: "pointer",

@@ -32,6 +32,17 @@ const ProfileTagList = (props) => {
 
 	const [filterConditions, setFilterConditions] = useState([]);
 
+	const removeAllConditions = () => {
+		setFilterConditions([...[]]);
+	};
+
+	const removeConditions = (value) => {
+		const currentIndex = filterConditions.indexOf(value);
+		const newChecked = [...filterConditions]
+		newChecked.splice(currentIndex, 1);
+		setFilterConditions(newChecked);
+	};
+
 	const handleClickToggleBtn = () => {
 		setIsShowLeftMenu(!isShowLeftMenu);
 	};
@@ -79,7 +90,7 @@ const ProfileTagList = (props) => {
 				<div className={"left-filter-bar" + (isShowLeftMenu ? " active" : "")}>
 					{isShowLeftMenu
 						? <LeftFilterBox handleChangeFilterCondition={setFilterConditions} filterConditions={filterConditions}
-										 handleClickToggleBtn={handleClickToggleBtn} />
+										 handleClickToggleBtn={handleClickToggleBtn} tab={props.tab} />
 						: <div className="toggle-box" onClick={handleClickToggleBtn}>
 							<ArrowForward className="toggle-btn"/>
 						</div>
@@ -87,35 +98,38 @@ const ProfileTagList = (props) => {
 				</div>
 			}
 			<div className="content-box">
-				<div className="search-box">
-					<input className="bordered-input m-r-5 flex-1" placeholder="Search"/>
-					<div className="flex-1 sort-box">
-						<Select
-							defaultValue={options[0]}
-							formatOptionLabel={formatsortOptionLabel}
-							options={options}
-							instanceId='chainSelect'
-							className="select-gray flex-1 m-r-5"
-						/>
-						<Select
-							defaultValue={secondOptions[0]}
-							formatOptionLabel={formatsortOptionLabel}
-							options={secondOptions}
-							instanceId='chainSelect'
-							className="select-gray flex-1 m-l-5"
-						/>
+				{props.tab !== "activity" &&
+					<div className="search-box">
+						<input className="bordered-input m-r-5 flex-1" placeholder="Search"/>
+						<div className="flex-1 sort-box">
+							<Select
+								defaultValue={options[0]}
+								formatOptionLabel={formatsortOptionLabel}
+								options={options}
+								instanceId='chainSelect'
+								className="select-gray flex-1 m-r-5"
+							/>
+							<Select
+								defaultValue={secondOptions[0]}
+								formatOptionLabel={formatsortOptionLabel}
+								options={secondOptions}
+								instanceId='chainSelect'
+								className="select-gray flex-1 m-l-5"
+							/>
+						</div>
 					</div>
-				</div>
+				}
 				{filterConditions.length > 0 &&
 					<div className="filter-content">
 						{
 							filterConditions.map((label, key) =>
 								<div className="filter-button" key={key}>
-									{label}<Close className="filter-close" />
+									{label}
+									<Close onClick={() => removeConditions(label)} className="filter-close" />
 								</div>
 							)
 						}
-						<div className="clear-btn">Clear All</div>
+						<div className="clear-btn" onClick={removeAllConditions}>Clear All</div>
 					</div>
 				}
 				{(props.tab === "collection" || props.tab === "created" || props.tab === "created_collection"

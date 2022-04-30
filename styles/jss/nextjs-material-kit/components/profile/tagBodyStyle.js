@@ -117,6 +117,7 @@ const style = {
 		'& .left-filter-bar': {
 			width: "60px",
 			borderRight: "1px solid #fd562a",
+			minHeight: "300px",
 
 			'&.active': {
 				width: "340px"

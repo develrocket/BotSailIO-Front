@@ -2,6 +2,7 @@ const style = {
 	container: {
 		width: "100%",
 		height: "100%",
+		minHeight: "300px",
 		display: "flex",
 		flexDirection: "column",
 
@@ -127,7 +128,7 @@ const style = {
 		},
 
 		'& .w-100-pro': {
-			width: "100%",
+			width: "100% !important",
 		},
 
 		'& .filter-btn-full': {

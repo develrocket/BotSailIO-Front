@@ -5,7 +5,8 @@ const Style = {
 		},
 		'& h2, h1, h3, h4, h5': {
 			fontWeight: 'bold'
-		}
+		},
+		marginBottom: '15px'
 	},
 	smallHead: {
 		display: 'flex',

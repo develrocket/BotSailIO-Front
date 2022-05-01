@@ -36,6 +36,13 @@ const Style = {
 		margin: '4px 17px 4px 6px',
 		padding: '8px 15px 8px 13px'
 	},
+	saveBtn: {
+		"@media (max-width: 1024px)": {
+			display: 'block',
+			margin: 'auto',
+			width: '100%'
+		},
+	}
 };
 
 export default Style;

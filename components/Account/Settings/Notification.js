@@ -207,9 +207,9 @@ export default function Profile() {
 							</div>
 						</div>
 					</div>
-					<input style={{ border: 'none', background: 'none', fontSize: '20px' }} value={threshold} onChange={thresholdHandle} />
+					<input style={{ border: 'none', background: 'none', fontSize: '20px', overflow: 'hidden' }} value={threshold} onChange={thresholdHandle} />
 				</div>
-				<Button color="actionButton" type={'submit'} ><strong>Save</strong></Button>
+				<Button color="actionButton" type={'submit'} className={ classes.saveBtn }><strong>Save</strong></Button>
 			</form>
 		</div>
 	);

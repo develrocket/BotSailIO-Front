@@ -10,6 +10,13 @@ const Style = {
 	helpItem: {
 		border: '1px solid',
 		borderBottomWidth: '0',
+
+		'& .buttonText': {
+			"@media (max-width: 576px)": {
+				"fontSize": "12px !important",
+			}
+		},
+
 		'& button' : {
 			background: 'none',
 			boxShadow: 'none',

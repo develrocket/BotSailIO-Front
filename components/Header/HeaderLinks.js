@@ -57,7 +57,7 @@ export default function HeaderLinks(props) {
 			const href = "/account?tab=favorites";
 			router.push(href, href, { shallow: true })
 		} else if (url === "Settings") {
-			const href = "/settings";
+			const href = "/account/settings";
 			router.push(href, href, { shallow: true })
 		} else if (url === "My Collections") {
 			const href = "/settings";
@@ -210,7 +210,7 @@ export default function HeaderLinks(props) {
 						</div>
 						<div className="action-item" onClick={() => {
 							setAnchorElTop(null);
-							goToUrl("/settings");
+							goToUrl("/account/settings");
 						}}>
 							<div className="action-icon">
 								<Settings />

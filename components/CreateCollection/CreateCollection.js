@@ -78,7 +78,6 @@ export default function CreateCollection() {
 	}
 	const categoryHandle = (value) => {
 		setDescription(value);
-		console.log(category)
 	}
 	const feeHandle = (e) => {
 		setFee(e.target.value);
@@ -100,7 +99,6 @@ export default function CreateCollection() {
 	}
 	const blockchainHandle = (val) => {
 		setBlockchain(val);
-		console.log(blockchain);
 	}
 	return (
 		<form className={ classes.form }>

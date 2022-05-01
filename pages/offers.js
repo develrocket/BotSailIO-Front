@@ -11,7 +11,7 @@ import pageStyles from "styles/jss/nextjs-material-kit/pages/collections";
 import Button from "../components/CustomButtons/Button";
 const useStyles = makeStyles({...basicsStyles, ...styles, ...pageStyles});
 
-export default function Index(props) {
+export default function Offers(props) {
 	const classes = useStyles();
 
 	return (

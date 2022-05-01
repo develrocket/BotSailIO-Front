@@ -141,7 +141,7 @@ const collectionListStyle = {
 			color: '#e4f1ff',
 			display: 'flex',
 			marginBottom: '4px',
-			fontSize: '10px',
+			fontSize: '12px',
 
 			'&>div': {
 				margin: '0 5px 0 0 !important',

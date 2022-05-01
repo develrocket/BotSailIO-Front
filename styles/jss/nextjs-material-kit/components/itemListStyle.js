@@ -97,7 +97,7 @@ const itemListStyle = {
 			color: '#868e96',
 			display: 'block',
 			marginBottom: '4px',
-			fontSize: '10px',
+			fontSize: '12px',
 
 			'& img': {
 				width: '12px',

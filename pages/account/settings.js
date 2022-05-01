@@ -9,6 +9,7 @@ import Notification from "../../components/Account/Settings/Notification";
 import Payment from "../../components/Account/Settings/Payment";
 import Support from "../../components/Account/Settings/Support";
 import Earning from "../../components/Account/Settings/Earning";
+import SettingHeaderTabs from "components/Account/Settings/SettingHeaderTabs";
 
 import {makeStyles} from "@material-ui/core/styles";
 
@@ -58,6 +59,7 @@ export default function Index() {
 	}
 	return (
 		<div className={classes.container}>
+			<SettingHeaderTabs />
 			<GridContainer>
 				<GridItem xs={12} sm={12} md={4} lg={3} className={'text-center ' + classes.gridFilterContainer + (isShowFilter ? ' ' + classes.showFilter : '')}>
 					<SideBar />

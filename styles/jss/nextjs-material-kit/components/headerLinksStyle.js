@@ -3,6 +3,40 @@ import {defaultFont} from "styles/jss/nextjs-material-kit.js";
 import tooltip from "styles/jss/nextjs-material-kit/tooltipsStyle.js";
 
 const headerLinksStyle = (theme) => ({
+	img: {
+		width: "40px",
+		height: "40px",
+		borderRadius: "50%",
+
+		"@media (max-width: 576px)": {
+			display: "none !important"
+		},
+	},
+	mobileLabel: {
+		display: "none",
+		marginLeft: "20px",
+		lineHeight: "63px",
+
+		"@media (max-width: 576px)": {
+			display: "inline !important"
+		},
+	},
+	imageDropdownButton: {
+		[theme.breakpoints.down("md")]: {
+			top: "0",
+			margin: "5px 15px",
+		},
+		padding: "0 !important",
+		margin: "5px 15px !important",
+		top: "4px",
+		borderRadius: "50%",
+
+		'& b': {
+			"@media (min-width: 576px)": {
+				display: "none !important"
+			}
+		}
+	},
 	actionList: {
 		display: "flex",
 		flexDirection: "column",
@@ -16,9 +50,9 @@ const headerLinksStyle = (theme) => ({
 			paddingRight: "20px",
 
 			'&:hover': {
-				transition: "all 0.2s ease 0s",
-				boxShadow: "rgb(4 17 29 / 25%) 0px 0px 8px 0px",
-				backgroundColor: "rgb(251, 253, 255)"
+				color: "#FFFFFF",
+				boxShadow: "0 12px 20px -10px rgb(156 39 176 / 28%), 0 4px 20px 0px rgb(0 0 0 / 12%), 0 7px 8px -5px rgb(156 39 176 / 20%)",
+				backgroundColor: "#9c27b0",
 			},
 
 			'& .action-icon': {

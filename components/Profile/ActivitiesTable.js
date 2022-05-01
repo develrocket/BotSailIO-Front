@@ -49,7 +49,7 @@ const LeftFilterBox = (props) => {
 					<td className="mobile-hidden">NullAddress</td>
 					<td className="mobile-hidden">You</td>
 					<td className="mobile-hidden">2 days ago</td>
-					<td className="mobile-show">
+					<td className="mobile-show" width="30%">
 						<p>Minted</p>
 						<p>- - -</p>
 						<p>3 days ago</p>
@@ -78,7 +78,7 @@ const LeftFilterBox = (props) => {
 					<td className="mobile-hidden">NullAddress</td>
 					<td className="mobile-hidden">You</td>
 					<td className="mobile-hidden">2 days ago</td>
-					<td className="mobile-show">
+					<td className="mobile-show" width="30%">
 						<p>Minted</p>
 						<p>- - -</p>
 						<p>3 days ago</p>
@@ -107,7 +107,7 @@ const LeftFilterBox = (props) => {
 					<td className="mobile-hidden">NullAddress</td>
 					<td className="mobile-hidden">You</td>
 					<td className="mobile-hidden">2 days ago</td>
-					<td className="mobile-show">
+					<td className="mobile-show" width="30%">
 						<p>Minted</p>
 						<p>- - -</p>
 						<p>3 days ago</p>
@@ -136,7 +136,7 @@ const LeftFilterBox = (props) => {
 					<td className="mobile-hidden">NullAddress</td>
 					<td className="mobile-hidden">You</td>
 					<td className="mobile-hidden">2 days ago</td>
-					<td className="mobile-show">
+					<td className="mobile-show" width="30%">
 						<p>Minted</p>
 						<p>- - -</p>
 						<p>3 days ago</p>

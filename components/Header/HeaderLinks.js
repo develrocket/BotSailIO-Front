@@ -129,15 +129,24 @@ export default function HeaderLinks(props) {
 					className={classes.activeLink}
 				/>
 			</ListItem>
-			<ListItem className={classes.listItem + " " + classes.mobileMenu}>
+			<ListItem className={classes.listItem}>
 				<CustomDropdown
 					navDropdown
-					buttonText="Account"
+					buttonText={
+						<>
+							<img
+								src="/img/faces/avatar.jpg"
+								className={classes.img}
+								alt="profile"
+							/>
+							<span className={classes.mobileLabel}>Account</span>
+						</>
+					}
 					onClick={(url) => {
 						goToProfilePage(url);
 					}}
 					buttonProps={{
-						className: classes.navLink,
+						className: classes.navLink + " " + classes.imageDropdownButton,
 						color: "transparent",
 					}}
 					dropdownList={[
@@ -149,85 +158,6 @@ export default function HeaderLinks(props) {
 					]}
 					className={classes.activeLink}
 				/>
-			</ListItem>
-			<ListItem className={classes.listItem + " " + classes.imgLink}>
-				<Button
-					href="/account"
-					onClick={showMoreActions}
-					color="transparent"
-					className={classes.navLink + (router.pathname.indexOf('account') >= 0 ? ' ' + classes.activeLink  : '')}
-				>
-					<img src="/img/faces/avatar.jpg" className="round-avatar" />
-				</Button>
-				<Popover
-					classes={{
-						paper: classes.popover,
-					}}
-					open={Boolean(anchorElTop)}
-					anchorEl={anchorElTop}
-					onClose={() => setAnchorElTop(null)}
-					anchorOrigin={{
-						vertical: "bottom",
-						horizontal: "left",
-					}}
-					transformOrigin={{
-						vertical: "top",
-						horizontal: "left",
-					}}
-					style={{marginTop: "8px"}}
-				>
-					<div className={classes.actionList}>
-						<div className="action-item" onClick={() => {
-							setAnchorElTop(null);
-							goToUrl("/account");
-						}}>
-							<div className="action-icon">
-								<Person />
-							</div>
-							<div className="action-label">Profile</div>
-						</div>
-						<div className="action-item" onClick={() => {
-							setAnchorElTop(null);
-							goToUrl("/account?tab=favorites");
-						}}>
-							<div className="action-icon">
-								<FavoriteBorder />
-							</div>
-							<div className="action-label">
-								Favorites
-							</div>
-						</div>
-						<div className="action-item" onClick={() => {
-							setAnchorElTop(null);
-							goToUrl("/myCollections");
-						}}>
-							<div className="action-icon">
-								<Apps />
-							</div>
-							<div className="action-label">
-								My Collections
-							</div>
-						</div>
-						<div className="action-item" onClick={() => {
-							setAnchorElTop(null);
-							goToUrl("/account/settings");
-						}}>
-							<div className="action-icon">
-								<Settings />
-							</div>
-							<div className="action-label">Settings</div>
-						</div>
-						<div className="action-item" onClick={() => {
-							setAnchorElTop(null);
-							// TODO Logout logic
-						}}>
-							<div className="action-icon">
-								<ExitToApp />
-							</div>
-							<div className="action-label">Log Out</div>
-						</div>
-					</div>
-				</Popover>
 			</ListItem>
             <ListItem className={classes.listItem}>
 				{address ? (

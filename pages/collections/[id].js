@@ -47,7 +47,18 @@ export default function Page({userInfo}) {
 
 	return (
 		<div className={classes.container + " " + classes.accountContainer}>
-			<label className="banner-box" />
+			<label className="banner-box">
+				<input type="file" id="main_file_input" name="main_file" style={{ display: 'none' }}
+					   accept=".jpg,.png,.gif,.svg" onChange={onChangeBannerFile} />
+				{
+					bannerFile
+						? <img src={ URL.createObjectURL(bannerFile) } className="banner-img" />
+						: <img src="/img/bg7.jpg" className="banner-img" />
+				}
+				<div className="hover-back" aria-hidden={false} htmlFor="main_file_input">
+					<Edit className="edit-icon" />
+				</div>
+			</label>
 			<div className="sub-box">
 				<div className="watch-box">
 					<button className="watch-btn m-r-5 m-l-10"><Add />WatchList</button>

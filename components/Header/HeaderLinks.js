@@ -199,7 +199,7 @@ export default function HeaderLinks(props) {
 						</div>
 						<div className="action-item" onClick={() => {
 							setAnchorElTop(null);
-							goToUrl("/collections/untitled-collection-316120299");
+							goToUrl("/myCollections");
 						}}>
 							<div className="action-icon">
 								<Apps />

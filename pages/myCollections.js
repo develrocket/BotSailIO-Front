@@ -79,7 +79,7 @@ export default function MyCollections(props) {
 						{/*</div>*/}
 						<div className={ classes.collectionContainer }>
 							<div className={ classes.collectionItem }>
-								<Link href={'/create/collection'}>
+								<Link href={'/collections/untitled-collection-316120299'}>
 									<a>
 										<img src={'/img/profile-bg.jpg'} style={{ height: '200px', width: '100%', borderRadius: '6px' }} />
 										<div className={ classes.collectionInfo }>

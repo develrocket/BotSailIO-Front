@@ -60,7 +60,7 @@ export default function HeaderLinks(props) {
 			const href = "/account/settings";
 			router.push(href, href, { shallow: true })
 		} else if (url === "My Collections") {
-			const href = "/settings";
+			const href = "/myCollections";
 			router.push(href, href, { shallow: true })
 		}
 		// TODO Logout logic

@@ -114,10 +114,10 @@ const componentsStyle = {
 	},
 	tabLink: {
 		display: 'flex',
-		fontSize: '22px',
+		fontSize: '20px',
 		alignItems: 'center',
 		'& svg': {
-			fontSize: '30px',
+			fontSize: '23px',
 			margin: '10px 20px 10px 10px'
 		},
 		'&:hover': {

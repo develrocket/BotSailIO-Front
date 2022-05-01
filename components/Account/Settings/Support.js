@@ -106,7 +106,7 @@ export default function Offer() {
 					>
 						<span className="buttonText">Cancel all Ethereum listings and offers</span>
 						{
-							(activated.indexOf(1) === -4) ?
+							(activated.indexOf(4) === -1) ?
 								<KeyboardArrowDown /> :
 								<KeyboardArrowUp />
 						}

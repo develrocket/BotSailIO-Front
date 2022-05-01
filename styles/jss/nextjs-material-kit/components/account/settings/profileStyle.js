@@ -83,7 +83,10 @@ const profileStyle = {
 			'&>input': {
 				background: '#353840',
 				color: '#ffffff',
-				border: 'none'
+				border: 'none',
+				flex: '1',
+				overflow: 'hidden',
+				textOverflow: 'ellipsis'
 			}
 		}
 	},
@@ -101,6 +104,7 @@ const profileStyle = {
 		position: 'relative',
 		background: 'none',
 		transition: 'background 100ms ease 0s',
+		margin: 'auto',
 
 		'& .imgIcon': {
 			fontSize: '4.5em',
@@ -159,6 +163,7 @@ const profileStyle = {
 		alignItems: 'center',
 		justifyContent: 'center',
 		position: 'relative',
+		margin: 'auto',
 
 		'& label': {
 			height: '100%',
@@ -226,6 +231,12 @@ const profileStyle = {
 		},
 
 	},
+	saveBtn: {
+		"@media (max-width: 1024px)": {
+			display: 'block',
+			margin: 'auto'
+		},
+	}
 
 
 };

@@ -20,6 +20,8 @@ const Style = {
 		'& button' : {
 			background: 'none',
 			boxShadow: 'none',
+			display: 'block',
+			width: '100%',
 			'&:hover': {
 				background: 'none',
 				boxShadow: 'none'
@@ -30,8 +32,14 @@ const Style = {
 			},
 			'& .buttonText': {
 				fontWeight: 'bold',
-				fontSize: '140%'
+				fontSize: '140%',
+				overflow: 'hidden',
+				textOverflow: 'ellipsis'
 			},
+			'&>span': {
+				display: 'flex',
+				justifyContent: 'space-between'
+			}
 		},
 		'& .itemDesc': {
 			padding:'0 10px 10px 30px'

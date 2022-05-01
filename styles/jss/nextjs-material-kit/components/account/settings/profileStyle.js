@@ -234,7 +234,8 @@ const profileStyle = {
 	saveBtn: {
 		"@media (max-width: 1024px)": {
 			display: 'block',
-			margin: 'auto'
+			margin: 'auto',
+			width: '100%'
 		},
 	}
 

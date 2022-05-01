@@ -22,6 +22,7 @@ const Style = {
 			boxShadow: 'none',
 			display: 'block',
 			width: '100%',
+			padding: '20px 30px',
 			'&:hover': {
 				background: 'none',
 				boxShadow: 'none'

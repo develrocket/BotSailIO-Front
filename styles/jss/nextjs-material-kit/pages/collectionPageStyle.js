@@ -128,6 +128,95 @@ const style = {
 			}
 		},
 
+		'& .mobile-func-box': {
+			display: "none",
+			flexDirection: "column",
+			justifyContent: "center",
+			alignItems: "center",
+
+			"@media (max-width: 576px)": {
+				display: "flex",
+			},
+
+			'& .setting-box': {
+				flex: 1,
+				display: "flex",
+				flexDirection: "row-reverse",
+				marginTop: "20px",
+				color: "rgb(229, 232, 235)",
+				width: "fit-content",
+
+				'& .share-btn': {
+					cursor: "pointer",
+					width: "50px",
+					height: "50px",
+					display: "inline-flex",
+					flexDirection: "row",
+					webkitBoxAlign: "center",
+					alignItems: "center",
+					borderRadius: "10px 0 0 10px",
+					webkitBoxPack: "center",
+					justifyContent: "center",
+					fontSize: "16px",
+					fontWeight: 600,
+					padding: "12px",
+					backgroundColor: "transparent",
+					border: "1px solid rgb(112, 122, 131)",
+					color: "rgb(229, 232, 235)",
+				},
+
+				'& .setting-btn': {
+					cursor: "pointer",
+					width: "50px",
+					height: "50px",
+					display: "inline-flex",
+					flexDirection: "row",
+					webkitBoxAlign: "center",
+					alignItems: "center",
+					borderRadius: "0 10px 10px 0",
+					webkitBoxPack: "center",
+					justifyContent: "center",
+					fontSize: "16px",
+					fontWeight: 600,
+					padding: "12px",
+					backgroundColor: "transparent",
+					border: "1px solid rgb(112, 122, 131)",
+					color: "rgb(229, 232, 235)",
+				},
+			},
+
+			'& .watch-box': {
+				flex: 1,
+				display: "flex",
+				flexDirection: "row",
+				marginTop: "20px",
+				color: "rgb(229, 232, 235)",
+				width: "fit-content",
+
+				'& .icon-btn': {
+					width: "50px"
+				},
+
+				'& .watch-btn': {
+					cursor: "pointer",
+					display: "inline-flex",
+					flexDirection: "row",
+					webkitBoxAlign: "center",
+					alignItems: "center",
+					borderRadius: "10px",
+					webkitBoxPack: "center",
+					justifyContent: "center",
+					fontSize: "16px",
+					fontWeight: 600,
+					padding: "12px 20px",
+					backgroundColor: "rgb(32, 34, 37)",
+					border: "1px solid rgb(112, 122, 131)",
+					color: "rgb(229, 232, 235)",
+					height: "50px",
+				}
+			},
+		},
+
 		'& .sub-box': {
 			width: "100%",
 			display: "flex",
@@ -311,6 +400,7 @@ const style = {
 				borderRadius: "10px",
 				display: "flex",
 				flexWrap: "wrap",
+				justifyContent: "center",
 
 				'& .detail-item': {
 					border: "1px solid rgb(21, 27, 34)",
@@ -356,7 +446,30 @@ const style = {
 				'& .item-4': {
 					borderRadius: "0 10px 10px 0",
 					borderLeft: 0,
-				}
+				},
+
+				"@media (max-width: 576px)": {
+					'& .item-1': {
+						borderRadius: "10px 0 0 0",
+						borderRight: 0,
+						borderBottom: 0,
+					},
+
+					'& .item-2': {
+						borderRadius: "0 10px 0 0",
+						borderBottom: 0
+					},
+
+					'& .item-3': {
+						borderRadius: "0 0 0 10px",
+						borderRight: 0,
+					},
+
+					'& .item-4': {
+						borderRadius: "0 0 10px 0",
+						borderLeft: "1px solid rgb(21, 27, 34) !important",
+					},
+				},
 			}
 		}
 	}

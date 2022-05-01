@@ -114,6 +114,7 @@ const style = {
 		width: "100%",
 		display: "flex",
 		flexDirection: "row",
+		borderTop: "1px solid #fd562a",
 
 		'& .mobile-filter-bar': {
 			position: "fixed",

@@ -42,7 +42,6 @@ const style = {
 			flexDirection: "row",
 			alignItems: "center",
 			height: "fit-content",
-			borderBottom: "1px solid #fd562a",
 			justifyContent: "center",
 
 			"@media (max-width: 1200px)": {

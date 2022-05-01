@@ -2,11 +2,11 @@ import React, {Component, useRef, useState} from "react";
 import Link from "next/link";
 import Popover from "@material-ui/core/Popover";
 import GridItem from "components/Grid/GridItem";
-import ProfileTagList from "components/Profile/ProfileTagList";
-import ItemList from "components/Collection/Item/ItemList";
+import ItemList from "components/Profile/ItemList";
 import CopyBox from "components/Collection/Item/CopyBox";
 import {makeStyles} from "@material-ui/core/styles";
-import {Edit, ViewList, Done, MoreVert, Facebook, Twitter, Storefront, Send, VisibilityOff} from '@material-ui/icons';
+import {Edit, ViewList, Add, MoreVert, Facebook, Twitter, Storefront, Send, VisibilityOff} from '@material-ui/icons';
+import Tooltip from "@material-ui/core/Tooltip";
 
 import styles from "styles/jss/nextjs-material-kit/pages/components.js";
 import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
@@ -50,7 +50,7 @@ export default function Page({userInfo}) {
 			<label className="banner-box" />
 			<div className="sub-box">
 				<div className="watch-box">
-					<button className="watch-btn m-r-5 m-l-10"><Done />Add Item</button>
+					<button className="watch-btn m-r-5 m-l-10"><Add />WatchList</button>
 					<button className="watch-btn m-l-5 icon-btn"><MoreVert /></button>
 				</div>
 				<div className="user-info-box" htmlFor="avatar_file">
@@ -69,11 +69,46 @@ export default function Page({userInfo}) {
 						<div className="share-btn" onClick={showMoreActions}>
 							<Edit />
 						</div>
-						<Link href="/account/settings">
+						<Link href="/collections/untitled-collection-316120299/payouts">
 							<a>
-								<div className="setting-btn">
-									<ViewList />
-								</div>
+								<Tooltip
+									id="tooltip-top"
+									title="Creator Earnings"
+									placement="top"
+									classes={{ tooltip: classes.tooltip }}
+								>
+									<div className="setting-btn">
+										<ViewList />
+									</div>
+								</Tooltip>
+							</a>
+						</Link>
+					</div>
+				</div>
+			</div>
+			<div className="mobile-func-box">
+				<div className="watch-box">
+					<button className="watch-btn m-r-5"><Add />WatchList</button>
+					<button className="watch-btn m-l-5 icon-btn"><MoreVert /></button>
+				</div>
+				<div className="setting-box">
+					<button className="add-btn">Add Item</button>
+					<div className="setting-container">
+						<div className="share-btn" onClick={showMoreActions}>
+							<Edit />
+						</div>
+						<Link href="/collections/untitled-collection-316120299/payouts">
+							<a>
+								<Tooltip
+									id="tooltip-top"
+									title="Creator Earnings"
+									placement="top"
+									classes={{ tooltip: classes.tooltip }}
+								>
+									<div className="setting-btn">
+										<ViewList />
+									</div>
+								</Tooltip>
 							</a>
 						</Link>
 					</div>
@@ -98,10 +133,10 @@ export default function Page({userInfo}) {
 						<p className="m-0">volume traded</p>
 					</div>
 				</div>
-				<div className="m-t-20">Welcome to the home of Untitled Collection #316120299 on OpenSea.</div>
-				<div>Discover the best items in this collection.</div>
+				<div style={{textAlign: "center"}} className="m-t-20">Welcome to the home of Untitled Collection #316120299 on OpenSea.</div>
+				<div style={{textAlign: "center"}}>Discover the best items in this collection.</div>
 			</div>
-			<ProfileTagList tab={tab} />
+			<ItemList tab={tab} />
 		</div>
 	);
 }

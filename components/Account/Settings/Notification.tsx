@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 
 //components
-import Button from "components/CustomButtons/Button.js";
+import Button from "components/CustomButtons/Button";
 import {Check} from '@material-ui/icons';
 import Checkbox from "@material-ui/core/Checkbox";
 
 // style
 import {makeStyles} from "@material-ui/core/styles";
-import javascriptStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/javascriptStyles.js";
+import javascriptStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/javascriptStyles";
 import styles from "styles/jss/nextjs-material-kit/components/account/settings/notificationStyle";
-import basicsStyle from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
+import basicsStyle from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle";
 
 const useStyles = makeStyles({...styles, ...javascriptStyles, ...basicsStyle});
 

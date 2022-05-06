@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {ArrowForward, Block, Send, Storefront, VisibilityOff, Close} from '@material-ui/icons';
-import styles from "styles/jss/nextjs-material-kit/components/profile/tagBodyStyle.js";
+import styles from "styles/jss/nextjs-material-kit/components/profile/tagBodyStyle";
 const useStyles = makeStyles(styles);
 import Select from "react-select";
 

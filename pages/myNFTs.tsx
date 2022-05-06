@@ -3,13 +3,13 @@ import GridContainer from "../components/Grid/GridContainer";
 import GridItem from "../components/Grid/GridItem";
 import MyNFTsList from "../components/myNFTList/MyNFTsList";
 import {makeStyles} from "@material-ui/core/styles";
-import Button from "components/CustomButtons/Button.js";
+import Button from "components/CustomButtons/Button";
 import IconButton from "@material-ui/core/IconButton";
 import {MoreVert, Storefront, Send, VisibilityOff, Block} from "@material-ui/icons";
 import { useRouter } from 'next/router'
 
-import styles from "styles/jss/nextjs-material-kit/pages/components.js";
-import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
+import styles from "styles/jss/nextjs-material-kit/pages/components";
+import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle";
 import pageStyles from "styles/jss/nextjs-material-kit/pages/myNFTs";
 import {useWeb3} from "@3rdweb/hooks";
 import CopyBox from "../components/Collection/Item/CopyBox";

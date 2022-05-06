@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 //components
-import Button from "components/CustomButtons/Button.js";
+import Button from "components/CustomButtons/Button";
 import {KeyboardArrowDown, KeyboardArrowUp, LooksOne, LooksTwo, MonetizationOn} from '@material-ui/icons';
 
 // style
 import {makeStyles} from "@material-ui/core/styles";
-import javascriptStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/javascriptStyles.js";
+import javascriptStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/javascriptStyles";
 import styles from "styles/jss/nextjs-material-kit/components/account/settings/supportStyle";
 
 const useStyles = makeStyles({...styles, ...javascriptStyles});

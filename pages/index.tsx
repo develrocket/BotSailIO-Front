@@ -6,7 +6,7 @@ import Button from "../components/CustomButtons/Button";
 import Parallax from "../components/Parallax/Parallax";
 import {makeStyles} from "@material-ui/core/styles";
 
-import styles from "styles/jss/nextjs-material-kit/pages/landingPage.js";
+import styles from "styles/jss/nextjs-material-kit/pages/landingPage";
 const useStyles = makeStyles(styles);
 
 export default function Index(props) {

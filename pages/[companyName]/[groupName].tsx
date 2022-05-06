@@ -7,9 +7,9 @@ import CopyBox from "components/Collection/Item/CopyBox";
 import {makeStyles} from "@material-ui/core/styles";
 import {FileCopy, Done, Twitter, Telegram, Widgets, Language} from '@material-ui/icons';
 
-import styles from "styles/jss/nextjs-material-kit/pages/components.js";
-import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
-import pageStyles from "styles/jss/nextjs-material-kit/pages/collections/groupStype.js";
+import styles from "styles/jss/nextjs-material-kit/pages/components";
+import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle";
+import pageStyles from "styles/jss/nextjs-material-kit/pages/collections/groupStype";
 import Button from "components/CustomButtons/Button";
 import {useWeb3} from "@3rdweb/hooks";
 

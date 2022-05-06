@@ -1,6 +1,6 @@
-import Header from "./Header/Header.js";
-import Footer from "./Footer/Footer.js";
-import HeaderLinks from "./Header/HeaderLinks.js";
+import Header from "./Header/Header";
+import Footer from "./Footer/Footer";
+import HeaderLinks from "./Header/HeaderLinks";
 
 const dashboardRoutes = [];
 

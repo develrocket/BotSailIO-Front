@@ -18,10 +18,10 @@ import DeleteIcon from "@material-ui/icons/Delete";
 import IconButton from "@material-ui/core/IconButton";
 
 // core components
-import CustomDropdown from "components/CustomDropdown/CustomDropdown.js";
-import Button from "components/CustomButtons/Button.js";
+import CustomDropdown from "components/CustomDropdown/CustomDropdown";
+import Button from "components/CustomButtons/Button";
 
-import styles from "styles/jss/nextjs-material-kit/components/headerLinksStyle.js";
+import styles from "styles/jss/nextjs-material-kit/components/headerLinksStyle";
 import Popover from "@material-ui/core/Popover";
 
 const useStyles = makeStyles(styles);

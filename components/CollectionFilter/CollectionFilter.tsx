@@ -6,8 +6,8 @@ import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Checkbox from "@material-ui/core/Checkbox";
 import Check from "@material-ui/icons/Check";
 
-import styles from "styles/jss/nextjs-material-kit/pages/components.js";
-import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
+import styles from "styles/jss/nextjs-material-kit/pages/components";
+import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle";
 
 const useStyles = makeStyles({...basicsStyles, ...styles});
 

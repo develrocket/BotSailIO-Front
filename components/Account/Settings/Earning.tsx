@@ -3,7 +3,7 @@ import Image from "next/image";
 
 // style
 import {makeStyles} from "@material-ui/core/styles";
-import javascriptStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/javascriptStyles.js";
+import javascriptStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/javascriptStyles";
 import styles from "styles/jss/nextjs-material-kit/components/account/settings/earningStyle";
 
 const useStyles = makeStyles({...styles, ...javascriptStyles});

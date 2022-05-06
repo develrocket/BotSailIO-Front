@@ -3,11 +3,11 @@ import React from "react";
 // @material-ui/core components
 import { makeStyles } from "@material-ui/core/styles";
 // @material-ui/icons
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
+import GridContainer from "components/Grid/GridContainer";
+import GridItem from "components/Grid/GridItem";
+import Button from "components/CustomButtons/Button";
 // core components
-import styles from "styles/jss/nextjs-material-kit/pages/componentsSections/downloadStyle.js";
+import styles from "styles/jss/nextjs-material-kit/pages/componentsSections/downloadStyle";
 
 const useStyles = makeStyles(styles);
 

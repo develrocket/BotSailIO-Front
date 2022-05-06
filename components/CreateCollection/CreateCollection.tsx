@@ -3,10 +3,10 @@ import React, { useState } from "react";
 //components
 import FormControlLabel from "@material-ui/core/FormControlLabel";
 import Switch from "@material-ui/core/Switch";
-import Button from "components/CustomButtons/Button.js";
+import Button from "components/CustomButtons/Button";
 import Select from "react-select";
 import PaymentTokens from "./PaymentTokens";
-import Dropdown from "components/Dropdown/Dropdown.js";
+import Dropdown from "components/Dropdown/Dropdown";
 import Theme from "./Theme"
 import formatOptionLabel from "../Create/Item/FormatOptionLabel";
 import Logo from "./Logo";
@@ -16,7 +16,7 @@ import {ErrorOutline} from "@material-ui/icons";
 // style
 import {makeStyles} from "@material-ui/core/styles";
 import styles from "styles/jss/nextjs-material-kit/components/createCollectionStyle";
-import javascriptStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/javascriptStyles.js";
+import javascriptStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/javascriptStyles";
 
 const useStyles = makeStyles({...styles, ...javascriptStyles});
 

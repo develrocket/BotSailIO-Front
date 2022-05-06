@@ -3,8 +3,8 @@ import Image from "next/image";
 
 // material-ui components
 
-import Button from "components/CustomButtons/Button.js";
-import Success from "components/Typography/Success.js";
+import Button from "components/CustomButtons/Button";
+import Success from "components/Typography/Success";
 import {makeStyles} from "@material-ui/core/styles";
 import styles from "styles/jss/nextjs-material-kit/components/tradeListStyle";
 

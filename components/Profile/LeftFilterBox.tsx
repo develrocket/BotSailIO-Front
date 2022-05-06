@@ -1,8 +1,8 @@
 import React, {useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {FilterList, ArrowBack, KeyboardArrowDown, KeyboardArrowUp, Check} from '@material-ui/icons';
-import styles from "styles/jss/nextjs-material-kit/components/profile/leftFilterBoxStyle.js";
-import customCheckboxRadioSwitch from "styles/jss/nextjs-material-kit/customCheckboxRadioSwitch.js";
+import styles from "styles/jss/nextjs-material-kit/components/profile/leftFilterBoxStyle";
+import customCheckboxRadioSwitch from "styles/jss/nextjs-material-kit/customCheckboxRadioSwitch";
 const useStyles = makeStyles({...styles, ...customCheckboxRadioSwitch});
 import Select from "react-select";
 import FormControlLabel from "@material-ui/core/FormControlLabel";

@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 //components
-import Button from "components/CustomButtons/Button.js";
+import Button from "components/CustomButtons/Button";
 import {Instagram, Language, Twitter, FileCopy, LibraryAddCheck} from '@material-ui/icons';
 
 
 // style
 import {makeStyles} from "@material-ui/core/styles";
-import javascriptStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/javascriptStyles.js";
+import javascriptStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/javascriptStyles";
 import styles from "styles/jss/nextjs-material-kit/components/account/settings/profileStyle";
 
 const useStyles = makeStyles({...styles, ...javascriptStyles});

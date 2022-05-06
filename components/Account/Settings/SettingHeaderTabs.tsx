@@ -16,9 +16,9 @@ import Icon from "@material-ui/core/Icon";
 import Popper from "@material-ui/core/Popper";
 
 // core components
-import Button from "components/CustomButtons/Button.js";
+import Button from "components/CustomButtons/Button";
 
-import styles from "styles/jss/nextjs-material-kit/components/account/settings/headerStyle.js";
+import styles from "styles/jss/nextjs-material-kit/components/account/settings/headerStyle";
 import {
 	Apps, ArrowDownward, ArrowUpward,
 	Collections, ErrorOutline,

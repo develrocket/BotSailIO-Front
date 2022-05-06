@@ -1,7 +1,7 @@
 import React, {useState} from "react";
 import {makeStyles} from "@material-ui/core/styles";
 import {LocalOffer, ShoppingCart, KeyboardArrowDown, KeyboardArrowUp, Check} from '@material-ui/icons';
-import styles from "styles/jss/nextjs-material-kit/components/profile/activitiesTableStyle.js";
+import styles from "styles/jss/nextjs-material-kit/components/profile/activitiesTableStyle";
 const useStyles = makeStyles({...styles});
 import Select from "react-select";
 import FormControlLabel from "@material-ui/core/FormControlLabel";

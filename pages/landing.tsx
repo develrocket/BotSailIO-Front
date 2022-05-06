@@ -7,20 +7,20 @@ import {makeStyles} from "@material-ui/core/styles";
 // @material-ui/icons
 
 // core components
-import Header from "components/Header/Header.js";
-import Footer from "components/Footer/Footer.js";
-import GridContainer from "components/Grid/GridContainer.js";
-import GridItem from "components/Grid/GridItem.js";
-import Button from "components/CustomButtons/Button.js";
-import HeaderLinks from "components/Header/HeaderLinks.js";
-import Parallax from "components/Parallax/Parallax.js";
+import Header from "components/Header/Header";
+import Footer from "components/Footer/Footer";
+import GridContainer from "components/Grid/GridContainer";
+import GridItem from "components/Grid/GridItem";
+import Button from "components/CustomButtons/Button";
+import HeaderLinks from "components/Header/HeaderLinks";
+import Parallax from "components/Parallax/Parallax";
 
-import styles from "styles/jss/nextjs-material-kit/pages/landingPage.js";
+import styles from "styles/jss/nextjs-material-kit/pages/landingPage";
 
 // Sections for this page
-import ProductSection from "pages-sections/LandingPage-Sections/ProductSection.js";
-import TeamSection from "pages-sections/LandingPage-Sections/TeamSection.js";
-import WorkSection from "pages-sections/LandingPage-Sections/WorkSection.js";
+import ProductSection from "pages-sections/LandingPage-Sections/ProductSection";
+import TeamSection from "pages-sections/LandingPage-Sections/TeamSection";
+import WorkSection from "pages-sections/LandingPage-Sections/WorkSection";
 
 const dashboardRoutes = [];
 

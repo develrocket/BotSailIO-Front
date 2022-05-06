@@ -12,7 +12,7 @@ import Dialog from "@material-ui/core/Dialog";
 import Slide from "@material-ui/core/Slide";
 
 import styles from "styles/jss/nextjs-material-kit/components/propertyModalStyle";
-import modalStyle from "styles/jss/nextjs-material-kit/modalStyle.js";
+import modalStyle from "styles/jss/nextjs-material-kit/modalStyle";
 
 const useStyles = makeStyles({...styles, ...modalStyle});
 

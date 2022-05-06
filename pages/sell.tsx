@@ -10,10 +10,10 @@ import Datetime from "react-datetime";
 import Carousel from "react-slick";
 import FormControl from "@material-ui/core/FormControl";
 
-import styles from "styles/jss/nextjs-material-kit/pages/components.js";
-import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
-import tooltipsStyle from "styles/jss/nextjs-material-kit/tooltipsStyle.js";
-import pageStyles from "styles/jss/nextjs-material-kit/pages/sellItem.js";
+import styles from "styles/jss/nextjs-material-kit/pages/components";
+import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle";
+import tooltipsStyle from "styles/jss/nextjs-material-kit/tooltipsStyle";
+import pageStyles from "styles/jss/nextjs-material-kit/pages/sellItem";
 
 import Tooltip from "@material-ui/core/Tooltip";
 import formatMoneyOptionLabel from "../components/Sell/formatMoneyOptionLabel";

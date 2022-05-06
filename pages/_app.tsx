@@ -7,7 +7,7 @@ import Layout from "components/layout";
 import { ThirdwebWeb3Provider } from "@3rdweb/hooks";
 import "regenerator-runtime/runtime";
 
-import PageChange from "components/PageChange/PageChange.js";
+import PageChange from "components/PageChange/PageChange";
 
 import "styles/scss/nextjs-material-kit.scss?v=1.2.0";
 

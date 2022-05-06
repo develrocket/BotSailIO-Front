@@ -5,9 +5,9 @@ import {makeStyles} from "@material-ui/core/styles";
 import Link from "next/link";
 import { useRouter } from 'next/router'
 
-import styles from "styles/jss/nextjs-material-kit/pages/components.js";
-import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
-import tooltipsStyle from "styles/jss/nextjs-material-kit/tooltipsStyle.js";
+import styles from "styles/jss/nextjs-material-kit/pages/components";
+import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle";
+import tooltipsStyle from "styles/jss/nextjs-material-kit/tooltipsStyle";
 import pageStyles from "styles/jss/nextjs-material-kit/pages/myCollections";
 import Button from "../components/CustomButtons/Button";
 import Tooltip from "@material-ui/core/Tooltip";

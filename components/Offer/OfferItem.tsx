@@ -3,7 +3,7 @@ import Image from "next/image";
 
 // material-ui components
 
-import Button from "components/CustomButtons/Button.js";
+import Button from "components/CustomButtons/Button";
 import {makeStyles} from "@material-ui/core/styles";
 import styles from "styles/jss/nextjs-material-kit/components/offerListStyle";
 

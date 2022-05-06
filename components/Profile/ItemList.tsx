@@ -4,10 +4,10 @@ import {
 	PhotoFilter, FormatPaint, FavoriteBorder, VisibilityOff, History, Storefront, FormatListBulleted,
 	KeyboardArrowDown, Copyright, Facebook, Twitter, Collections, Apps, ArrowDownward, ArrowUpward, PlaylistAddCheck, ErrorOutline
 } from '@material-ui/icons';
-import styles from "styles/jss/nextjs-material-kit/components/profile/tagListStyle.js";
+import styles from "styles/jss/nextjs-material-kit/components/profile/tagListStyle";
 import ProfileTabBody from "components/Profile/ProfileTabBody";
 const useStyles = makeStyles(styles);
-import Button from "components/CustomButtons/Button.js";
+import Button from "components/CustomButtons/Button";
 import Popover from "@material-ui/core/Popover";
 import {useRouter} from "next/router";
 

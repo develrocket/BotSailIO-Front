@@ -13,10 +13,10 @@ import Switch from "@material-ui/core/Switch";
 import Tooltip from "@material-ui/core/Tooltip";
 import Select from "react-select";
 
-import styles from "styles/jss/nextjs-material-kit/pages/components.js";
-import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
-import pageStyles from "styles/jss/nextjs-material-kit/pages/create/createItemStyle.js";
-import tooltipsStyle from "styles/jss/nextjs-material-kit/tooltipsStyle.js";
+import styles from "styles/jss/nextjs-material-kit/pages/components";
+import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle";
+import pageStyles from "styles/jss/nextjs-material-kit/pages/create/createItemStyle";
+import tooltipsStyle from "styles/jss/nextjs-material-kit/tooltipsStyle";
 import Button from "components/CustomButtons/Button";
 
 const useStyles = makeStyles({...basicsStyles, ...styles, ...tooltipsStyle, ...pageStyles});

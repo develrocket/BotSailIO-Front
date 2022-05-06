@@ -1,12 +1,12 @@
 import React, { useState } from "react";
 
 //components
-import Button from "components/CustomButtons/Button.js";
+import Button from "components/CustomButtons/Button";
 import {Check, ErrorOutline} from '@material-ui/icons';
 
 // style
 import {makeStyles} from "@material-ui/core/styles";
-import tooltipsStyle from "styles/jss/nextjs-material-kit/tooltipsStyle.js";
+import tooltipsStyle from "styles/jss/nextjs-material-kit/tooltipsStyle";
 import styles from "styles/jss/nextjs-material-kit/components/account/settings/offerStyle";
 import Tooltip from "@material-ui/core/Tooltip";
 import Image from "next/image";

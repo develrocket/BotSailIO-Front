@@ -4,8 +4,8 @@ import GridItem from "../../components/Grid/GridItem";
 import CreateCollection from "../../components/CreateCollection/CreateCollection";
 import {makeStyles} from "@material-ui/core/styles";
 
-import styles from "styles/jss/nextjs-material-kit/pages/components.js";
-import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
+import styles from "styles/jss/nextjs-material-kit/pages/components";
+import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle";
 import pageStyles from "styles/jss/nextjs-material-kit/pages/create";
 const useStyles = makeStyles({...basicsStyles, ...styles, ...pageStyles});
 

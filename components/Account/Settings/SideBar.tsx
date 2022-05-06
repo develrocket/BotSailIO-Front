@@ -6,8 +6,8 @@ import {useRouter} from "next/router";
 import {makeStyles} from "@material-ui/core/styles";
 
 import pageStyle from "styles/jss/nextjs-material-kit/components/account/settings/sideBar";
-import styles from "styles/jss/nextjs-material-kit/pages/components.js";
-import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
+import styles from "styles/jss/nextjs-material-kit/pages/components";
+import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle";
 import {AccountBox, Help, LocalOffer, MonetizationOn, Notifications, Payment} from "@material-ui/icons";
 
 const useStyles = makeStyles({...basicsStyles, ...styles, ...pageStyle});

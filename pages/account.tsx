@@ -8,9 +8,9 @@ import CopyBox from "components/Collection/Item/CopyBox";
 import {makeStyles} from "@material-ui/core/styles";
 import {Edit, Share, Settings, Copyright, Facebook, Twitter, Storefront, Send, VisibilityOff} from '@material-ui/icons';
 
-import styles from "styles/jss/nextjs-material-kit/pages/components.js";
-import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle.js";
-import pageStyles from "styles/jss/nextjs-material-kit/pages/accountPageStyle.js";
+import styles from "styles/jss/nextjs-material-kit/pages/components";
+import basicsStyles from "styles/jss/nextjs-material-kit/pages/componentsSections/basicsStyle";
+import pageStyles from "styles/jss/nextjs-material-kit/pages/accountPageStyle";
 import Button from "components/CustomButtons/Button";
 import {useWeb3} from "@3rdweb/hooks";
 import {useRouter} from "next/router";
